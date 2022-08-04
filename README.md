@@ -7,8 +7,7 @@
 ## Setup(Mac)
 - Install ruby & bundler
   ```sh
-  brew install ruby
-  bundle install
+  gem install bundler
   ```
 - Setup project
   go to project root dir, run this command in your terminal.
