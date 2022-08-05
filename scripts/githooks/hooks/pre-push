@@ -4,3 +4,7 @@ set -euo pipefail
 echo "=====unit test start====="
 bundle exec fastlane unit_tests
 echo "=====unit test end====="
+
+echo "=====static check start====="
+bundle exec fastlane check
+echo "=====static check end====="
