@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "=====unit test start====="
+bundle exec fastlane unit_tests
+echo "=====unit test end====="

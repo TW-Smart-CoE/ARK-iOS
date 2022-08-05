@@ -1,0 +1,14 @@
+//
+//  Test.xcconfig
+//  ARK-iOS
+//
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Shared.xcconfig"
+#include "../Pods/Target Support Files/Pods-ARK-iOSTests/Pods-ARK-iOSTests.debug.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = $(PRODUCT_BUNDLE_IDENTIFIER).tests
