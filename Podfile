@@ -5,6 +5,8 @@ platform :ios, '14.0'
 target 'ARK-iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  
+  pod 'SwiftLint', '~> 0.48'
 
   # Pods for ARK-iOS
 
