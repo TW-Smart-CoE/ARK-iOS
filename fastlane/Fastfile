@@ -39,20 +39,17 @@ platform :ios do
 
   desc "Runs all the static check"
   lane :check do
-    swiftlint(
-      mode: :lint,
-      strict: true,
-      executable: "./Pods/SwiftLint/swiftlint",
-      config_file: "./.swiftlint.yml",
-      raise_if_swiftlint_error: true,
-      ignore_exit_status: true
-    )
+    lint_base({ :mode => :lint })
   end
 
   desc "Autocorrect all swift files"
   lane :lint_correct do
+    lint_base({ :mode => :fix })
+  end
+
+  private_lane :lint_base do |options|
     swiftlint(
-      mode: :autocorrect,
+      mode: options[:mode],
       strict: true,
       executable: "./Pods/SwiftLint/swiftlint",
       config_file: "./.swiftlint.yml",

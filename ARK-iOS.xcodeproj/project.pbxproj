@@ -316,7 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"${PODS_ROOT}/SwiftLint/swiftlint\" ]]; then\n  ${PODS_ROOT}/SwiftLint/swiftlint\nelse\n  echo \"warning: swiftlint doesn't exist. Run 'bundle exec pod install'\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ -f \"${PODS_ROOT}/SwiftLint/swiftlint\" ]]; then\n  ${PODS_ROOT}/SwiftLint/swiftlint\nelse\n  echo \"warning: swiftlint doesn't exist. Run 'bundle exec pod install'\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
