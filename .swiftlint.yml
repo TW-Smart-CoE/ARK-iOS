@@ -23,3 +23,5 @@ opt_in_rules:
   - implicitly_unwrapped_optional
   - indentation_width
   - multiline_parameters
+  - vertical_whitespace_opening_braces
+  - vertical_whitespace_closing_braces
