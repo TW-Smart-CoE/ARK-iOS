@@ -1,16 +1,23 @@
 PODS:
+  - Core (0.0.1)
   - SwiftLint (0.48.0)
 
 DEPENDENCIES:
+  - Core (from `./modules/Core`)
   - SwiftLint (~> 0.48)
 
 SPEC REPOS:
   trunk:
     - SwiftLint
 
+EXTERNAL SOURCES:
+  Core:
+    :path: "./modules/Core"
+
 SPEC CHECKSUMS:
+  Core: 70c1f273ecdd43fd3e050ae6982690e7cd013b97
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
 
-PODFILE CHECKSUM: d10c2b0f715d489cd679cf5e39ba2af2a186b769
+PODFILE CHECKSUM: 1348d6e649304cca878bb080fffb6d4b41badaa6
 
 COCOAPODS: 1.11.3

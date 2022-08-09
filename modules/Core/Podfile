@@ -2,24 +2,15 @@ source 'https://cdn.cocoapods.org/'
 
 platform :ios, '14.0'
 
-def modules
-  pod 'Core', :path => './modules/Core'
-end
-
-target 'ARK-iOS' do
+target 'Core' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  
-  modules
-  pod 'SwiftLint', '~> 0.48'
 
   # Pods for ARK-iOS
 
-  target 'ARK-iOSTests' do
+  target 'CoreTests' do
     inherit! :search_paths
     # Pods for testing
   end
-
+  
 end
-
-
