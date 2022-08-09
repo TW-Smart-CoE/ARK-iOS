@@ -37,6 +37,29 @@ platform :ios do
     run_tests(scheme: "ARK-iOS")
   end
 
+  desc "Runs all the static check"
+  lane :check do
+    lint_base({ :mode => :lint })
+  end
+
+  desc "Autocorrect all swift files"
+  lane :lint_correct do
+    lint_base({ :mode => :fix })
+  end
+
+  private_lane :lint_base do |options|
+    swiftlint(
+      mode: options[:mode],
+      strict: true,
+      executable: "./Pods/SwiftLint/swiftlint",
+      config_file: "./.swiftlint.yml",
+      output_file: "./fastlane/report.md",
+      reporter: "markdown",
+      raise_if_swiftlint_error: true,   
+      ignore_exit_status: true
+    )
+  end
+
   desc "Notify message to user"
   private_lane :notify_message do |options|
     if is_ci
