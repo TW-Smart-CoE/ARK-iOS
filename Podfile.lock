@@ -1,10 +1,12 @@
 PODS:
   - Core (0.0.1)
   - SwiftLint (0.48.0)
+  - UI (0.0.1)
 
 DEPENDENCIES:
   - Core (from `./modules/Core`)
   - SwiftLint (~> 0.48)
+  - UI (from `./modules/UI`)
 
 SPEC REPOS:
   trunk:
@@ -13,11 +15,14 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Core:
     :path: "./modules/Core"
+  UI:
+    :path: "./modules/UI"
 
 SPEC CHECKSUMS:
   Core: 70c1f273ecdd43fd3e050ae6982690e7cd013b97
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
+  UI: 39fec1ab46ff32d6aceb69f26bb5d9e62c017d7e
 
-PODFILE CHECKSUM: 1348d6e649304cca878bb080fffb6d4b41badaa6
+PODFILE CHECKSUM: 0d632caf10ff860c73928b08369bd5ffd25a231e
 
 COCOAPODS: 1.11.3
