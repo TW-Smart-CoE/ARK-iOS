@@ -16,20 +16,41 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Build an app for dev env"
+
+  desc "Build an app with Debug env"
   lane :build_dev do
-    build_app(scheme: "ARK-iOS",
-            workspace: "ARK-iOS.xcworkspace",
-            include_bitcode: false)
+    build_package({ :configuration => "Debug", :export_method => "ad-hoc" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
     }
     notify_message(notification_options)
   end
 
-  desc "Build an app for uat env"
+  desc "Build an app with Uat env"
   lane :build_uat do
-    # change the task to uat later
+    build_package({ :configuration => "Uat", :export_method => "ad-hoc" })
+    notification_options = {
+      :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
+    }
+    notify_message(notification_options)
+  end
+
+  desc "Build an app with Staging env"
+  lane :build_staging do
+    build_package({ :configuration => "Staging", :export_method => "ad-hoc" })
+    notification_options = {
+      :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
+    }
+    notify_message(notification_options)
+  end
+
+  desc "Build an app with Release env"
+  lane :build_release do
+    build_package({ :configuration => "Release", :export_method => "app-store" })
+    notification_options = {
+      :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
+    }
+    notify_message(notification_options)
   end
 
   desc "Runs all the unit tests"
@@ -47,6 +68,8 @@ platform :ios do
     lint_base({ :mode => :fix })
   end
 
+
+
   private_lane :lint_base do |options|
     swiftlint(
       mode: options[:mode],
@@ -57,6 +80,20 @@ platform :ios do
       reporter: "markdown",
       raise_if_swiftlint_error: true,   
       ignore_exit_status: true
+    )
+  end
+
+  private_lane :build_package do |options|
+    build_app(
+      workspace: "ARK-iOS.xcworkspace",
+      scheme: "ARK-iOS",
+      configuration: options[:configuration],
+      export_method: options[:export_method],
+      silent: false,
+      clean: false,
+      skip_codesigning: true,
+      output_directory: "./build/packages", 
+      include_bitcode: false
     )
   end
 
