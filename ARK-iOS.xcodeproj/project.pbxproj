@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20F21EBCE804EDBFA80DD10B /* Pods_ARK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E604933C28A39EDF005C737A /* Pods_ARK_iOS.framework */; };
 		93163E6907136AB5741E4814 /* Pods_ARK_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF88D1E3AA74A33F7502972 /* Pods_ARK_iOSTests.framework */; };
-		C6C8B9E7C0C44FEA2992DD20 /* Pods_ARK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFA4D47DF08F86027C8471D /* Pods_ARK_iOS.framework */; };
+		E668CAF028A506B300379B4F /* App-Staging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E668CAEE28A506B300379B4F /* App-Staging.xcconfig */; };
+		E668CAF128A506B300379B4F /* App-Uat.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E668CAEF28A506B300379B4F /* App-Uat.xcconfig */; };
 		E6710DF12898EECE00663362 /* ARKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6710DF02898EECE00663362 /* ARKApp.swift */; };
 		E6710DF32898EECE00663362 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6710DF22898EECE00663362 /* ContentView.swift */; };
 		E6710DF52898EED000663362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6710DF42898EED000663362 /* Assets.xcassets */; };
@@ -17,8 +19,6 @@
 		E6710E2C28990B0000663362 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E6710E2B28990B0000663362 /* Shared.xcconfig */; };
 		E6710E2E28990B2600663362 /* App-Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E6710E2D28990B2600663362 /* App-Debug.xcconfig */; };
 		E6710E3028990B3700663362 /* App-Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E6710E2F28990B3700663362 /* App-Release.xcconfig */; };
-		E6710E37289A5CD500663362 /* Test-Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E6710E35289A5CD500663362 /* Test-Release.xcconfig */; };
-		E6710E38289A5CD500663362 /* Test-Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = E6710E36289A5CD500663362 /* Test-Debug.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +32,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03460ABD7AF93F9D0D9CED0E /* Pods-ARK-iOSTests.uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOSTests.uat.xcconfig"; path = "Target Support Files/Pods-ARK-iOSTests/Pods-ARK-iOSTests.uat.xcconfig"; sourceTree = "<group>"; };
 		1EFA4D47DF08F86027C8471D /* Pods_ARK_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARK_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B02F006099AF5E51964524C /* Pods-ARK-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-ARK-iOSTests/Pods-ARK-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		3336613C68709622898B732B /* Pods-ARK-iOS.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOS.staging.xcconfig"; path = "Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS.staging.xcconfig"; sourceTree = "<group>"; };
 		411A90461CACADAD68F2FABB /* Pods-ARK-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8ADE8CB2239E272C97B76CF2 /* Pods-ARK-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOS.release.xcconfig"; path = "Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		94381680E9549C040D07E5A6 /* Pods-ARK-iOS.uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOS.uat.xcconfig"; path = "Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS.uat.xcconfig"; sourceTree = "<group>"; };
 		96E531B951D9EF31497A824D /* Pods-ARK-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ARK-iOSTests/Pods-ARK-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BAF88D1E3AA74A33F7502972 /* Pods_ARK_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARK_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A2E91739AB8A888252298F /* Pods-ARK-iOSTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOSTests.staging.xcconfig"; path = "Target Support Files/Pods-ARK-iOSTests/Pods-ARK-iOSTests.staging.xcconfig"; sourceTree = "<group>"; };
+		E604933C28A39EDF005C737A /* Pods_ARK_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ARK_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E668CAEE28A506B300379B4F /* App-Staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "App-Staging.xcconfig"; sourceTree = "<group>"; };
+		E668CAEF28A506B300379B4F /* App-Uat.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "App-Uat.xcconfig"; sourceTree = "<group>"; };
 		E6710DED2898EECE00663362 /* ARK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6710DF02898EECE00663362 /* ARKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKApp.swift; sourceTree = "<group>"; };
 		E6710DF22898EECE00663362 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,8 +55,6 @@
 		E6710E2B28990B0000663362 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		E6710E2D28990B2600663362 /* App-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Debug.xcconfig"; sourceTree = "<group>"; };
 		E6710E2F28990B3700663362 /* App-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Release.xcconfig"; sourceTree = "<group>"; };
-		E6710E35289A5CD500663362 /* Test-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Test-Release.xcconfig"; sourceTree = "<group>"; };
-		E6710E36289A5CD500663362 /* Test-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Test-Debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6C8B9E7C0C44FEA2992DD20 /* Pods_ARK_iOS.framework in Frameworks */,
+				20F21EBCE804EDBFA80DD10B /* Pods_ARK_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +84,10 @@
 				8ADE8CB2239E272C97B76CF2 /* Pods-ARK-iOS.release.xcconfig */,
 				96E531B951D9EF31497A824D /* Pods-ARK-iOSTests.debug.xcconfig */,
 				2B02F006099AF5E51964524C /* Pods-ARK-iOSTests.release.xcconfig */,
+				94381680E9549C040D07E5A6 /* Pods-ARK-iOS.uat.xcconfig */,
+				3336613C68709622898B732B /* Pods-ARK-iOS.staging.xcconfig */,
+				03460ABD7AF93F9D0D9CED0E /* Pods-ARK-iOSTests.uat.xcconfig */,
+				C2A2E91739AB8A888252298F /* Pods-ARK-iOSTests.staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -135,9 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				E6710E2B28990B0000663362 /* Shared.xcconfig */,
-				E6710E36289A5CD500663362 /* Test-Debug.xcconfig */,
-				E6710E35289A5CD500663362 /* Test-Release.xcconfig */,
 				E6710E2D28990B2600663362 /* App-Debug.xcconfig */,
+				E668CAEF28A506B300379B4F /* App-Uat.xcconfig */,
+				E668CAEE28A506B300379B4F /* App-Staging.xcconfig */,
 				E6710E2F28990B3700663362 /* App-Release.xcconfig */,
 			);
 			path = Configs;
@@ -146,6 +155,7 @@
 		FD7F818641C6735D7D54E1FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E604933C28A39EDF005C737A /* Pods_ARK_iOS.framework */,
 				1EFA4D47DF08F86027C8471D /* Pods_ARK_iOS.framework */,
 				BAF88D1E3AA74A33F7502972 /* Pods_ARK_iOSTests.framework */,
 			);
@@ -199,7 +209,7 @@
 		E6710DE52898EECE00663362 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
@@ -238,10 +248,10 @@
 			files = (
 				E6710E2E28990B2600663362 /* App-Debug.xcconfig in Resources */,
 				E6710DF82898EED000663362 /* Preview Assets.xcassets in Resources */,
-				E6710E38289A5CD500663362 /* Test-Debug.xcconfig in Resources */,
 				E6710DF52898EED000663362 /* Assets.xcassets in Resources */,
+				E668CAF128A506B300379B4F /* App-Uat.xcconfig in Resources */,
 				E6710E2C28990B0000663362 /* Shared.xcconfig in Resources */,
-				E6710E37289A5CD500663362 /* Test-Release.xcconfig in Resources */,
+				E668CAF028A506B300379B4F /* App-Staging.xcconfig in Resources */,
 				E6710E3028990B3700663362 /* App-Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +359,224 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E668CAF228A506D000379B4F /* Uat */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Uat;
+		};
+		E668CAF328A506D000379B4F /* Uat */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E668CAEF28A506B300379B4F /* App-Uat.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"UAT=1",
+					"COCOAPODS=1",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.ios.ark;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Uat;
+		};
+		E668CAF428A506D000379B4F /* Uat */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03460ABD7AF93F9D0D9CED0E /* Pods-ARK-iOSTests.uat.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.tw-smart-coe.ARK-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARK.app/ARK";
+			};
+			name = Uat;
+		};
+		E668CAF528A506DA00379B4F /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Staging;
+		};
+		E668CAF628A506DA00379B4F /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E668CAEE28A506B300379B4F /* App-Staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"STAGING=1",
+					"COCOAPODS=1",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.ios.ark;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Staging;
+		};
+		E668CAF728A506DA00379B4F /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2A2E91739AB8A888252298F /* Pods-ARK-iOSTests.staging.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.tw-smart-coe.ARK-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARK.app/ARK";
+			};
+			name = Staging;
+		};
 		E6710E0F2898EED000663362 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -473,12 +701,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -508,6 +739,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -569,6 +801,8 @@
 			buildConfigurations = (
 				E6710E0F2898EED000663362 /* Debug */,
 				E6710E102898EED000663362 /* Release */,
+				E668CAF228A506D000379B4F /* Uat */,
+				E668CAF528A506DA00379B4F /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -578,6 +812,8 @@
 			buildConfigurations = (
 				E6710E122898EED000663362 /* Debug */,
 				E6710E132898EED000663362 /* Release */,
+				E668CAF328A506D000379B4F /* Uat */,
+				E668CAF628A506DA00379B4F /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -587,6 +823,8 @@
 			buildConfigurations = (
 				E6710E152898EED000663362 /* Debug */,
 				E6710E162898EED000663362 /* Release */,
+				E668CAF428A506D000379B4F /* Uat */,
+				E668CAF728A506DA00379B4F /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
