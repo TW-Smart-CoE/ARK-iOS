@@ -13,6 +13,9 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+
+ENV['KEY_CHAIN_NAME'] = 'ark.keychain'
+
 default_platform(:ios)
 
 platform :ios do
@@ -85,58 +88,80 @@ platform :ios do
   desc "Config certificate for debug"
   lane :certificate_debug do
     app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.debug'
-    match(
-      type: 'development',
-      app_identifier: [app_identifier],
-      force_for_new_devices: true,
-      readonly: false
-    )
+    match_base({
+      :type => 'development',
+      :app_identifier => app_identifier
+    })
   end
 
   desc "Config certificate for dev build"
   lane :certificate_dev do
     app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.debug'
-    match(
-      type: 'adhoc',
-      app_identifier: [app_identifier],
-      force_for_new_devices: true,
-      readonly: false
-    )
+    match_base({
+      :type => 'adhoc',
+      :app_identifier => app_identifier
+    })
   end
 
   desc "Config certificate for uat build"
   lane :certificate_uat do
     app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.uat'
-    match(
-      type: 'adhoc',
-      app_identifier: [app_identifier],
-      force_for_new_devices: true,
-      readonly: false
-    )
+    match_base({
+      :type => 'adhoc',
+      :app_identifier => app_identifier
+    })
   end
 
   desc "Config certificate for staging build"
   lane :certificate_staging do |options|
     app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.staging'
-    match(
-      type: 'adhoc',
-      app_identifier: [app_identifier],
-      force_for_new_devices: true,
-      readonly: false
-    )
+    match_base({
+      :type => 'adhoc',
+      :app_identifier => app_identifier
+    })
   end
 
   desc "Config certificate for release build"
   lane :certificate_release do
     app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
-    match(
-      type: 'appstore',
-      app_identifier: [app_identifier],
-      force_for_new_devices: true,
-      readonly: false
+    match_base({
+      :type => 'appstore',
+      :app_identifier => app_identifier
+    })
+  end
+
+  private_lane :ensure_keychain do |options|
+    create_keychain(
+      name: options[:name],
+      password: options[:password],
+      unlock: false,
+      timeout: 0,
+      lock_when_sleeps: true
     )
   end
 
+  private_lane :match_base do |options|
+    keychain_name = ENV['KEY_CHAIN_NAME']
+    keychain_password = ENV['KEY_CHAIN_PASSWORD']
+
+    ensure_keychain({
+      :name => keychain_name,
+      :password => keychain_password
+    })
+
+    sh "security find-identity -v -p codesigning ark.keychain"
+
+    match(
+      type: options[:type],
+      app_identifier: options[:app_identifier],
+      force_for_new_devices: true,
+      readonly: false,
+      keychain_name: keychain_name,
+      keychain_password: keychain_password
+    )
+
+    sh "security find-identity -v -p codesigning ark.keychain"
+  end
 
   private_lane :lint_base do |options|
     swiftlint(
