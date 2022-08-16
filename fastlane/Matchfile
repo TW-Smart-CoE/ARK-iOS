@@ -1,0 +1,9 @@
+git_url("git@github.com:TW-Smart-CoE/Certificates.git")
+
+storage_mode("git")
+
+apple_dev_portal_id = CredentialsManager::AppfileConfig.try_fetch_value(:apple_dev_portal_id)
+username(apple_dev_portal_id) # Apple Developer Portal username
+
+
+

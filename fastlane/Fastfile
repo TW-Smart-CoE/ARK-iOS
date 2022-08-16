@@ -19,6 +19,7 @@ platform :ios do
 
   desc "Build an app with Debug env"
   lane :build_dev do
+    certificate_dev
     build_package({ :configuration => "Debug", :export_method => "ad-hoc" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
@@ -28,6 +29,7 @@ platform :ios do
 
   desc "Build an app with Uat env"
   lane :build_uat do
+    certificate_uat
     build_package({ :configuration => "Uat", :export_method => "ad-hoc" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
@@ -37,6 +39,7 @@ platform :ios do
 
   desc "Build an app with Staging env"
   lane :build_staging do
+    certificate_staging
     build_package({ :configuration => "Staging", :export_method => "ad-hoc" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
@@ -46,11 +49,22 @@ platform :ios do
 
   desc "Build an app with Release env"
   lane :build_release do
+    certificate_release
     build_package({ :configuration => "Release", :export_method => "app-store" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
     }
     notify_message(notification_options)
+  end
+
+  desc "Build an app and upload to Testflight"
+  lane :release_to_test_flight do
+    build_release
+
+    apple_dev_portal_id = CredentialsManager::AppfileConfig.try_fetch_value(:apple_dev_portal_id)
+    upload_to_testflight(
+      username: apple_dev_portal_id
+    )
   end
 
   desc "Runs all the unit tests"
@@ -68,6 +82,60 @@ platform :ios do
     lint_base({ :mode => :fix })
   end
 
+  desc "Config certificate for debug"
+  lane :certificate_debug do
+    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.debug'
+    match(
+      type: 'development',
+      app_identifier: [app_identifier],
+      force_for_new_devices: true,
+      readonly: false
+    )
+  end
+
+  desc "Config certificate for dev build"
+  lane :certificate_dev do
+    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.debug'
+    match(
+      type: 'adhoc',
+      app_identifier: [app_identifier],
+      force_for_new_devices: true,
+      readonly: false
+    )
+  end
+
+  desc "Config certificate for uat build"
+  lane :certificate_uat do
+    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.uat'
+    match(
+      type: 'adhoc',
+      app_identifier: [app_identifier],
+      force_for_new_devices: true,
+      readonly: false
+    )
+  end
+
+  desc "Config certificate for staging build"
+  lane :certificate_staging do |options|
+    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.staging'
+    match(
+      type: 'adhoc',
+      app_identifier: [app_identifier],
+      force_for_new_devices: true,
+      readonly: false
+    )
+  end
+
+  desc "Config certificate for release build"
+  lane :certificate_release do
+    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+    match(
+      type: 'appstore',
+      app_identifier: [app_identifier],
+      force_for_new_devices: true,
+      readonly: false
+    )
+  end
 
 
   private_lane :lint_base do |options|
@@ -84,14 +152,15 @@ platform :ios do
   end
 
   private_lane :build_package do |options|
+    team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
     build_app(
       workspace: "ARK-iOS.xcworkspace",
       scheme: "ARK-iOS",
       configuration: options[:configuration],
       export_method: options[:export_method],
+      export_team_id: team_id,
       silent: false,
-      clean: false,
-      skip_codesigning: true,
+      clean: true,
       output_directory: "./build/packages", 
       include_bitcode: false
     )
@@ -130,4 +199,5 @@ platform :ios do
     sh "export LC_ALL=en_US.UTF-8"
     sh "export LANG=en_US.UTF-8"
   end
+
 end

@@ -96,3 +96,7 @@ fastlane/report.md
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# Dotenv
+.env*
+
