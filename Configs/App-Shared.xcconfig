@@ -1,0 +1,19 @@
+//
+//  Shared.xcconfig
+//  ARK-iOS
+//
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+//
+
+#include "Basic.xcconfig"
+
+TARGET_NAME = $(HOST_TARGET_NAME)
+PRODUCT_BUNDLE_IDENTIFIER = com.thoughtworks.ark$(CONFIGURATION_SUFFIX)
+PRODUCT_NAME = $(HOST_PRODUCT_NAME)
+PRODUCT_MODULE_NAME = $(TARGET_NAME)
+INFOPLIST_KEY_CFBundleDisplayName = $(TARGET_NAME)$(CONFIGURATION_SUFFIX)
+

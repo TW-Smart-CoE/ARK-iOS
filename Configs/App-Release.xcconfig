@@ -8,7 +8,7 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-#include "Shared.xcconfig"
+#include "App-Shared.xcconfig"
 #include "../Pods/Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS.release.xcconfig"
 
-PRODUCT_NAME = $(inherited).$(MARKETING_VERSION)
+CONFIGURATION_SUFFIX = 
