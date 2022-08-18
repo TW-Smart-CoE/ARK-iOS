@@ -13,8 +13,8 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-
 ENV['KEY_CHAIN_NAME'] = 'ark.keychain'
+
 
 default_platform(:ios)
 
@@ -87,7 +87,7 @@ platform :ios do
 
   desc "Config certificate for debug"
   lane :certificate_debug do
-    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.debug'
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.debug'
     match_base({
       :type => 'development',
       :app_identifier => app_identifier
@@ -96,7 +96,7 @@ platform :ios do
 
   desc "Config certificate for dev build"
   lane :certificate_dev do
-    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.debug'
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.debug'
     match_base({
       :type => 'adhoc',
       :app_identifier => app_identifier
@@ -105,7 +105,7 @@ platform :ios do
 
   desc "Config certificate for uat build"
   lane :certificate_uat do
-    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.uat'
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.uat'
     match_base({
       :type => 'adhoc',
       :app_identifier => app_identifier
@@ -114,7 +114,7 @@ platform :ios do
 
   desc "Config certificate for staging build"
   lane :certificate_staging do |options|
-    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier) + '.staging'
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.staging'
     match_base({
       :type => 'adhoc',
       :app_identifier => app_identifier
@@ -123,7 +123,7 @@ platform :ios do
 
   desc "Config certificate for release build"
   lane :certificate_release do
-    app_identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+    app_identifier = ENV['KEY_APP_IDENTIFIER']
     match_base({
       :type => 'appstore',
       :app_identifier => app_identifier
@@ -143,15 +143,15 @@ platform :ios do
   private_lane :match_base do |options|
     keychain_name = ENV['KEY_CHAIN_NAME']
     keychain_password = ENV['KEY_CHAIN_PASSWORD']
+    apple_id = ENV['KEY_APPLE_ID']
 
     ensure_keychain({
       :name => keychain_name,
       :password => keychain_password
     })
 
-    sh "security find-identity -v -p codesigning ark.keychain"
-
     match(
+      username: apple_id,
       type: options[:type],
       app_identifier: options[:app_identifier],
       force_for_new_devices: true,
@@ -159,8 +159,6 @@ platform :ios do
       keychain_name: keychain_name,
       keychain_password: keychain_password
     )
-
-    sh "security find-identity -v -p codesigning ark.keychain"
   end
 
   private_lane :lint_base do |options|
@@ -177,7 +175,7 @@ platform :ios do
   end
 
   private_lane :build_package do |options|
-    team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
+    team_id = ENV['KEY_TEAM_ID']
     build_app(
       workspace: "ARK-iOS.xcworkspace",
       scheme: "ARK-iOS",

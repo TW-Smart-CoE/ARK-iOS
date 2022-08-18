@@ -1,4 +1,5 @@
 
-apple_dev_portal_id "tao.tang@thoughtworks.com"  # Apple Developer Account
-app_identifier "com.thoughtworks.ark"
-team_id "25EZUPR5QA" # Developer Portal Team ID
+ENV['KEY_APPLE_ID'] = "tao.tang@thoughtworks.com"
+ENV['KEY_APP_IDENTIFIER'] = "com.thoughtworks.ark"
+ENV['KEY_TEAM_ID'] = "25EZUPR5QA"
+
