@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E6710DEC2898EECE00663362"
-               BuildableName = "ARK.1.0.0.1.uat.app"
+               BuildableName = "ARK.1.0.1.app"
                BlueprintName = "ARK-iOS"
                ReferencedContainer = "container:ARK-iOS.xcodeproj">
             </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E6710DEC2898EECE00663362"
-            BuildableName = "ARK.1.0.0.1.uat.app"
+            BuildableName = "ARK.1.0.1.app"
             BlueprintName = "ARK-iOS"
             ReferencedContainer = "container:ARK-iOS.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E6710DEC2898EECE00663362"
-            BuildableName = "ARK.1.0.0.1.uat.app"
+            BuildableName = "ARK.1.0.1.app"
             BlueprintName = "ARK-iOS"
             ReferencedContainer = "container:ARK-iOS.xcodeproj">
          </BuildableReference>

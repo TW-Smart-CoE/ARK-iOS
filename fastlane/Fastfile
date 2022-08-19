@@ -13,9 +13,6 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-ENV['KEY_CHAIN_NAME'] = 'ark.keychain'
-
-
 default_platform(:ios)
 
 platform :ios do
@@ -176,15 +173,21 @@ platform :ios do
 
   private_lane :build_package do |options|
     team_id = ENV['KEY_TEAM_ID']
+    scheme = ENV['KEY_PROJECT_NAME']
+    version = get_version_number(xcodeproj: ENV['KEY_PROJECT'])
+    build_number = get_build_number(xcodeproj: ENV['KEY_PROJECT'])
+    ipa_name = "ARK.#{version}.#{build_number}.#{options[:configuration].downcase}.ipa"
+
     build_app(
-      workspace: "ARK-iOS.xcworkspace",
-      scheme: "ARK-iOS",
+      workspace: ENV['KEY_WORKSPACE'],
+      scheme: scheme,
       configuration: options[:configuration],
       export_method: options[:export_method],
       export_team_id: team_id,
       silent: false,
       clean: true,
       output_directory: "./build/packages", 
+      output_name: ipa_name,
       include_bitcode: false
     )
   end
