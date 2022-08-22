@@ -14,6 +14,7 @@
 		E6710DF52898EED000663362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6710DF42898EED000663362 /* Assets.xcassets */; };
 		E6710DF82898EED000663362 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6710DF72898EED000663362 /* Preview Assets.xcassets */; };
 		E6710E022898EED000663362 /* ARKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6710E012898EED000663362 /* ARKTests.swift */; };
+		E6F3B78828B321D70064AFFF /* App-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F3B78628B321C20064AFFF /* App-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,7 @@
 		E6710E2B28990B0000663362 /* App-Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "App-Shared.xcconfig"; sourceTree = "<group>"; };
 		E6710E2D28990B2600663362 /* App-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Debug.xcconfig"; sourceTree = "<group>"; };
 		E6710E2F28990B3700663362 /* App-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Release.xcconfig"; sourceTree = "<group>"; };
-		E68FC2E228AB665C0012D8A8 /* ARK-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ARK-iOS-Info.plist"; sourceTree = "<group>"; };
+		E6F3B78628B321C20064AFFF /* App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +92,6 @@
 		E6710DE42898EECE00663362 = {
 			isa = PBXGroup;
 			children = (
-				E68FC2E228AB665C0012D8A8 /* ARK-iOS-Info.plist */,
 				E6710DEF2898EECE00663362 /* Sources */,
 				E6710E002898EED000663362 /* Tests */,
 				E6710E2A28990B0000663362 /* Configs */,
@@ -145,6 +145,7 @@
 				E668CAEF28A506B300379B4F /* App-Uat.xcconfig */,
 				E668CAEE28A506B300379B4F /* App-Staging.xcconfig */,
 				E6710E2F28990B3700663362 /* App-Release.xcconfig */,
+				E6F3B78628B321C20064AFFF /* App-Info.plist */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -244,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6710DF82898EED000663362 /* Preview Assets.xcassets in Resources */,
+				E6F3B78828B321D70064AFFF /* App-Info.plist in Resources */,
 				E6710DF52898EED000663362 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,8 +422,7 @@
 				DYLIB_CURRENT_VERSION = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ARK-iOS-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = ARK.debug;
+				INFOPLIST_FILE = "Configs/App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -529,8 +530,7 @@
 				DEVELOPMENT_TEAM = 25EZUPR5QA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ARK-iOS-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = ARK.debug;
+				INFOPLIST_FILE = "Configs/App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -702,8 +702,7 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "ARK-iOS-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = ARK.debug;
+				INFOPLIST_FILE = "Configs/App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -735,8 +734,7 @@
 				DEVELOPMENT_TEAM = 25EZUPR5QA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ARK-iOS-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = ARK.debug;
+				INFOPLIST_FILE = "Configs/App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
