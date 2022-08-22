@@ -12,6 +12,8 @@
 		E604930228A1FED1005C737A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60492F928A1FED1005C737A /* Core.framework */; };
 		E604930728A1FED1005C737A /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604930628A1FED1005C737A /* CoreTests.swift */; };
 		E604930828A1FED1005C737A /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = E60492FC28A1FED1005C737A /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6F3B77E28B2461C0064AFFF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77D28B2461C0064AFFF /* String.swift */; };
+		E6F3B78028B246640064AFFF /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77F28B246640064AFFF /* StringTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		E60492FC28A1FED1005C737A /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		E604930128A1FED1005C737A /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E604930628A1FED1005C737A /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
+		E6F3B77D28B2461C0064AFFF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		E6F3B77F28B246640064AFFF /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				E604930628A1FED1005C737A /* CoreTests.swift */,
+				E6F3B77F28B246640064AFFF /* StringTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 		E604933828A34514005C737A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E6F3B77D28B2461C0064AFFF /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F3B77E28B2461C0064AFFF /* String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F3B78028B246640064AFFF /* StringTests.swift in Sources */,
 				E604930728A1FED1005C737A /* CoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

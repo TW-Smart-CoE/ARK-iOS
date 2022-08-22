@@ -14,7 +14,11 @@
 		E6710DF52898EED000663362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6710DF42898EED000663362 /* Assets.xcassets */; };
 		E6710DF82898EED000663362 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6710DF72898EED000663362 /* Preview Assets.xcassets */; };
 		E6710E022898EED000663362 /* ARKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6710E012898EED000663362 /* ARKTests.swift */; };
-		E6F3B78828B321D70064AFFF /* App-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F3B78628B321C20064AFFF /* App-Info.plist */; };
+		E6F3B77828AE1F620064AFFF /* BuildEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77628AE1F620064AFFF /* BuildEnvironment.swift */; };
+		E6F3B77C28AF68430064AFFF /* ShortcutItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77B28AF68430064AFFF /* ShortcutItems.swift */; };
+		E6F3B78228B2481F0064AFFF /* BuildEnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B78128B2481F0064AFFF /* BuildEnvironmentTests.swift */; };
+		E6F3B78328B271FB0064AFFF /* DeveloperTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77428AE1F620064AFFF /* DeveloperTools.swift */; };
+		E6F3B78528B2729D0064AFFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B78428B2729D0064AFFF /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,11 @@
 		E6710E2B28990B0000663362 /* App-Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "App-Shared.xcconfig"; sourceTree = "<group>"; };
 		E6710E2D28990B2600663362 /* App-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Debug.xcconfig"; sourceTree = "<group>"; };
 		E6710E2F28990B3700663362 /* App-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Release.xcconfig"; sourceTree = "<group>"; };
+		E6F3B77428AE1F620064AFFF /* DeveloperTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperTools.swift; sourceTree = "<group>"; };
+		E6F3B77628AE1F620064AFFF /* BuildEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildEnvironment.swift; sourceTree = "<group>"; };
+		E6F3B77B28AF68430064AFFF /* ShortcutItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutItems.swift; sourceTree = "<group>"; };
+		E6F3B78128B2481F0064AFFF /* BuildEnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildEnvironmentTests.swift; sourceTree = "<group>"; };
+		E6F3B78428B2729D0064AFFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6F3B78628B321C20064AFFF /* App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +123,10 @@
 			isa = PBXGroup;
 			children = (
 				E6710DF02898EECE00663362 /* ARKApp.swift */,
+				E6F3B78428B2729D0064AFFF /* AppDelegate.swift */,
 				E6710DF22898EECE00663362 /* ContentView.swift */,
+				E6F3B77328AE1F620064AFFF /* Developer */,
+				E6F3B77528AE1F620064AFFF /* Utils */,
 				E6710DF42898EED000663362 /* Assets.xcassets */,
 				E6710DF62898EED000663362 /* Preview Content */,
 			);
@@ -133,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				E6710E012898EED000663362 /* ARKTests.swift */,
+				E6F3B78128B2481F0064AFFF /* BuildEnvironmentTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -148,6 +161,23 @@
 				E6F3B78628B321C20064AFFF /* App-Info.plist */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		E6F3B77328AE1F620064AFFF /* Developer */ = {
+			isa = PBXGroup;
+			children = (
+				E6F3B77428AE1F620064AFFF /* DeveloperTools.swift */,
+			);
+			path = Developer;
+			sourceTree = "<group>";
+		};
+		E6F3B77528AE1F620064AFFF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E6F3B77628AE1F620064AFFF /* BuildEnvironment.swift */,
+				E6F3B77B28AF68430064AFFF /* ShortcutItems.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		FD7F818641C6735D7D54E1FD /* Frameworks */ = {
@@ -172,6 +202,7 @@
 				E6710DE92898EECE00663362 /* Sources */,
 				E6710DEA2898EECE00663362 /* Frameworks */,
 				E6710DEB2898EECE00663362 /* Resources */,
+				AC085BC7ECA6D4B3E18CB815 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -245,7 +276,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6710DF82898EED000663362 /* Preview Assets.xcassets in Resources */,
-				E6F3B78828B321D70064AFFF /* App-Info.plist in Resources */,
 				E6710DF52898EED000663362 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +310,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC085BC7ECA6D4B3E18CB815 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CDD8252C33E20F79C8F0033A /* [CP] Check Pods Manifest.lock */ = {
@@ -329,8 +376,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F3B78528B2729D0064AFFF /* AppDelegate.swift in Sources */,
+				E6F3B77C28AF68430064AFFF /* ShortcutItems.swift in Sources */,
 				E6710DF32898EECE00663362 /* ContentView.swift in Sources */,
+				E6F3B77828AE1F620064AFFF /* BuildEnvironment.swift in Sources */,
 				E6710DF12898EECE00663362 /* ARKApp.swift in Sources */,
+				E6F3B78328B271FB0064AFFF /* DeveloperTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F3B78228B2481F0064AFFF /* BuildEnvironmentTests.swift in Sources */,
 				E6710E022898EED000663362 /* ARKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +480,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "$(GCC_PREPROCESSOR_DEFINITIONS)";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -536,6 +589,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "$(GCC_PREPROCESSOR_DEFINITIONS)";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -708,6 +762,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "$(GCC_PREPROCESSOR_DEFINITIONS)";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -740,6 +795,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_PREPROCESSOR_DEFINITIONS = "$(GCC_PREPROCESSOR_DEFINITIONS)";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
