@@ -8,7 +8,8 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-#include "Shared.xcconfig"
+#include "App-Shared.xcconfig"
 #include "../Pods/Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS.uat.xcconfig"
 
-PRODUCT_NAME = $(inherited).$(MARKETING_VERSION).uat
+CONFIGURATION_SUFFIX = .uat
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 UAT=1

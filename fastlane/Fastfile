@@ -19,6 +19,7 @@ platform :ios do
 
   desc "Build an app with Debug env"
   lane :build_dev do
+    certificate_dev
     build_package({ :configuration => "Debug", :export_method => "ad-hoc" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
@@ -28,6 +29,7 @@ platform :ios do
 
   desc "Build an app with Uat env"
   lane :build_uat do
+    certificate_uat
     build_package({ :configuration => "Uat", :export_method => "ad-hoc" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
@@ -37,6 +39,7 @@ platform :ios do
 
   desc "Build an app with Staging env"
   lane :build_staging do
+    certificate_staging
     build_package({ :configuration => "Staging", :export_method => "ad-hoc" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
@@ -46,11 +49,22 @@ platform :ios do
 
   desc "Build an app with Release env"
   lane :build_release do
+    certificate_release
     build_package({ :configuration => "Release", :export_method => "app-store" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
     }
     notify_message(notification_options)
+  end
+
+  desc "Build an app and upload to Testflight"
+  lane :release_to_test_flight do
+    build_release
+
+    apple_dev_portal_id = CredentialsManager::AppfileConfig.try_fetch_value(:apple_dev_portal_id)
+    upload_to_testflight(
+      username: apple_dev_portal_id
+    )
   end
 
   desc "Runs all the unit tests"
@@ -68,7 +82,81 @@ platform :ios do
     lint_base({ :mode => :fix })
   end
 
+  desc "Config certificate for debug"
+  lane :certificate_debug do
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.debug'
+    match_base({
+      :type => 'development',
+      :app_identifier => app_identifier
+    })
+  end
 
+  desc "Config certificate for dev build"
+  lane :certificate_dev do
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.debug'
+    match_base({
+      :type => 'adhoc',
+      :app_identifier => app_identifier
+    })
+  end
+
+  desc "Config certificate for uat build"
+  lane :certificate_uat do
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.uat'
+    match_base({
+      :type => 'adhoc',
+      :app_identifier => app_identifier
+    })
+  end
+
+  desc "Config certificate for staging build"
+  lane :certificate_staging do |options|
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.staging'
+    match_base({
+      :type => 'adhoc',
+      :app_identifier => app_identifier
+    })
+  end
+
+  desc "Config certificate for release build"
+  lane :certificate_release do
+    app_identifier = ENV['KEY_APP_IDENTIFIER']
+    match_base({
+      :type => 'appstore',
+      :app_identifier => app_identifier
+    })
+  end
+
+  private_lane :ensure_keychain do |options|
+    create_keychain(
+      name: options[:name],
+      password: options[:password],
+      unlock: false,
+      timeout: 0,
+      lock_when_sleeps: true
+    )
+  end
+
+  private_lane :match_base do |options|
+    keychain_name = ENV['KEY_CHAIN_NAME']
+    keychain_password = ENV['KEY_CHAIN_PASSWORD']
+    apple_id = ENV['KEY_APPLE_ID']
+
+    ensure_keychain({
+      :name => keychain_name,
+      :password => keychain_password
+    })
+
+    match(
+      username: apple_id,
+      type: options[:type],
+      app_identifier: options[:app_identifier],
+      force_for_new_devices: true,
+      readonly: false,
+      keychain_name: keychain_name,
+      keychain_password: keychain_password
+    )
+  end
 
   private_lane :lint_base do |options|
     swiftlint(
@@ -84,15 +172,22 @@ platform :ios do
   end
 
   private_lane :build_package do |options|
+    team_id = ENV['KEY_TEAM_ID']
+    scheme = ENV['KEY_PROJECT_NAME']
+    version = get_version_number(xcodeproj: ENV['KEY_PROJECT'])
+    build_number = get_build_number(xcodeproj: ENV['KEY_PROJECT'])
+    ipa_name = "ARK.#{version}.#{build_number}.#{options[:configuration].downcase}.ipa"
+
     build_app(
-      workspace: "ARK-iOS.xcworkspace",
-      scheme: "ARK-iOS",
+      workspace: ENV['KEY_WORKSPACE'],
+      scheme: scheme,
       configuration: options[:configuration],
       export_method: options[:export_method],
+      export_team_id: team_id,
       silent: false,
-      clean: false,
-      skip_codesigning: true,
+      clean: true,
       output_directory: "./build/packages", 
+      output_name: ipa_name,
       include_bitcode: false
     )
   end
@@ -130,4 +225,5 @@ platform :ios do
     sh "export LC_ALL=en_US.UTF-8"
     sh "export LANG=en_US.UTF-8"
   end
+
 end
