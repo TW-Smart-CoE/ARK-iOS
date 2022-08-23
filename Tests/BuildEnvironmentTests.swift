@@ -18,14 +18,12 @@ class BuildEnvironmentTests: XCTestCase {
         continueAfterFailure = false
     }
 
-    func test_givenABuildEnvironmentWithDebug_whenGetBundleIdentifier_thenReturnedValueShouldBeWithDebugSuffix() {
-        /// given
-        let debugEnvironment = BuildEnvironment(configuration: .debug)
-
+    func testShouldReturnBundleIdentifuerWithDebugSuffix_whenGetBundleIdentifierUnderDebugEnv() {
         /// when
+        let debugEnvironment = BuildEnvironment(configuration: .debug)
         let bundleIdentifier = debugEnvironment.bundleIdentifier
 
-        /// then
+        /// should
         XCTAssertEqual(bundleIdentifier, self.bundleIdentifier + ".debug")
     }
 }

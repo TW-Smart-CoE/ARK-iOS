@@ -9,14 +9,12 @@ import Core
 import XCTest
 
 class StringTests: XCTestCase {
-    func test_givenStringType_whenGetAEmptyString_thenReturnExpectedEmptySting() {
-        /// given
-        let expected = ""
-
+    func testShouldReturnExpectedEmptySting_whenGetEmptyString() {
         /// when
+        let expected = ""
         let result = String.empty
 
-        /// then
+        /// should
         XCTAssertEqual(result, expected)
     }
 }
