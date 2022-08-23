@@ -22,6 +22,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
             sessionRole: connectingSceneSession.role
         )
         #if DEBUG
+        addDeveloperToolsShortcut(to: application)
         sceneConfiguration.delegateClass = DebugSceneDelegate.self
         #else
         sceneConfiguration.delegateClass = SceneDelegate.self
@@ -47,6 +48,25 @@ private class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 #if DEBUG
+extension AppDelegate {
+    private func addDeveloperToolsShortcut(to application: UIApplication) {
+        let developerToolsItem = UIApplicationShortcutItem(
+            type: DeveloperTools.ShortcutActionType,
+            localizedTitle: DeveloperTools.ShortcutActionType
+        )
+        let developerToolsItemExistsIn: ([UIApplicationShortcutItem]) -> Bool = { (shortcutItems) in
+            shortcutItems.contains(where: { $0.type == developerToolsItem.type })
+        }
+        switch application.shortcutItems {
+        case nil:
+            application.shortcutItems = [developerToolsItem]
+        case let shortcutItems? where !developerToolsItemExistsIn(shortcutItems):
+            application.shortcutItems = shortcutItems + [developerToolsItem]
+        default: break
+        }
+    }
+}
+
 private class DebugSceneDelegate: SceneDelegate {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 

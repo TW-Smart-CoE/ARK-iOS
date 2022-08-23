@@ -4,20 +4,5 @@
 <dict>
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
-
-#if DEBUG
-    <key>UIApplicationShortcutItems</key>
-    <array>
-        <dict>
-            <key>UIApplicationShortcutItemType</key>
-            <string>DeveloperAction</string>
-            <key>UIApplicationShortcutItemIconType</key>
-            <string>UIApplicationShortcutIconTypeDeveloper</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>DeveloperTools</string>
-        </dict>
-    </array>
-#endif
-    
 </dict>
 </plist>
