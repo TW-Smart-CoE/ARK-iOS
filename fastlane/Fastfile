@@ -152,13 +152,26 @@ platform :ios do
   end
 
   private_lane :ensure_keychain do |options|
-    create_keychain(
-      name: options[:name],
-      password: options[:password],
-      unlock: false,
-      timeout: 0,
-      lock_when_sleeps: true
-    )
+    keychain_name = ENV['KEY_CHAIN_NAME']
+    keychain_password = ENV['KEY_CHAIN_PASSWORD']
+    keychain_path = "~/Library/Keychains/#{keychain_name}-db"
+    keychain_exists = File.exist? File.expand_path(keychain_path)
+
+    if keychain_exists 
+      unlock_keychain( 
+        path: keychain_path,
+        password: keychain_password
+      )
+    else
+      create_keychain(
+        name: keychain_name,
+        password: keychain_password,
+        unlock: true,
+        timeout: 0,
+        lock_when_sleeps: true
+      )
+    end
+
   end
 
   private_lane :match_base do |options|
