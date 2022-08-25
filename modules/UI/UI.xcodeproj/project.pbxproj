@@ -11,6 +11,7 @@
 		E604932928A22E60005C737A /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E604932028A22E60005C737A /* UI.framework */; };
 		E604932E28A22E60005C737A /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604932D28A22E60005C737A /* UITests.swift */; };
 		E604932F28A22E60005C737A /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = E604932328A22E60005C737A /* UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E674B1F628B74EE500C689A2 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E674B1F528B74EE500C689A2 /* UI.swift */; };
 		F34B5AF9E0C1516AC1AA8B4B /* Pods_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251869661955EE2A00EA3351 /* Pods_UI.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		E604932328A22E60005C737A /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
 		E604932828A22E60005C737A /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E604932D28A22E60005C737A /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
+		E674B1F528B74EE500C689A2 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		F229A0E60399760A38B41D2C /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				E604933B28A34542005C737A /* Res */,
 				E604933A28A3453B005C737A /* Themes */,
 				E604932328A22E60005C737A /* UI.h */,
+				E674B1F528B74EE500C689A2 /* UI.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				TargetAttributes = {
 					E604931F28A22E60005C737A = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 					E604932728A22E60005C737A = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -288,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E674B1F628B74EE500C689A2 /* UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0387083DB816A3DE28D1EA2C /* Pods-UI.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -454,6 +460,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 18D942B4F389EC3ADCD87197 /* Pods-UI.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -492,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7CA7598A991D590D4C2B19A3 /* Pods-UITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -508,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CD07D66B6A72B4E781BC7F90 /* Pods-UITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
