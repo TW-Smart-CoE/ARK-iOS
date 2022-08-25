@@ -69,7 +69,29 @@ platform :ios do
 
   desc "Runs all the unit tests"
   lane :unit_tests do
-    run_tests(scheme: "ARK-iOS")
+    test_output_dir = "./build/test"
+    coverage_output_dir = test_output_dir + "/coverage"
+    scheme = "All-Tests"
+
+    sh "rm -rf ../#{coverage_output_dir}/*"
+
+    run_tests(
+      workspace: ENV["KEY_WORKSPACE"],
+      scheme: scheme,
+      output_directory: test_output_dir,
+      code_coverage: true,
+      clean: true
+    )
+    
+    xcov(
+      workspace: ENV['KEY_WORKSPACE'],
+      scheme: scheme,
+      configuration: 'Debug',
+      minimum_coverage_percentage: 10.0,
+      output_directory: coverage_output_dir,
+      markdown_report: true,
+      disable_coveralls: true
+    )
   end
 
   desc "Runs all the static check"

@@ -1,0 +1,9 @@
+
+- AppDelegate.swift
+- ARKApp.swift
+
+# Exclude all files ending by "View.swift"
+- .*View.swift
+
+# Exclude all dependencies
+- Pods
