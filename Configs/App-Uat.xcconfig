@@ -11,5 +11,5 @@
 #include "App-Shared.xcconfig"
 #include "../Pods/Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS.uat.xcconfig"
 
-CONFIGURATION_SUFFIX = .uat
+CONFIGURATION_NAME = uat
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 UAT=1

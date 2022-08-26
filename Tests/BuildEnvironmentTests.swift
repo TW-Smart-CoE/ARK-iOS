@@ -24,6 +24,6 @@ class BuildEnvironmentTests: XCTestCase {
         let bundleIdentifier = debugEnvironment.bundleIdentifier
 
         /// should
-        XCTAssertEqual(bundleIdentifier, self.bundleIdentifier + ".debug")
+        XCTAssertEqual(bundleIdentifier, self.bundleIdentifier + ".dev")
     }
 }

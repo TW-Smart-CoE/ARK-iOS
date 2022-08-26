@@ -11,4 +11,6 @@
 #include "App-Shared.xcconfig"
 #include "../Pods/Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS.release.xcconfig"
 
-CONFIGURATION_SUFFIX = 
+CONFIGURATION_NAME =
+CONFIGURATION_SUFFIX =
+INFOPLIST_KEY_CFBundleDisplayName = $(TARGET_NAME)

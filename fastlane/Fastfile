@@ -17,7 +17,7 @@ default_platform(:ios)
 
 platform :ios do
 
-  desc "Build an app with Debug env"
+  desc "Build an app with Dev env"
   lane :build_dev do
     certificate_dev
     build_package({ :configuration => "Debug", :export_method => "ad-hoc" })
@@ -82,9 +82,9 @@ platform :ios do
     lint_base({ :mode => :fix })
   end
 
-  desc "Config certificate for debug"
+  desc "Config certificate for dev"
   lane :certificate_debug do
-    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.debug'
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.dev'
     match_base({
       :type => 'development',
       :app_identifier => app_identifier
@@ -93,7 +93,7 @@ platform :ios do
 
   desc "Config certificate for dev build"
   lane :certificate_dev do
-    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.debug'
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.dev'
     match_base({
       :type => 'adhoc',
       :app_identifier => app_identifier
