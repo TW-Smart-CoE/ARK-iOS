@@ -58,7 +58,7 @@ platform :ios do
   end
 
   desc "Build an app and upload to Testflight"
-  lane :release_to_test_flight do
+  lane :release_to_test_channel do
     build_release
 
     apple_dev_portal_id = CredentialsManager::AppfileConfig.try_fetch_value(:apple_dev_portal_id)
