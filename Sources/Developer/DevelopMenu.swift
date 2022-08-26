@@ -7,18 +7,19 @@
 
 import SwiftUI
 
-struct DeveloperTools: View {
+struct DevelopMenu: View {
     var body: some View {
         Text(BuildEnvironment.current.bundleIdentifier)
     }
 }
 
-extension DeveloperTools {
-    static let ShortcutActionType = "DeveloperAction"
+extension DevelopMenu {
+    static let ShortcutType = "DevelopMenu"
+    static let ShortcutName = "Develop Menu"
 }
 
 struct DeveloperTools_Previews: PreviewProvider {
     static var previews: some View {
-        DeveloperTools()
+        DevelopMenu()
     }
 }
