@@ -16,9 +16,13 @@ pipeline {
                     sh 'gem install bundler'
                     sh 'bundle install'
                     // Copy node env file to export environment variables
-                    withCredentials([file(credentialsId: 'env-default', variable: 'env')]) {
+                    withCredentials([
+                        file(credentialsId: 'env-default', variable: 'env'), 
+                        file(credentialsId: 'apple-authkey', variable: 'apple_authKey')
+                        ]) {
                         sh 'rm -f .env.default'
                         sh 'cp $env .env.default'
+                        sh 'cp $apple_authKey Apple_AuthKey.p8'
                     }
                 }
             }

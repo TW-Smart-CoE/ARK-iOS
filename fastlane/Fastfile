@@ -177,17 +177,24 @@ platform :ios do
   private_lane :match_base do |options|
     keychain_name = ENV['KEY_CHAIN_NAME']
     keychain_password = ENV['KEY_CHAIN_PASSWORD']
-    apple_id = ENV['KEY_APPLE_ID']
 
     ensure_keychain({
       :name => keychain_name,
       :password => keychain_password
     })
 
+    api_key = app_store_connect_api_key(
+      key_id: ENV['APPLE_API_KEY_ID'],
+      issuer_id: ENV['APPLE_API_ISSUER_ID'],
+      key_filepath: ENV['APPLE_API_KEY_FILEPATH'],
+      duration: 1200,
+      in_house: false
+    )
+
     match(
-      username: apple_id,
       type: options[:type],
       app_identifier: options[:app_identifier],
+      api_key: api_key,
       force_for_new_devices: true,
       readonly: false,
       keychain_name: keychain_name,
