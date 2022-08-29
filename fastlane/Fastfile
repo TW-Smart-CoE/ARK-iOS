@@ -108,47 +108,87 @@ platform :ios do
 
   desc "Config certificate for dev"
   lane :certificate_debug do
-    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.dev'
-    match_base({
-      :type => 'development',
-      :app_identifier => app_identifier
+    configuration = "Dev"
+    suffix = ".#{configuration.downcase}"
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + suffix
+
+    certificate({
+      :type => "development",
+      :suffix => suffix,
+      :configuration => app_identifier
     })
   end
 
   desc "Config certificate for dev build"
   lane :certificate_dev do
-    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.dev'
-    match_base({
-      :type => 'adhoc',
-      :app_identifier => app_identifier
+    configuration = "Dev"
+    suffix = ".#{configuration.downcase}"
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + suffix
+
+    certificate({
+      :type => "adhoc",
+      :suffix => suffix,
+      :configuration => configuration
     })
   end
 
   desc "Config certificate for uat build"
   lane :certificate_uat do
-    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.uat'
-    match_base({
-      :type => 'adhoc',
-      :app_identifier => app_identifier
+    configuration = "Uat"
+    suffix = ".#{configuration.downcase}"
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + suffix
+
+    certificate({
+      :type => "adhoc",
+      :suffix => suffix,
+      :configuration => configuration
     })
   end
 
   desc "Config certificate for staging build"
   lane :certificate_staging do |options|
-    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.staging'
-    match_base({
-      :type => 'adhoc',
-      :app_identifier => app_identifier
+    configuration = "Staging"
+    suffix = ".#{configuration.downcase}"
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + suffix
+
+    certificate({
+      :type => "adhoc",
+      :suffix => suffix,
+      :configuration => configuration
     })
   end
 
   desc "Config certificate for release build"
   lane :certificate_release do
     app_identifier = ENV['KEY_APP_IDENTIFIER']
+    certificate({
+      :type => "appstore",
+      :suffix => "",
+      :configuration => "Release"
+    })
+  end
+
+  private_lane :certificate do |options|
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + options[:suffix]
     match_base({
-      :type => 'appstore',
+      :type => options[:type],
       :app_identifier => app_identifier
     })
+
+    profile_path = ENV["sigh_#{app_identifier}_#{options[:type]}_profile-path"]
+
+    development_type = "development"
+    developer_identity = "iPhone Developer"
+    distribution_identity = "iPhone Distribution"
+
+    update_code_signing_settings(
+      path: ENV['KEY_PROJECT'],
+      targets: ENV['KEY_PROJECT_NAME'],
+      build_configurations: options[:configuration],
+      profile_name: lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][app_identifier],
+      code_sign_identity: options[:type] == development_type ? developer_identity : distribution_identity
+    )
+
   end
 
   private_lane :ensure_keychain do |options|
