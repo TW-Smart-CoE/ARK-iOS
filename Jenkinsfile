@@ -4,6 +4,12 @@ pipeline {
         // Setup Ruby to PATH
         RUBY_HOME = "/usr/local/opt/ruby"
         PATH = "$RUBY_HOME/bin:$PATH"
+        LANG = "en_US.UTF-8"
+    }
+    parameters {
+        string(name: 'APP_BUILD_FOLDER', defaultValue: './build', description: 'Application build output folder')
+        string(name: 'APP_PACKAGES_FOLDER', defaultValue: './build/packages', description: 'Application packages output folder')
+        string(name: 'APP_TEST_FOLDER', defaultValue: './build/test', description: 'Application test output folder')
     }
     options {
         // Stop the build early in case of compile or test failures
@@ -15,6 +21,7 @@ pipeline {
                 script {
                     sh 'gem install bundler'
                     sh 'bundle install'
+                    sh 'bundle exec pod install --repo-update'
                     // Copy node env file to export environment variables
                     withCredentials([
                         file(credentialsId: 'env-default', variable: 'env'), 
@@ -22,15 +29,9 @@ pipeline {
                         ]) {
                         sh 'rm -f .env.default'
                         sh 'cp $env .env.default'
+                        sh 'rm -f Apple_AuthKey.p8'
                         sh 'cp $apple_authKey Apple_AuthKey.p8'
                     }
-                }
-            }
-        }
-        stage('Build') {
-            steps {
-                script {
-                    sh 'bundle exec fastlane build_dev'
                 }
             }
         }
@@ -53,22 +54,39 @@ pipeline {
                 }
             }
         }
+        stage('Build') {
+            steps {
+                script {
+                    sh 'bundle exec fastlane build_dev'
+                    sh 'bundle exec fastlane build_uat'
+                }
+            }
+        }
         stage('Deploy') {
             when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
+                branch 'main'
+                expression {
+                    currentBuild.result == null || currentBuild.result == 'SUCCESS'
+                }
             }
             steps {
                 script {
-                    sh 'echo deploy'
+                    sh 'bundle exec fastlane build_staging'
+                    sh 'bundle exec fastlane release_to_test_channel'
                 }
             }
         }
     }
     post {
         success {
-            echo 'TODO: Archiving ...'
+            dir(".${params.APP_PACKAGES_FOLDER}") {
+                archiveArtifacts artifacts: "**/*.ipa"
+                archiveArtifacts artifacts: "**/*.dSYM.zip", allowEmptyArchive: true
+            }
+        }
+        
+        cleanup {
+            cleanWs()
         }
     }
 }
