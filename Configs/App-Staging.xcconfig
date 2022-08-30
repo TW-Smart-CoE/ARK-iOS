@@ -11,5 +11,5 @@
 #include "App-Shared.xcconfig"
 #include "../Pods/Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS.staging.xcconfig"
 
-CONFIGURATION_SUFFIX = .staging
+CONFIGURATION_NAME = staging
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 STAGING=1

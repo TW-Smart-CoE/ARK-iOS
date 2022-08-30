@@ -51,8 +51,8 @@ private class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension AppDelegate {
     private func addDeveloperToolsShortcut(to application: UIApplication) {
         let developerToolsItem = UIApplicationShortcutItem(
-            type: DeveloperTools.ShortcutActionType,
-            localizedTitle: DeveloperTools.ShortcutActionType
+            type: DevelopMenu.ShortcutType,
+            localizedTitle: DevelopMenu.ShortcutName
         )
         let developerToolsItemExistsIn: ([UIApplicationShortcutItem]) -> Bool = { (shortcutItems) in
             shortcutItems.contains(where: { $0.type == developerToolsItem.type })
@@ -76,7 +76,7 @@ private class DebugSceneDelegate: SceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         super.scene(scene, willConnectTo: session, options: connectionOptions)
-        if let shortcutItem = connectionOptions.shortcutItem, shortcutItem.isDeveloperItem {
+        if let shortcutItem = connectionOptions.shortcutItem, shortcutItem.isDevelopMenu {
             appDelegate.showDeveloperTools = true
         }
     }
@@ -86,7 +86,7 @@ private class DebugSceneDelegate: SceneDelegate {
         performActionFor shortcutItem: UIApplicationShortcutItem,
         completionHandler: @escaping (Bool) -> Void
     ) {
-        if shortcutItem.isDeveloperItem {
+        if shortcutItem.isDevelopMenu {
             appDelegate.showDeveloperTools = true
             completionHandler(true)
         } else {

@@ -17,7 +17,7 @@
 		E6F3B77828AE1F620064AFFF /* BuildEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77628AE1F620064AFFF /* BuildEnvironment.swift */; };
 		E6F3B77C28AF68430064AFFF /* ShortcutItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77B28AF68430064AFFF /* ShortcutItems.swift */; };
 		E6F3B78228B2481F0064AFFF /* BuildEnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B78128B2481F0064AFFF /* BuildEnvironmentTests.swift */; };
-		E6F3B78328B271FB0064AFFF /* DeveloperTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77428AE1F620064AFFF /* DeveloperTools.swift */; };
+		E6F3B78328B271FB0064AFFF /* DevelopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77428AE1F620064AFFF /* DevelopMenu.swift */; };
 		E6F3B78528B2729D0064AFFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B78428B2729D0064AFFF /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		E6710E2B28990B0000663362 /* App-Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "App-Shared.xcconfig"; sourceTree = "<group>"; };
 		E6710E2D28990B2600663362 /* App-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Debug.xcconfig"; sourceTree = "<group>"; };
 		E6710E2F28990B3700663362 /* App-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Release.xcconfig"; sourceTree = "<group>"; };
-		E6F3B77428AE1F620064AFFF /* DeveloperTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperTools.swift; sourceTree = "<group>"; };
+		E6F3B77428AE1F620064AFFF /* DevelopMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopMenu.swift; sourceTree = "<group>"; };
 		E6F3B77628AE1F620064AFFF /* BuildEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildEnvironment.swift; sourceTree = "<group>"; };
 		E6F3B77B28AF68430064AFFF /* ShortcutItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutItems.swift; sourceTree = "<group>"; };
 		E6F3B78128B2481F0064AFFF /* BuildEnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildEnvironmentTests.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		E6F3B77328AE1F620064AFFF /* Developer */ = {
 			isa = PBXGroup;
 			children = (
-				E6F3B77428AE1F620064AFFF /* DeveloperTools.swift */,
+				E6F3B77428AE1F620064AFFF /* DevelopMenu.swift */,
 			);
 			path = Developer;
 			sourceTree = "<group>";
@@ -381,7 +381,7 @@
 				E6710DF32898EECE00663362 /* ContentView.swift in Sources */,
 				E6F3B77828AE1F620064AFFF /* BuildEnvironment.swift in Sources */,
 				E6710DF12898EECE00663362 /* ARKApp.swift in Sources */,
-				E6F3B78328B271FB0064AFFF /* DeveloperTools.swift in Sources */,
+				E6F3B78328B271FB0064AFFF /* DevelopMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

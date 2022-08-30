@@ -24,7 +24,7 @@ struct AppView: View {
 
     var body: some View {
         if appDelegate.showDeveloperTools {
-            DeveloperTools()
+            DevelopMenu()
         } else {
             ContentView()
         }

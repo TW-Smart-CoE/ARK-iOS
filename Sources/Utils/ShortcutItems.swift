@@ -8,5 +8,5 @@
 import UIKit
 
 extension UIApplicationShortcutItem {
-    var isDeveloperItem: Bool { self.type == DeveloperTools.ShortcutActionType }
+    var isDevelopMenu: Bool { self.type == DevelopMenu.ShortcutType }
 }
