@@ -69,26 +69,28 @@ platform :ios do
 
   desc "Runs all the unit tests"
   lane :unit_tests do
-    test_output_dir = "./build/test"
-    coverage_output_dir = test_output_dir + "/coverage"
     scheme = "All-Tests"
-
-    sh "rm -rf ../#{coverage_output_dir}/*"
-
     run_tests(
       workspace: ENV["KEY_WORKSPACE"],
       scheme: scheme,
-      output_directory: test_output_dir,
+      output_directory: ENV["TEST_OUTPUT_DIR"],
       code_coverage: true,
       clean: true
     )
-    
+
+    coverage_report()
+  end
+
+  desc "Genarate coverage report for Unit Test"
+  lane :coverage_report do
+    scheme = "All-Tests"
+    clean_test_coverage_dir()
     xcov(
-      workspace: ENV['KEY_WORKSPACE'],
+      workspace: ENV["KEY_WORKSPACE"],
       scheme: scheme,
-      configuration: 'Debug',
-      minimum_coverage_percentage: 10.0,
-      output_directory: coverage_output_dir,
+      configuration: "Debug",
+      minimum_coverage_percentage: ENV["MIN_COVERAGE"],
+      output_directory: ENV["COVERAGE_OUTPUT_DIR"],
       markdown_report: true,
       disable_coveralls: true
     )
@@ -178,6 +180,10 @@ platform :ios do
       keychain_name: keychain_name,
       keychain_password: keychain_password
     )
+  end
+
+  private_lane :clean_test_coverage_dir do
+    sh "rm -rf ../#{ENV["COVERAGE_OUTPUT_DIR"]}/*"
   end
 
   private_lane :lint_base do |options|

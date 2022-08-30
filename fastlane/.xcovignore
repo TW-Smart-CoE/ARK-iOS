@@ -1,6 +1,7 @@
-
 - AppDelegate.swift
 - ARKApp.swift
+- ShortcutItems.swift
+- DevelopMenu.swift
 
 # Exclude all files ending by "View.swift"
 - .*View.swift
