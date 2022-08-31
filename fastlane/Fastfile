@@ -168,6 +168,13 @@ platform :ios do
     })
   end
 
+  desc "Delete keychain"
+  lane :delete_project_keychain do
+    if project_keychain_exists 
+      delete_keychain(name: ENV['KEY_CHAIN_NAME'])
+    end
+  end
+
   private_lane :certificate do |options|
     app_identifier = ENV['KEY_APP_IDENTIFIER'] + options[:suffix]
     match_base({
@@ -203,12 +210,10 @@ platform :ios do
   private_lane :ensure_keychain do |options|
     keychain_name = ENV['KEY_CHAIN_NAME']
     keychain_password = ENV['KEY_CHAIN_PASSWORD']
-    keychain_path = "~/Library/Keychains/#{keychain_name}-db"
-    keychain_exists = File.exist? File.expand_path(keychain_path)
 
-    if keychain_exists 
+    if project_keychain_exists 
       unlock_keychain( 
-        path: keychain_path,
+        path: project_keychain_path,
         password: keychain_password
       )
     else
@@ -220,7 +225,16 @@ platform :ios do
         lock_when_sleeps: true
       )
     end
+  end
 
+  private_lane :project_keychain_path do
+    keychain_name = ENV['KEY_CHAIN_NAME']
+    keychain_path = "~/Library/Keychains/#{keychain_name}-db"
+  end
+
+  private_lane :project_keychain_exists do
+    keychain_path = project_keychain_path()
+    File.exist? File.expand_path(keychain_path)
   end
 
   private_lane :match_base do |options|

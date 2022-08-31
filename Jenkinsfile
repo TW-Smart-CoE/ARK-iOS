@@ -49,6 +49,7 @@ pipeline {
                     steps {
                         script {
                             sh 'bundle exec fastlane check'
+                            junit 'build/test/report.junit'
                         }
                     }
                 }
@@ -90,6 +91,7 @@ pipeline {
         }
         
         cleanup {
+            sh "bundle exec fastlane delete_project_keychain"
             cleanWs()
         }
     }
