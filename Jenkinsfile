@@ -42,6 +42,7 @@ pipeline {
                     steps {
                         script {
                             sh 'bundle exec fastlane unit_tests'
+                            junit 'build/test/report.junit'
                         }
                     }
                 }
@@ -49,7 +50,6 @@ pipeline {
                     steps {
                         script {
                             sh 'bundle exec fastlane check'
-                            junit 'build/test/report.junit'
                         }
                     }
                 }
@@ -80,13 +80,20 @@ pipeline {
     }
     post {
         success {
-            dir(".${params.APP_PACKAGES_FOLDER}") {
+            dir("${params.APP_PACKAGES_FOLDER}") {
                 archiveArtifacts artifacts: "**/*.ipa"
                 archiveArtifacts artifacts: "**/*.dSYM.zip", allowEmptyArchive: true
             }
 
-            dir(".${params.APP_TEST_FOLDER}") {
-                archiveArtifacts artifacts: "**/*"
+            dir("${params.APP_TEST_FOLDER}") {                                                                            
+                publishHTML target: [
+                    allowMissing         : false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll              : true,
+                    reportDir            : './coverage',
+                    reportFiles          : '**/*.html',
+                    reportName           : 'Test Coverage'
+                ]
             }
         }
         
