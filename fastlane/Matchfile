@@ -2,8 +2,4 @@ git_url("git@github.com:TW-Smart-CoE/Certificates.git")
 
 storage_mode("git")
 
-# App Store Connect API Info
-ENV['APPLE_API_KEY_ID'] = "F88W9JU2T2"
-ENV['APPLE_API_ISSUER_ID'] = "69a6de83-d6d6-47e3-e053-5b8c7c11a4d1"
-ENV['APPLE_API_KEY_FILEPATH'] = "./Apple_AuthKey.p8"
 

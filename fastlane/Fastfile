@@ -108,8 +108,8 @@ platform :ios do
 
   desc "Config certificate for dev"
   lane :certificate_debug do
-    configuration = "Dev"
-    suffix = ".#{configuration.downcase}"
+    configuration = "Debug"
+    suffix = ".dev"
     app_identifier = ENV['KEY_APP_IDENTIFIER'] + suffix
 
     certificate({
@@ -121,8 +121,8 @@ platform :ios do
 
   desc "Config certificate for dev build"
   lane :certificate_dev do
-    configuration = "Dev"
-    suffix = ".#{configuration.downcase}"
+    configuration = "Debug"
+    suffix = ".dev"
     app_identifier = ENV['KEY_APP_IDENTIFIER'] + suffix
 
     certificate({
@@ -188,7 +188,16 @@ platform :ios do
       profile_name: lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][app_identifier],
       code_sign_identity: options[:type] == development_type ? developer_identity : distribution_identity
     )
+  end
 
+  private_lane :apple_api_key do
+    api_key = app_store_connect_api_key(
+      key_id: ENV['APPLE_API_KEY_ID'],
+      issuer_id: ENV['APPLE_API_ISSUER_ID'],
+      key_filepath: ENV['APPLE_API_KEY_FILEPATH'],
+      duration: 1200,
+      in_house: false
+    )
   end
 
   private_lane :ensure_keychain do |options|
@@ -223,13 +232,7 @@ platform :ios do
       :password => keychain_password
     })
 
-    api_key = app_store_connect_api_key(
-      key_id: ENV['APPLE_API_KEY_ID'],
-      issuer_id: ENV['APPLE_API_ISSUER_ID'],
-      key_filepath: ENV['APPLE_API_KEY_FILEPATH'],
-      duration: 1200,
-      in_house: false
-    )
+    api_key = apple_api_key()
 
     match(
       type: options[:type],

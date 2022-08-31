@@ -100,3 +100,5 @@ iOSInjectionProject/
 # Dotenv
 .env.*
 
+# Apple AuthKey
+Apple_AuthKey.p8

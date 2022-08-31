@@ -15,7 +15,7 @@ pipeline {
         // Stop the build early in case of compile or test failures
         skipStagesAfterUnstable()
     }
-    stages{
+    stages {
         stage('Setup') {
             steps {
                 script {
@@ -82,6 +82,10 @@ pipeline {
             dir(".${params.APP_PACKAGES_FOLDER}") {
                 archiveArtifacts artifacts: "**/*.ipa"
                 archiveArtifacts artifacts: "**/*.dSYM.zip", allowEmptyArchive: true
+            }
+
+            dir(".${params.APP_TEST_FOLDER}") {
+                archiveArtifacts artifacts: "**/*"
             }
         }
         
