@@ -9,16 +9,16 @@ import Foundation
 import SwiftUI
 
 public enum ColorName: String {
-    case gray_50
-    case gray_100
-    case gray_200
-    case gray_300
-    case gray_400
-    case gray_500
-    case gray_600
-    case gray_700
-    case gray_800
-    case gray_900
+    case gray50
+    case gray100
+    case gray200
+    case gray300
+    case gray400
+    case gray500
+    case gray600
+    case gray700
+    case gray800
+    case gray900
     case blue
 }
 
