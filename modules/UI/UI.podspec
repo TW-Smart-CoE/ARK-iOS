@@ -12,4 +12,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '14.0'
   spec.source_files          = 'Sources/**/*.swift'
   spec.framework             = 'SwiftUI'
+  spec.test_spec 'Tests' do |test_spec|
+    test_spec.source_files = 'Tests/**/*.swift'
+  end
 end

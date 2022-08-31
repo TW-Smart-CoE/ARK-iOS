@@ -1,10 +1,8 @@
 
-ENV['KEY_APPLE_ID'] = "tao.tang@thoughtworks.com"
-ENV['KEY_APP_IDENTIFIER'] = "com.thoughtworks.ark"
-ENV['KEY_TEAM_ID'] = "25EZUPR5QA"
-ENV['KEY_CHAIN_NAME'] = 'ark.keychain'
+app_identifier ENV["KEY_APP_IDENTIFIER"]
 
-ENV['KEY_PROJECT_NAME'] = "ARK-iOS"
-ENV['KEY_WORKSPACE'] = ENV['KEY_PROJECT_NAME'] + ".xcworkspace"
-ENV['KEY_PROJECT'] = ENV['KEY_PROJECT_NAME'] + ".xcodeproj"
+apple_dev_portal_id ENV["KEY_APPLE_ID"]
+itunes_connect_id ENV["KEY_APPLE_ID"]
+
+team_id ENV["KEY_TEAM_ID"]
 

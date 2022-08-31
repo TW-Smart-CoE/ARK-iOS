@@ -69,7 +69,31 @@ platform :ios do
 
   desc "Runs all the unit tests"
   lane :unit_tests do
-    run_tests(scheme: "ARK-iOS")
+    scheme = "All-Tests"
+    run_tests(
+      workspace: ENV["KEY_WORKSPACE"],
+      scheme: scheme,
+      output_directory: ENV["TEST_OUTPUT_DIR"],
+      code_coverage: true,
+      clean: true
+    )
+
+    coverage_report()
+  end
+
+  desc "Genarate coverage report for Unit Test"
+  lane :coverage_report do
+    scheme = "All-Tests"
+    clean_test_coverage_dir()
+    xcov(
+      workspace: ENV["KEY_WORKSPACE"],
+      scheme: scheme,
+      configuration: "Debug",
+      minimum_coverage_percentage: ENV["MIN_COVERAGE"],
+      output_directory: ENV["COVERAGE_OUTPUT_DIR"],
+      markdown_report: true,
+      disable_coveralls: true
+    )
   end
 
   desc "Runs all the static check"
@@ -156,6 +180,10 @@ platform :ios do
       keychain_name: keychain_name,
       keychain_password: keychain_password
     )
+  end
+
+  private_lane :clean_test_coverage_dir do
+    sh "rm -rf ../#{ENV["COVERAGE_OUTPUT_DIR"]}/*"
   end
 
   private_lane :lint_base do |options|

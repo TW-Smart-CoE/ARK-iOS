@@ -98,5 +98,5 @@ fastlane/report.md
 iOSInjectionProject/
 
 # Dotenv
-.env*
+.env.*
 

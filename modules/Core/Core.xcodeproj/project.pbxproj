@@ -502,6 +502,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44DEA6C5DE682AA2F8EB53CF /* Pods-CoreTests.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -518,6 +519,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C687F55223D344F2CE82774A /* Pods-CoreTests.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
