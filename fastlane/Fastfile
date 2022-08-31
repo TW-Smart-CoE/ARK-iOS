@@ -75,7 +75,8 @@ platform :ios do
       scheme: scheme,
       output_directory: ENV["TEST_OUTPUT_DIR"],
       code_coverage: true,
-      clean: true
+      clean: true,
+      skip_slack: true
     )
 
     coverage_report()
@@ -92,7 +93,8 @@ platform :ios do
       minimum_coverage_percentage: ENV["MIN_COVERAGE"],
       output_directory: ENV["COVERAGE_OUTPUT_DIR"],
       markdown_report: true,
-      disable_coveralls: true
+      disable_coveralls: true,
+      skip_slack: true
     )
   end
 
