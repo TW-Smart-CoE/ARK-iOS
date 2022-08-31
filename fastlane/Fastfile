@@ -278,10 +278,11 @@ platform :ios do
 
   private_lane :build_package do |options|
     team_id = ENV['KEY_TEAM_ID']
-    scheme = ENV['KEY_PROJECT_NAME']
+    project = ENV['KEY_PROJECT_NAME']
+    scheme = ENV['KEY_SCHEME']
     version = get_version_number(xcodeproj: ENV['KEY_PROJECT'])
     build_number = get_build_number(xcodeproj: ENV['KEY_PROJECT'])
-    ipa_name = "ARK.#{version}.#{build_number}.#{options[:configuration].downcase}.ipa"
+    ipa_name = "#{project}.#{version}.#{build_number}.#{options[:configuration].downcase}.ipa"
 
     build_app(
       workspace: ENV['KEY_WORKSPACE'],
