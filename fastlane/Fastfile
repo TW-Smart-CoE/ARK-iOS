@@ -58,13 +58,15 @@ platform :ios do
   end
 
   desc "Build an app and upload to Testflight"
-  lane :release_to_test_channel do
-    build_release
+  lane :release_to_test_channel do |options|
+    build_staging
+    fir_cli api_token: options[:fir_token], specify_file_path: lane_context[SharedValues::IPA_OUTPUT_PATH]
+  end
 
-    apple_dev_portal_id = CredentialsManager::AppfileConfig.try_fetch_value(:apple_dev_portal_id)
-    upload_to_testflight(
-      username: apple_dev_portal_id
-    )
+  desc "Build an app and upload to Testflight"
+  lane :release_to_test_flight do
+    build_release
+    upload_to_testflight
   end
 
   desc "Runs all the unit tests"

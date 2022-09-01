@@ -1,8 +1,4 @@
 
 app_identifier ENV["KEY_APP_IDENTIFIER"]
-
-apple_dev_portal_id ENV["KEY_APPLE_ID"]
-itunes_connect_id ENV["KEY_APPLE_ID"]
-
 team_id ENV["KEY_TEAM_ID"]
 

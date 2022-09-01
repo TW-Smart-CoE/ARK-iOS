@@ -80,7 +80,9 @@ pipeline {
         stage('Production') {
             when { branch pattern: "release(-v.+)?", comparator: "REGEXP"}
             steps {
-                echo 'TODO: Releasing...'
+                script {
+                    sh 'bundle exec fastlane build_release'
+                }
             }
         }
     }
