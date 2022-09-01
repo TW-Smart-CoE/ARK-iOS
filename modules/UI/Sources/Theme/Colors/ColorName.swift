@@ -55,5 +55,3 @@ extension Color {
         self.init(colorName.rawValue, bundle: bundle)
     }
 }
-
-
