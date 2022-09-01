@@ -77,6 +77,12 @@ pipeline {
                 }
             }
         }
+        stage('Production') {
+            when { branch pattern: "release(-v.+)?", comparator: "REGEXP"}
+            steps {
+                echo 'TODO: Releasing...'
+            }
+        }
     }
     post {
         success {
