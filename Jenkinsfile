@@ -72,8 +72,11 @@ pipeline {
             }
             steps {
                 script {
-                    sh 'bundle exec fastlane build_staging'
-                    sh 'bundle exec fastlane release_to_test_channel'
+                    withCredentials([
+                        string(credentialsId: 'fir-token', variable: 'fir_token')
+                        ]) {
+                        sh 'bundle exec fastlane release_to_test_channel fir_token:$fir_token'
+                    }
                 }
             }
         }
@@ -81,7 +84,7 @@ pipeline {
             when { branch pattern: "release(-v.+)?", comparator: "REGEXP"}
             steps {
                 script {
-                    sh 'bundle exec fastlane build_release'
+                    sh 'bundle exec fastlane release_to_test_flight'
                 }
             }
         }
