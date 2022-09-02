@@ -16,3 +16,4 @@ Pod::Spec.new do |spec|
     test_spec.source_files = 'Tests/**/*.swift'
   end  
 end
+

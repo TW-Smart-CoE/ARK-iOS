@@ -88,16 +88,33 @@ platform :ios do
   lane :coverage_report do
     scheme = "All-Tests"
     clean_test_coverage_dir()
-    xcov(
-      workspace: ENV["KEY_WORKSPACE"],
+    # xcov(
+    #   workspace: ENV["KEY_WORKSPACE"],
+    #   scheme: scheme,
+    #   configuration: "Debug",
+    #   minimum_coverage_percentage: ENV["MIN_COVERAGE"],
+    #   output_directory: ENV["COVERAGE_OUTPUT_DIR"],
+    #   markdown_report: true,
+    #   disable_coveralls: true,
+    #   skip_slack: true
+    # )
+
+    slather(
       scheme: scheme,
-      configuration: "Debug",
-      minimum_coverage_percentage: ENV["MIN_COVERAGE"],
-      output_directory: ENV["COVERAGE_OUTPUT_DIR"],
-      markdown_report: true,
-      disable_coveralls: true,
-      skip_slack: true
+      proj: "ARK-iOS.xcodeproj",
+      workspace: "ARK-iOS.xcworkspace",
+      cobertura_xml: true,
+      output_directory: "./build/test/coverage/cobertura"
     )
+
+    slather(
+      scheme: scheme,
+      proj: "ARK-iOS.xcodeproj",
+      workspace: "ARK-iOS.xcworkspace",
+      html: true,
+      output_directory: "./build/test/coverage/html"
+    )
+
   end
 
   desc "Runs all the static check"
@@ -304,11 +321,11 @@ platform :ios do
 
   desc "Notify message to user"
   private_lane :notify_message do |options|
-    if is_ci
-      notification_slack(options)
-    else
-      notification_mac(options)
-    end
+    # if is_ci
+    #   notification_slack(options)
+    # else
+    #   notification_mac(options)
+    # end
   end
 
   private_lane :notification_mac do |options|

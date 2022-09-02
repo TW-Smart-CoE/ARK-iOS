@@ -46,58 +46,58 @@ pipeline {
                         }
                     }
                 }
-                stage('Check') {
-                    steps {
-                        script {
-                            sh 'bundle exec fastlane check'
-                        }
-                    }
-                }
+                // stage('Check') {
+                //     steps {
+                //         script {
+                //             sh 'bundle exec fastlane check'
+                //         }
+                //     }
+                // }
             }
         }
-        stage('Build') {
-            steps {
-                script {
-                    sh 'bundle exec fastlane build_dev'
-                    sh 'bundle exec fastlane build_uat'
-                }
-            }
-        }
-        stage('Deploy') {
-            when {
-                branch 'main'
-                expression {
-                    currentBuild.result == null || currentBuild.result == 'SUCCESS'
-                }
-            }
-            steps {
-                script {
-                    sh 'bundle exec fastlane release_to_test_channel'
-                }
-            }
-        }
-        stage('Production') {
-            when { branch pattern: "release(-v.+)?", comparator: "REGEXP"}
-            steps {
-                script {
-                    sh 'bundle exec fastlane release_to_test_flight'
-                }
-            }
-        }
+        // stage('Build') {
+        //     steps {
+        //         script {
+        //             sh 'bundle exec fastlane build_dev'
+        //             sh 'bundle exec fastlane build_uat'
+        //         }
+        //     }
+        // }
+        // stage('Deploy') {
+        //     when {
+        //         branch 'main'
+        //         expression {
+        //             currentBuild.result == null || currentBuild.result == 'SUCCESS'
+        //         }
+        //     }
+        //     steps {
+        //         script {
+        //             sh 'bundle exec fastlane release_to_test_channel'
+        //         }
+        //     }
+        // }
+        // stage('Production') {
+        //     when { branch pattern: "release(-v.+)?", comparator: "REGEXP"}
+        //     steps {
+        //         script {
+        //             sh 'bundle exec fastlane release_to_test_flight'
+        //         }
+        //     }
+        // }
     }
     post {
         success {
-            dir("${params.APP_PACKAGES_FOLDER}") {
-                archiveArtifacts artifacts: "**/*.ipa"
-                archiveArtifacts artifacts: "**/*.dSYM.zip", allowEmptyArchive: true
-            }
+            // dir("${params.APP_PACKAGES_FOLDER}") {
+            //     archiveArtifacts artifacts: "**/*.ipa"
+            //     archiveArtifacts artifacts: "**/*.dSYM.zip", allowEmptyArchive: true
+            // }
 
             dir("${params.APP_TEST_FOLDER}") {                                                                            
                 publishHTML target: [
                     allowMissing         : false,
                     alwaysLinkToLastBuild: false,
                     keepAll              : true,
-                    reportDir            : './coverage',
+                    reportDir            : './coverage/html',
                     reportFiles          : '**/*.html',
                     reportName           : 'Test Coverage'
                 ]
@@ -106,7 +106,7 @@ pipeline {
         
         cleanup {
             sh "bundle exec fastlane delete_project_keychain"
-            cleanWs()
+            // cleanWs()
         }
     }
 }
