@@ -58,13 +58,15 @@ platform :ios do
   end
 
   desc "Build an app and upload to Testflight"
-  lane :release_to_test_channel do
-    build_release
+  lane :release_to_test_channel do |options|
+    build_staging
+    fir_cli api_token: options[:fir_token], specify_file_path: lane_context[SharedValues::IPA_OUTPUT_PATH]
+  end
 
-    apple_dev_portal_id = CredentialsManager::AppfileConfig.try_fetch_value(:apple_dev_portal_id)
-    upload_to_testflight(
-      username: apple_dev_portal_id
-    )
+  desc "Build an app and upload to Testflight"
+  lane :release_to_test_flight do
+    build_release
+    upload_to_testflight
   end
 
   desc "Runs all the unit tests"
@@ -75,7 +77,8 @@ platform :ios do
       scheme: scheme,
       output_directory: ENV["TEST_OUTPUT_DIR"],
       code_coverage: true,
-      clean: true
+      clean: true,
+      skip_slack: true
     )
 
     coverage_report()
@@ -92,7 +95,8 @@ platform :ios do
       minimum_coverage_percentage: ENV["MIN_COVERAGE"],
       output_directory: ENV["COVERAGE_OUTPUT_DIR"],
       markdown_report: true,
-      disable_coveralls: true
+      disable_coveralls: true,
+      skip_slack: true
     )
   end
 
@@ -108,73 +112,150 @@ platform :ios do
 
   desc "Config certificate for dev"
   lane :certificate_debug do
-    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.dev'
-    match_base({
-      :type => 'development',
-      :app_identifier => app_identifier
+    configuration = "Debug"
+    suffix = ".dev"
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + suffix
+
+    certificate({
+      :type => "development",
+      :suffix => suffix,
+      :configuration => app_identifier
     })
   end
 
   desc "Config certificate for dev build"
   lane :certificate_dev do
-    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.dev'
-    match_base({
-      :type => 'adhoc',
-      :app_identifier => app_identifier
+    configuration = "Debug"
+    suffix = ".dev"
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + suffix
+
+    certificate({
+      :type => "adhoc",
+      :suffix => suffix,
+      :configuration => configuration
     })
   end
 
   desc "Config certificate for uat build"
   lane :certificate_uat do
-    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.uat'
-    match_base({
-      :type => 'adhoc',
-      :app_identifier => app_identifier
+    configuration = "Uat"
+    suffix = ".#{configuration.downcase}"
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + suffix
+
+    certificate({
+      :type => "adhoc",
+      :suffix => suffix,
+      :configuration => configuration
     })
   end
 
   desc "Config certificate for staging build"
   lane :certificate_staging do |options|
-    app_identifier = ENV['KEY_APP_IDENTIFIER'] + '.staging'
-    match_base({
-      :type => 'adhoc',
-      :app_identifier => app_identifier
+    configuration = "Staging"
+    suffix = ".#{configuration.downcase}"
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + suffix
+
+    certificate({
+      :type => "adhoc",
+      :suffix => suffix,
+      :configuration => configuration
     })
   end
 
   desc "Config certificate for release build"
   lane :certificate_release do
     app_identifier = ENV['KEY_APP_IDENTIFIER']
-    match_base({
-      :type => 'appstore',
-      :app_identifier => app_identifier
+    certificate({
+      :type => "appstore",
+      :suffix => "",
+      :configuration => "Release"
     })
   end
 
-  private_lane :ensure_keychain do |options|
-    create_keychain(
-      name: options[:name],
-      password: options[:password],
-      unlock: false,
-      timeout: 0,
-      lock_when_sleeps: true
+  desc "Delete keychain"
+  lane :delete_project_keychain do
+    if project_keychain_exists 
+      delete_keychain(name: ENV['KEY_CHAIN_NAME'])
+    end
+  end
+
+  private_lane :certificate do |options|
+    app_identifier = ENV['KEY_APP_IDENTIFIER'] + options[:suffix]
+    match_base({
+      :type => options[:type],
+      :app_identifier => app_identifier
+    })
+
+    profile_path = ENV["sigh_#{app_identifier}_#{options[:type]}_profile-path"]
+
+    development_type = "development"
+    developer_identity = "iPhone Developer"
+    distribution_identity = "iPhone Distribution"
+
+    update_code_signing_settings(
+      path: ENV['KEY_PROJECT'],
+      targets: ENV['KEY_PROJECT_NAME'],
+      build_configurations: options[:configuration],
+      profile_name: lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][app_identifier],
+      code_sign_identity: options[:type] == development_type ? developer_identity : distribution_identity
     )
+  end
+
+  private_lane :apple_api_key do
+    api_key = app_store_connect_api_key(
+      key_id: ENV['APPLE_API_KEY_ID'],
+      issuer_id: ENV['APPLE_API_ISSUER_ID'],
+      key_filepath: ENV['APPLE_API_KEY_FILEPATH'],
+      duration: 1200,
+      in_house: false
+    )
+  end
+
+  private_lane :ensure_keychain do |options|
+    keychain_name = ENV['KEY_CHAIN_NAME']
+    keychain_password = ENV['KEY_CHAIN_PASSWORD']
+
+    if project_keychain_exists 
+      unlock_keychain( 
+        path: project_keychain_path,
+        password: keychain_password
+      )
+    else
+      create_keychain(
+        name: keychain_name,
+        password: keychain_password,
+        unlock: true,
+        timeout: 0,
+        lock_when_sleeps: true
+      )
+    end
+  end
+
+  private_lane :project_keychain_path do
+    keychain_name = ENV['KEY_CHAIN_NAME']
+    keychain_path = "~/Library/Keychains/#{keychain_name}-db"
+  end
+
+  private_lane :project_keychain_exists do
+    keychain_path = project_keychain_path()
+    File.exist? File.expand_path(keychain_path)
   end
 
   private_lane :match_base do |options|
     keychain_name = ENV['KEY_CHAIN_NAME']
     keychain_password = ENV['KEY_CHAIN_PASSWORD']
-    apple_id = ENV['KEY_APPLE_ID']
 
     ensure_keychain({
       :name => keychain_name,
       :password => keychain_password
     })
 
+    api_key = apple_api_key()
+
     match(
-      username: apple_id,
       type: options[:type],
       app_identifier: options[:app_identifier],
+      api_key: api_key,
       force_for_new_devices: true,
       readonly: false,
       keychain_name: keychain_name,
@@ -201,10 +282,11 @@ platform :ios do
 
   private_lane :build_package do |options|
     team_id = ENV['KEY_TEAM_ID']
-    scheme = ENV['KEY_PROJECT_NAME']
+    project = ENV['KEY_PROJECT_NAME']
+    scheme = ENV['KEY_SCHEME']
     version = get_version_number(xcodeproj: ENV['KEY_PROJECT'])
     build_number = get_build_number(xcodeproj: ENV['KEY_PROJECT'])
-    ipa_name = "ARK.#{version}.#{build_number}.#{options[:configuration].downcase}.ipa"
+    ipa_name = "#{project}.#{version}.#{build_number}.#{options[:configuration].downcase}.ipa"
 
     build_app(
       workspace: ENV['KEY_WORKSPACE'],
