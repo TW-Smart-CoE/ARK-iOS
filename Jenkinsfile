@@ -72,11 +72,7 @@ pipeline {
             }
             steps {
                 script {
-                    withCredentials([
-                        string(credentialsId: 'fir-token', variable: 'fir_token')
-                        ]) {
-                        sh 'bundle exec fastlane release_to_test_channel fir_token:$fir_token'
-                    }
+                    sh 'bundle exec fastlane release_to_test_channel'
                 }
             }
         }

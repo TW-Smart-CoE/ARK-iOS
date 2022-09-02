@@ -58,9 +58,9 @@ platform :ios do
   end
 
   desc "Build an app and upload to Testflight"
-  lane :release_to_test_channel do |options|
+  lane :release_to_test_channel do
     build_staging
-    fir_cli api_token: options[:fir_token], specify_file_path: lane_context[SharedValues::IPA_OUTPUT_PATH]
+    fir_cli api_token: ENV["FIR_TOKEN"], specify_file_path: lane_context[SharedValues::IPA_OUTPUT_PATH]
   end
 
   desc "Build an app and upload to Testflight"
