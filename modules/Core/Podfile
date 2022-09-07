@@ -1,16 +1,21 @@
 source 'https://cdn.cocoapods.org/'
 
 platform :ios, '14.0'
+use_frameworks!
+
+
+def shared
+  pod 'Alamofire', '~> 5.6'
+end
 
 target 'Core' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for ARK-iOS
+  shared
 
   target 'CoreTests' do
     inherit! :search_paths
     # Pods for testing
+    shared
   end
   
 end

@@ -10,8 +10,10 @@
 		49680F1AE30E0C589FD10559 /* Pods_CoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2A251ADC8DEFC6AFCA68B2 /* Pods_CoreTests.framework */; };
 		76D95C4026825CD552D39194 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0714C9DB1E09FA871A02B597 /* Pods_Core.framework */; };
 		E604930228A1FED1005C737A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60492F928A1FED1005C737A /* Core.framework */; };
-		E604930728A1FED1005C737A /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604930628A1FED1005C737A /* CoreTests.swift */; };
 		E604930828A1FED1005C737A /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = E60492FC28A1FED1005C737A /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E628E62B28C62A7C002FE56E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628E62A28C62A7C002FE56E /* Session.swift */; };
+		E628E63228C8414A002FE56E /* DataSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628E63128C8414A002FE56E /* DataSessionTests.swift */; };
+		E628E63428C84A24002FE56E /* DataSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628E63328C84A24002FE56E /* DataSession.swift */; };
 		E6F3B77E28B2461C0064AFFF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77D28B2461C0064AFFF /* String+Extensions.swift */; };
 		E6F3B78028B246640064AFFF /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77F28B246640064AFFF /* StringTests.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +38,9 @@
 		E60492F928A1FED1005C737A /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60492FC28A1FED1005C737A /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		E604930128A1FED1005C737A /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E604930628A1FED1005C737A /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
+		E628E62A28C62A7C002FE56E /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E628E63128C8414A002FE56E /* DataSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSessionTests.swift; sourceTree = "<group>"; };
+		E628E63328C84A24002FE56E /* DataSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSession.swift; sourceTree = "<group>"; };
 		E6F3B77D28B2461C0064AFFF /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E6F3B77F28B246640064AFFF /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,8 +109,8 @@
 		E60492FB28A1FED1005C737A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E628E62928C629E3002FE56E /* Network */,
 				E604933828A34514005C737A /* Extensions */,
-				E604933928A3451A005C737A /* Utils */,
 				E60492FC28A1FED1005C737A /* Core.h */,
 			);
 			path = Sources;
@@ -115,8 +119,8 @@
 		E604930528A1FED1005C737A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E604930628A1FED1005C737A /* CoreTests.swift */,
 				E6F3B77F28B246640064AFFF /* StringTests.swift */,
+				E628E63128C8414A002FE56E /* DataSessionTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -129,11 +133,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		E604933928A3451A005C737A /* Utils */ = {
+		E628E62928C629E3002FE56E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E628E62A28C62A7C002FE56E /* Session.swift */,
+				E628E63328C84A24002FE56E /* DataSession.swift */,
 			);
-			path = Utils;
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +183,7 @@
 				E60492FD28A1FED1005C737A /* Sources */,
 				E60492FE28A1FED1005C737A /* Frameworks */,
 				E60492FF28A1FED1005C737A /* Resources */,
+				329D879BA1CD211424499398 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -244,6 +251,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		329D879BA1CD211424499398 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoreTests/Pods-CoreTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoreTests/Pods-CoreTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoreTests/Pods-CoreTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5478623CA83BBF40C5E3AF17 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +319,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E628E63428C84A24002FE56E /* DataSession.swift in Sources */,
+				E628E62B28C62A7C002FE56E /* Session.swift in Sources */,
 				E6F3B77E28B2461C0064AFFF /* String+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,8 +329,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E628E63228C8414A002FE56E /* DataSessionTests.swift in Sources */,
 				E6F3B78028B246640064AFFF /* StringTests.swift in Sources */,
-				E604930728A1FED1005C737A /* CoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
