@@ -30,7 +30,7 @@ public extension ThemeColors {
         case .statusBarColor:
             return ColorName.blue.color
         default:
-            return Color(self.rawValue)
+            return Color(self.rawValue, bundle: .uiBundle)
         }
     }
 }

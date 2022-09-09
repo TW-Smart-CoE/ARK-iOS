@@ -46,12 +46,6 @@ public enum ColorName: String {
 
 public extension ColorName {
     var color: Color {
-        Color(self.rawValue)
-    }
-}
-
-extension Color {
-    init(_ colorName: ColorName, bundle: Bundle = Bundle.uiBundle) {
-        self.init(colorName.rawValue, bundle: bundle)
+        Color(self.rawValue, bundle: Bundle.uiBundle)
     }
 }
