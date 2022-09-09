@@ -46,7 +46,7 @@ public enum ColorName: String {
 
 public extension ColorName {
     var color: Color {
-        Color(self)
+        Color(self.rawValue)
     }
 }
 

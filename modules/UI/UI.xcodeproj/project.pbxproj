@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B2A5EFF128BF52C500F3E391 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2A5EFF028BF52C500F3E391 /* Colors.xcassets */; };
 		B2A5EFF328BF534D00F3E391 /* ColorName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5EFF228BF534D00F3E391 /* ColorName.swift */; };
+		B2FCC69C28CB2FCA0091A202 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */; };
+		B2FCC69E28CB2FD90091A202 /* ThemeColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FCC69D28CB2FD90091A202 /* ThemeColors.xcassets */; };
 		E5EF1FF10147F1C679ABBBC6 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F229A0E60399760A38B41D2C /* Pods_UITests.framework */; };
 		E604932928A22E60005C737A /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E604932028A22E60005C737A /* UI.framework */; };
 		E604932E28A22E60005C737A /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604932D28A22E60005C737A /* UITests.swift */; };
@@ -34,6 +36,8 @@
 		7CA7598A991D590D4C2B19A3 /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2A5EFF028BF52C500F3E391 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B2A5EFF228BF534D00F3E391 /* ColorName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorName.swift; sourceTree = "<group>"; };
+		B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
+		B2FCC69D28CB2FD90091A202 /* ThemeColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThemeColors.xcassets; sourceTree = "<group>"; };
 		CD07D66B6A72B4E781BC7F90 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 		E604932028A22E60005C737A /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E604932328A22E60005C737A /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
@@ -96,7 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				B2A5EFF028BF52C500F3E391 /* Colors.xcassets */,
+				B2FCC69D28CB2FD90091A202 /* ThemeColors.xcassets */,
 				B2A5EFF228BF534D00F3E391 /* ColorName.swift */,
+				B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2A5EFF128BF52C500F3E391 /* Colors.xcassets in Resources */,
+				B2FCC69E28CB2FD90091A202 /* ThemeColors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +308,7 @@
 			files = (
 				B2A5EFF328BF534D00F3E391 /* ColorName.swift in Sources */,
 				E674B1F628B74EE500C689A2 /* UI.swift in Sources */,
+				B2FCC69C28CB2FCA0091A202 /* ThemeColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
