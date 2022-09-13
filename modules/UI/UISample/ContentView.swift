@@ -14,16 +14,15 @@ struct ContentView: View {
             Text("Test ColorName with dynamic color")
                 .padding(.bottom, .smallPadding)
                 .foregroundColor(ColorName.blue.color)
-            
+
             Text("Test ColorName with solid color")
                 .padding(.bottom, .standardPadding)
                 .foregroundColor(ColorName.teal200.color)
-            
+
             Text("Test ThemeColors")
                 .padding()
                 .foregroundColor(ThemeColors.primary.color)
         }
-        
     }
 }
 
