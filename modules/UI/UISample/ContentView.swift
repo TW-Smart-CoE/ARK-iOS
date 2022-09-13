@@ -10,13 +10,13 @@ import UI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: .smallSpacing) {
             Text("Test ColorName with dynamic color")
-                .padding()
+                .padding(.bottom, .smallPadding)
                 .foregroundColor(ColorName.blue.color)
             
             Text("Test ColorName with solid color")
-                .padding()
+                .padding(.bottom, .standardPadding)
                 .foregroundColor(ColorName.teal200.color)
             
             Text("Test ThemeColors")

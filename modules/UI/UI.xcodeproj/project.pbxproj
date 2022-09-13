@@ -20,6 +20,7 @@
 		B2FCC6F728CB3B440091A202 /* UISampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCC6F628CB3B440091A202 /* UISampleUITestsLaunchTests.swift */; };
 		B2FCC70128CB3B8A0091A202 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E604932028A22E60005C737A /* UI.framework */; };
 		B2FCC70228CB3B8A0091A202 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E604932028A22E60005C737A /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B2FCC70828CB41570091A202 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCC70728CB41570091A202 /* Dimensions.swift */; };
 		E5EF1FF10147F1C679ABBBC6 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F229A0E60399760A38B41D2C /* Pods_UITests.framework */; };
 		E604932928A22E60005C737A /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E604932028A22E60005C737A /* UI.framework */; };
 		E604932E28A22E60005C737A /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E604932D28A22E60005C737A /* UITests.swift */; };
@@ -92,6 +93,7 @@
 		B2FCC6F028CB3B440091A202 /* UISampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UISampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FCC6F428CB3B440091A202 /* UISampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISampleUITests.swift; sourceTree = "<group>"; };
 		B2FCC6F628CB3B440091A202 /* UISampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B2FCC70728CB41570091A202 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 		CD07D66B6A72B4E781BC7F90 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 		E604932028A22E60005C737A /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E604932328A22E60005C737A /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
@@ -219,6 +221,14 @@
 			path = UISampleUITests;
 			sourceTree = "<group>";
 		};
+		B2FCC70628CB41470091A202 /* Dimension */ = {
+			isa = PBXGroup;
+			children = (
+				B2FCC70728CB41570091A202 /* Dimensions.swift */,
+			);
+			path = Dimension;
+			sourceTree = "<group>";
+		};
 		E604931628A22E60005C737A = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +258,7 @@
 		E604932228A22E60005C737A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B2FCC70628CB41470091A202 /* Dimension */,
 				B2A5EFEE28BF529D00F3E391 /* Theme */,
 				E604932328A22E60005C737A /* UI.h */,
 				E674B1F528B74EE500C689A2 /* UI.swift */,
@@ -543,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2A5EFF328BF534D00F3E391 /* ColorName.swift in Sources */,
+				B2FCC70828CB41570091A202 /* Dimensions.swift in Sources */,
 				E674B1F628B74EE500C689A2 /* UI.swift in Sources */,
 				B2FCC69C28CB2FCA0091A202 /* ThemeColors.swift in Sources */,
 			);
