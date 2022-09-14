@@ -14,5 +14,7 @@ Pod::Spec.new do |spec|
   spec.framework             = 'Foundation'
   spec.test_spec 'Tests' do |test_spec|
     test_spec.source_files = 'Tests/**/*.swift'
-  end  
+  end
+  
+  spec.dependency 'Alamofire', '~> 5.6'
 end
