@@ -6,14 +6,12 @@ PODS:
     - Alamofire (~> 5.6)
   - SwiftLint (0.48.0)
   - UI (0.0.1)
-  - UI/Tests (0.0.1)
 
 DEPENDENCIES:
   - Core (from `./modules/Core`)
   - Core/Tests (from `./modules/Core`)
   - SwiftLint (~> 0.48)
   - UI (from `./modules/UI`)
-  - UI/Tests (from `./modules/UI`)
 
 SPEC REPOS:
   trunk:
@@ -32,6 +30,6 @@ SPEC CHECKSUMS:
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
   UI: 1af87e03025bfb7106afb4a4c56a12608e8c373d
 
-PODFILE CHECKSUM: 30d71675a478aa85dde8cb14af28c01a0cbb281b
+PODFILE CHECKSUM: 2326e47d4089050e8bf021b1070d37ef9fe310cb
 
 COCOAPODS: 1.11.3

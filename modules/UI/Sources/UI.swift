@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class UIBundle {}
+
+extension Bundle {
+    static let uiBundle = Bundle(for: UIBundle.self)
+}
