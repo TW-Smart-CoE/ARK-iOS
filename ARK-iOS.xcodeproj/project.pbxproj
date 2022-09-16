@@ -53,8 +53,8 @@
 		E6710DFD2898EED000663362 /* ARK-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ARK-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6710E012898EED000663362 /* ARKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKTests.swift; sourceTree = "<group>"; };
 		E6710E2B28990B0000663362 /* App-Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "App-Shared.xcconfig"; sourceTree = "<group>"; };
-		E6710E2D28990B2600663362 /* App-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Debug.xcconfig"; sourceTree = "<group>"; };
-		E6710E2F28990B3700663362 /* App-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Release.xcconfig"; sourceTree = "<group>"; };
+		E6710E2D28990B2600663362 /* App-Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Dev.xcconfig"; sourceTree = "<group>"; };
+		E6710E2F28990B3700663362 /* App-Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "App-Prod.xcconfig"; sourceTree = "<group>"; };
 		E6F3B77428AE1F620064AFFF /* DevelopMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopMenu.swift; sourceTree = "<group>"; };
 		E6F3B77628AE1F620064AFFF /* BuildEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildEnvironment.swift; sourceTree = "<group>"; };
 		E6F3B77B28AF68430064AFFF /* ShortcutItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutItems.swift; sourceTree = "<group>"; };
@@ -154,10 +154,10 @@
 			isa = PBXGroup;
 			children = (
 				E6710E2B28990B0000663362 /* App-Shared.xcconfig */,
-				E6710E2D28990B2600663362 /* App-Debug.xcconfig */,
+				E6710E2D28990B2600663362 /* App-Dev.xcconfig */,
 				E668CAEF28A506B300379B4F /* App-Uat.xcconfig */,
 				E668CAEE28A506B300379B4F /* App-Staging.xcconfig */,
-				E6710E2F28990B3700663362 /* App-Release.xcconfig */,
+				E6710E2F28990B3700663362 /* App-Prod.xcconfig */,
 				E6F3B78628B321C20064AFFF /* App-Info.plist */,
 			);
 			path = Configs;
@@ -742,7 +742,7 @@
 		};
 		E6710E122898EED000663362 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6710E2D28990B2600663362 /* App-Debug.xcconfig */;
+			baseConfigurationReference = E6710E2D28990B2600663362 /* App-Dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -778,7 +778,7 @@
 		};
 		E6710E132898EED000663362 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6710E2F28990B3700663362 /* App-Release.xcconfig */;
+			baseConfigurationReference = E6710E2F28990B3700663362 /* App-Prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
