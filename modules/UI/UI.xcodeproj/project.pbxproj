@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B2A5EFF128BF52C500F3E391 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2A5EFF028BF52C500F3E391 /* Colors.xcassets */; };
-		B2A5EFF328BF534D00F3E391 /* ColorName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5EFF228BF534D00F3E391 /* ColorName.swift */; };
+		B2A5EFF328BF534D00F3E391 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5EFF228BF534D00F3E391 /* Colors.swift */; };
 		B2FCC69C28CB2FCA0091A202 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */; };
 		B2FCC69E28CB2FD90091A202 /* ThemeColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FCC69D28CB2FD90091A202 /* ThemeColors.xcassets */; };
 		B2FCC6DA28CB3B420091A202 /* UISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCC6D928CB3B420091A202 /* UISampleApp.swift */; };
@@ -80,7 +80,7 @@
 		251869661955EE2A00EA3351 /* Pods_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA7598A991D590D4C2B19A3 /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2A5EFF028BF52C500F3E391 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		B2A5EFF228BF534D00F3E391 /* ColorName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorName.swift; sourceTree = "<group>"; };
+		B2A5EFF228BF534D00F3E391 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
 		B2FCC69D28CB2FD90091A202 /* ThemeColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThemeColors.xcassets; sourceTree = "<group>"; };
 		B2FCC6D728CB3B420091A202 /* UISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,7 +179,7 @@
 			children = (
 				B2A5EFF028BF52C500F3E391 /* Colors.xcassets */,
 				B2FCC69D28CB2FD90091A202 /* ThemeColors.xcassets */,
-				B2A5EFF228BF534D00F3E391 /* ColorName.swift */,
+				B2A5EFF228BF534D00F3E391 /* Colors.swift */,
 				B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */,
 			);
 			path = Colors;
@@ -553,7 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2A5EFF328BF534D00F3E391 /* ColorName.swift in Sources */,
+				B2A5EFF328BF534D00F3E391 /* Colors.swift in Sources */,
 				B2FCC70828CB41570091A202 /* Dimensions.swift in Sources */,
 				E674B1F628B74EE500C689A2 /* UI.swift in Sources */,
 				B2FCC69C28CB2FCA0091A202 /* ThemeColors.swift in Sources */,

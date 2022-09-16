@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public enum ColorName: String {
+public enum Colors: String {
     // black
     case black
     // white
@@ -44,7 +44,7 @@ public enum ColorName: String {
     case red900
 }
 
-public extension ColorName {
+public extension Colors {
     var color: Color {
         Color(self.rawValue, bundle: Bundle.uiBundle)
     }

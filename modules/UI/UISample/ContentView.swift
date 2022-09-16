@@ -13,11 +13,11 @@ struct ContentView: View {
         VStack(spacing: .smallSpacing) {
             Text("Test ColorName with dynamic color")
                 .padding(.bottom, .smallPadding)
-                .foregroundColor(ColorName.blue.color)
+                .foregroundColor(Colors.blue.color)
 
             Text("Test ColorName with solid color")
                 .padding(.bottom, .standardPadding)
-                .foregroundColor(ColorName.teal200.color)
+                .foregroundColor(Colors.teal200.color)
 
             Text("Test ThemeColors")
                 .padding()
