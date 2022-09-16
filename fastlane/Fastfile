@@ -20,7 +20,7 @@ platform :ios do
   desc "Build an app with Dev env"
   lane :build_dev do
     certificate_dev
-    build_package({ :configuration => "Debug", :export_method => "ad-hoc" })
+    build_package({ :configuration => "Debug", :package => "dev", :export_method => "ad-hoc" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
     }
@@ -30,7 +30,7 @@ platform :ios do
   desc "Build an app with Uat env"
   lane :build_uat do
     certificate_uat
-    build_package({ :configuration => "Uat", :export_method => "ad-hoc" })
+    build_package({ :configuration => "Uat", :package => "uat", :export_method => "ad-hoc" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
     }
@@ -40,7 +40,7 @@ platform :ios do
   desc "Build an app with Staging env"
   lane :build_staging do
     certificate_staging
-    build_package({ :configuration => "Staging", :export_method => "ad-hoc" })
+    build_package({ :configuration => "Staging", :package => "staging", :export_method => "ad-hoc" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
     }
@@ -48,9 +48,9 @@ platform :ios do
   end
 
   desc "Build an app with Release env"
-  lane :build_release do
-    certificate_release
-    build_package({ :configuration => "Release", :export_method => "app-store" })
+  lane :build_prod do
+    certificate_prod
+    build_package({ :configuration => "Release", :package => "prod", :export_method => "app-store" })
     notification_options = {
       :message => "Finished #{lane_context[SharedValues::LANE_NAME]} on #{Time.new.to_s}"
     }
@@ -65,11 +65,11 @@ platform :ios do
 
   desc "Build an app and upload to Testflight"
   lane :release_to_test_flight do
-    build_release
+    build_prod
     upload_to_testflight
   end
 
-  desc "Runs all the unit tests"
+  desc "Run all the unit tests"
   lane :unit_tests do
     scheme = "All-Tests"
     run_tests(
@@ -163,7 +163,7 @@ platform :ios do
   end
 
   desc "Config certificate for release build"
-  lane :certificate_release do
+  lane :certificate_prod do
     app_identifier = ENV['KEY_APP_IDENTIFIER']
     certificate({
       :type => "appstore",
@@ -286,7 +286,7 @@ platform :ios do
     scheme = ENV['KEY_SCHEME']
     version = get_version_number(xcodeproj: ENV['KEY_PROJECT'])
     build_number = get_build_number(xcodeproj: ENV['KEY_PROJECT'])
-    ipa_name = "#{project}.#{version}.#{build_number}.#{options[:configuration].downcase}.ipa"
+    ipa_name = "#{project}.#{version}.#{build_number}.#{options[:package].downcase}.ipa"
 
     build_app(
       workspace: ENV['KEY_WORKSPACE'],
