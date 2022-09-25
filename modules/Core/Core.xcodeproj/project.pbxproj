@@ -20,6 +20,8 @@
 		E6C0B72728DC42BF00A64FC6 /* Prettier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0B72628DC42BF00A64FC6 /* Prettier.swift */; };
 		E6C0B72928DC42D400A64FC6 /* LogRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0B72828DC42D400A64FC6 /* LogRecord.swift */; };
 		E6C0B72B28DC5E4D00A64FC6 /* DefaultOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0B72A28DC5E4D00A64FC6 /* DefaultOutputStream.swift */; };
+		E6C0B72E28DC5FCF00A64FC6 /* DefaultPrettierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0B72C28DC5FBE00A64FC6 /* DefaultPrettierTests.swift */; };
+		E6C0B73028E083DB00A64FC6 /* LogModifiersChainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0B72F28E083DB00A64FC6 /* LogModifiersChainTests.swift */; };
 		E6C0B73428E08D0E00A64FC6 /* SensitiveInfoProtector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0B73328E08D0E00A64FC6 /* SensitiveInfoProtector.swift */; };
 		E6F3B77E28B2461C0064AFFF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77D28B2461C0064AFFF /* String+Extensions.swift */; };
 		E6F3B78028B246640064AFFF /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F3B77F28B246640064AFFF /* StringTests.swift */; };
@@ -54,6 +56,8 @@
 		E6C0B72628DC42BF00A64FC6 /* Prettier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prettier.swift; sourceTree = "<group>"; };
 		E6C0B72828DC42D400A64FC6 /* LogRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRecord.swift; sourceTree = "<group>"; };
 		E6C0B72A28DC5E4D00A64FC6 /* DefaultOutputStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOutputStream.swift; sourceTree = "<group>"; };
+		E6C0B72C28DC5FBE00A64FC6 /* DefaultPrettierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPrettierTests.swift; sourceTree = "<group>"; };
+		E6C0B72F28E083DB00A64FC6 /* LogModifiersChainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModifiersChainTests.swift; sourceTree = "<group>"; };
 		E6C0B73328E08D0E00A64FC6 /* SensitiveInfoProtector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensitiveInfoProtector.swift; sourceTree = "<group>"; };
 		E6F3B77D28B2461C0064AFFF /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E6F3B77F28B246640064AFFF /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 			children = (
 				E6F3B77F28B246640064AFFF /* StringTests.swift */,
 				E628E63128C8414A002FE56E /* APIServiceTests.swift */,
+				E6C0B72C28DC5FBE00A64FC6 /* DefaultPrettierTests.swift */,
+				E6C0B72F28E083DB00A64FC6 /* LogModifiersChainTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -365,6 +371,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6C0B72E28DC5FCF00A64FC6 /* DefaultPrettierTests.swift in Sources */,
+				E6C0B73028E083DB00A64FC6 /* LogModifiersChainTests.swift in Sources */,
 				E628E63228C8414A002FE56E /* APIServiceTests.swift in Sources */,
 				E6F3B78028B246640064AFFF /* StringTests.swift in Sources */,
 			);

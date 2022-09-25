@@ -11,3 +11,8 @@
 
 # Core
 - modules/Core/Sources/Network/Session.swift
+- modules/Core/Sources/Logger/Loggable.swift
+- modules/Core/Sources/Logger/Logger.swift
+- modules/Core/Sources/Logger/LogRecord.swift
+- modules/Core/Sources/Logger/SensitiveInfoProtector.swift
+- modules/Core/Sources/Logger/DefaultOutputStream.swift
