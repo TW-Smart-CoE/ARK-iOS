@@ -26,3 +26,9 @@ opt_in_rules:
   - multiline_parameters
   - vertical_whitespace_opening_braces
   - vertical_whitespace_closing_braces
+custom_rules:
+  prevent_print:
+    name: "prevent_print"
+    regex: "\\n( |\\t)*(Swift\\.)?(print|debugPrint)\\(.*\\)"
+    message: "Please use `Log` to print messages."
+    severity: error
