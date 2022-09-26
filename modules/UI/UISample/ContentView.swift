@@ -10,19 +10,30 @@ import UI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: .smallSpacing) {
-            Text("Test ColorName with dynamic color")
-                .padding(.bottom, .smallPadding)
-                .foregroundColor(Colors.blue.color)
+        NavigationView {
+            List {
+                NavigationLink {
+                    ColorSampleView()
+                } label: {
+                    Text("Color Sample")
+                }
 
-            Text("Test ColorName with solid color")
-                .padding(.bottom, .standardPadding)
-                .foregroundColor(Colors.teal200.color)
+                NavigationLink {
+                    DimensionSampleView()
+                } label: {
+                    Text("Dimension Sample")
+                }
 
-            Text("Test ThemeColors")
-                .padding()
-                .foregroundColor(ThemeColors.primary.color)
+                NavigationLink {
+                    TypographySampleView()
+                } label: {
+                    Text("Typography Sample")
+                }
+            }
+            .navigationTitle("Sample List")
+            .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
