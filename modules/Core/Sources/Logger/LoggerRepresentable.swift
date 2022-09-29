@@ -7,16 +7,18 @@
 
 import Foundation
 
-enum LogLevel {
-    static var Warning: String = "WARNING"
-    static var Error: String = "ERROR"
-    static var Info: String = "INFO"
+public enum LogLevel: String {
+    case warning = "WARNING"
+    case error = "ERROR"
+    case info = "INFO"
+}
 
+enum Tags {
     static var JSONEncodingErrorTag: String = "JSON ENCDOING ERROR"
 }
 
 public protocol LoggerRepresentable {
-    func log(_ record: LogRecord)
+    func log(_ record: any LogRecording)
 }
 
 extension LoggerRepresentable {
@@ -50,7 +52,7 @@ extension LoggerRepresentable {
             let jsonString = try json(from: encodable)
             log(level: level, tag: tag, message: jsonString, file: file, line: line)
         } catch let encodingError {
-            error(tag: LogLevel.JSONEncodingErrorTag, error: encodingError)
+            error(tag: Tags.JSONEncodingErrorTag, error: encodingError)
         }
     }
 
@@ -60,7 +62,7 @@ extension LoggerRepresentable {
         file: String = #file,
         line: Int = #line
     ) {
-        log(level: LogLevel.Warning, tag: tag, message: message, file: file, line: line)
+        log(level: LogLevel.warning.rawValue, tag: tag, message: message, file: file, line: line)
     }
 
     public func warning<T: Encodable>(
@@ -71,9 +73,9 @@ extension LoggerRepresentable {
     ) {
         do {
             let jsonString = try json(from: encodable)
-            log(level: LogLevel.Warning, tag: tag, message: jsonString, file: file, line: line)
+            log(level: LogLevel.warning.rawValue, tag: tag, message: jsonString, file: file, line: line)
         } catch let encodingError {
-            error(tag: LogLevel.JSONEncodingErrorTag, error: encodingError)
+            error(tag: Tags.JSONEncodingErrorTag, error: encodingError)
         }
     }
 
@@ -83,7 +85,7 @@ extension LoggerRepresentable {
         file: String = #file,
         line: Int = #line
     ) {
-        log(level: LogLevel.Error, tag: tag, message: message, file: file, line: line)
+        log(level: LogLevel.error.rawValue, tag: tag, message: message, file: file, line: line)
     }
 
     public func error<T: Encodable>(
@@ -94,9 +96,9 @@ extension LoggerRepresentable {
     ) {
         do {
             let jsonString = try json(from: encodable)
-            log(level: LogLevel.Error, tag: tag, message: jsonString, file: file, line: line)
+            log(level: LogLevel.error.rawValue, tag: tag, message: jsonString, file: file, line: line)
         } catch let encodingError {
-            error(tag: LogLevel.JSONEncodingErrorTag, error: encodingError)
+            error(tag: Tags.JSONEncodingErrorTag, error: encodingError)
         }
     }
 
@@ -105,7 +107,7 @@ extension LoggerRepresentable {
         error: Swift.Error,
         file: String = #file,
         line: Int = #line) {
-        log(level: LogLevel.Error, tag: tag, message: "\(error)", file: file, line: line)
+        log(level: LogLevel.error.rawValue, tag: tag, message: "\(error)", file: file, line: line)
     }
 
     public func info(
@@ -114,7 +116,7 @@ extension LoggerRepresentable {
         file: String = #file,
         line: Int = #line
     ) {
-        log(level: LogLevel.Info, tag: tag, message: message, file: file, line: line)
+        log(level: LogLevel.info.rawValue, tag: tag, message: message, file: file, line: line)
     }
 
     public func info<T: Encodable>(
@@ -125,9 +127,9 @@ extension LoggerRepresentable {
     ) {
         do {
             let jsonString = try json(from: encodable)
-            log(level: LogLevel.Info, tag: tag, message: jsonString, file: file, line: line)
+            log(level: LogLevel.info.rawValue, tag: tag, message: jsonString, file: file, line: line)
         } catch let encodingError {
-            error(tag: LogLevel.JSONEncodingErrorTag, error: encodingError)
+            error(tag: Tags.JSONEncodingErrorTag, error: encodingError)
         }
     }
 

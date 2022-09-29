@@ -70,7 +70,7 @@ private class MockModifier: LogModifier {
         self.record = record
     }
 
-    func modify(_ record: LogRecord) -> LogRecord? {
+    func modify(_ record: LogRecording) -> (LogRecording)? {
         isCalled = true
         return self.record
     }

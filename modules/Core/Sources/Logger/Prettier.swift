@@ -8,20 +8,23 @@
 import Foundation
 
 public protocol Prettier {
-    func prettify(_ record: LogRecord) -> String
+    func prettify(_ record: any LogRecording) -> String
 }
 
 public struct DefaultPrettier: Prettier {
     static let UnkownFile = "Unkown File"
+    static let UnkownThread = "Unkown Thread"
 
     public init() { }
 
-    public func prettify(_ record: LogRecord) -> String {
+    public func prettify(_ record: any LogRecording) -> String {
         let fileName = fileName(of: record.file)
+        let threadName = record.thread.name ?? DefaultPrettier.UnkownThread
         return
 """
-[\(record.level)][\(record.tag)][\(record.thread.name ?? "Unkown thread")][\(record.date)][\(fileName):\(record.line)]
+[\(record.level)][\(record.tag)][\(threadName)][\(record.date)][\(fileName):\(record.line)]
 \(record.message)
+
 """
     }
 

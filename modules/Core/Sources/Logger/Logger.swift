@@ -28,7 +28,7 @@ public struct Logger: LoggerRepresentable {
         self.modifier = modifier
     }
 
-    public func log(_ record: LogRecord) {
+    public func log(_ record: any LogRecording) {
         if let prettified = modifier.modify(record).flatMap(prettier.prettify) {
             var outputStream = self.outputStream
             outputStream.write(prettified)

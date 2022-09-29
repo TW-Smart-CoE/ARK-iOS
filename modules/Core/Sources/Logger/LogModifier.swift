@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol LogModifier {
-    func modify(_ record: LogRecord) -> LogRecord?
+    func modify(_ record: any LogRecording) -> (any LogRecording)?
 }
 
 public class LogModifiersChain: LogModifier {
@@ -22,8 +22,8 @@ public class LogModifiersChain: LogModifier {
         self.modifiers.append(modifier)
     }
 
-    public func modify(_ record: LogRecord) -> LogRecord? {
-        return self.modifiers.reduce(record as LogRecord?) { partialResult, modifier in
+    public func modify(_ record: any LogRecording) -> (any LogRecording)? {
+        return self.modifiers.reduce(record) { partialResult, modifier in
             partialResult.flatMap(modifier.modify)
         }
     }

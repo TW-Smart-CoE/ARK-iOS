@@ -38,6 +38,7 @@ class DefaultPrettierTests: XCTestCase {
 """
 [INFO][tag][test_thread][\(date)][file.swift:100]
 \(message)
+
 """
 XCTAssertEqual(result, expected)
     }

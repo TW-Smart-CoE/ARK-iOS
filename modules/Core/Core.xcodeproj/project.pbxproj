@@ -14,7 +14,7 @@
 		E628E63228C8414A002FE56E /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628E63128C8414A002FE56E /* APIServiceTests.swift */; };
 		E628E63628C8A2E1002FE56E /* Interceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628E63528C8A2E1002FE56E /* Interceptor.swift */; };
 		E628E63828C98A87002FE56E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E628E63728C98A87002FE56E /* APIService.swift */; };
-		E630D19A28D99C9F0019D18E /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E630D19928D99C9F0019D18E /* Loggable.swift */; };
+		E630D19A28D99C9F0019D18E /* LoggerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E630D19928D99C9F0019D18E /* LoggerRepresentable.swift */; };
 		E630D19C28D9A0E20019D18E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E630D19B28D9A0E20019D18E /* Logger.swift */; };
 		E6C0B72528DC327D00A64FC6 /* LogModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0B72428DC327D00A64FC6 /* LogModifier.swift */; };
 		E6C0B72728DC42BF00A64FC6 /* Prettier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0B72628DC42BF00A64FC6 /* Prettier.swift */; };
@@ -50,7 +50,7 @@
 		E628E63128C8414A002FE56E /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		E628E63528C8A2E1002FE56E /* Interceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interceptor.swift; sourceTree = "<group>"; };
 		E628E63728C98A87002FE56E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		E630D19928D99C9F0019D18E /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
+		E630D19928D99C9F0019D18E /* LoggerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerRepresentable.swift; sourceTree = "<group>"; };
 		E630D19B28D9A0E20019D18E /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		E6C0B72428DC327D00A64FC6 /* LogModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModifier.swift; sourceTree = "<group>"; };
 		E6C0B72628DC42BF00A64FC6 /* Prettier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prettier.swift; sourceTree = "<group>"; };
@@ -166,12 +166,12 @@
 		E630D19828D99C3A0019D18E /* Logger */ = {
 			isa = PBXGroup;
 			children = (
-				E630D19928D99C9F0019D18E /* Loggable.swift */,
+				E630D19928D99C9F0019D18E /* LoggerRepresentable.swift */,
 				E6C0B72828DC42D400A64FC6 /* LogRecord.swift */,
-				E630D19B28D9A0E20019D18E /* Logger.swift */,
 				E6C0B72428DC327D00A64FC6 /* LogModifier.swift */,
 				E6C0B73328E08D0E00A64FC6 /* SensitiveInfoProtector.swift */,
 				E6C0B72628DC42BF00A64FC6 /* Prettier.swift */,
+				E630D19B28D9A0E20019D18E /* Logger.swift */,
 				E6C0B72A28DC5E4D00A64FC6 /* DefaultOutputStream.swift */,
 			);
 			path = Logger;
@@ -361,7 +361,7 @@
 				E628E63828C98A87002FE56E /* APIService.swift in Sources */,
 				E6C0B72928DC42D400A64FC6 /* LogRecord.swift in Sources */,
 				E6F3B77E28B2461C0064AFFF /* String+Extensions.swift in Sources */,
-				E630D19A28D99C9F0019D18E /* Loggable.swift in Sources */,
+				E630D19A28D99C9F0019D18E /* LoggerRepresentable.swift in Sources */,
 				E628E63628C8A2E1002FE56E /* Interceptor.swift in Sources */,
 				E6C0B72528DC327D00A64FC6 /* LogModifier.swift in Sources */,
 			);

@@ -8,13 +8,19 @@
 import Foundation
 
 public struct SensitiveInfoProtector: LogModifier {
-    public func modify(_ record: LogRecord) -> LogRecord? {
+    public func modify(_ record: any LogRecording) -> (any LogRecording)? {
 #if DEBUG
 return record
 #else
-var result = record
-result.message = "*****"
-return result
+return LogRecord(
+    level: record.level,
+    tag: record.tag,
+    thread: record.thread,
+    date: record.date,
+    file: record.file,
+    line: record.line,
+    message: "*****"
+)
 #endif
     }
 }
