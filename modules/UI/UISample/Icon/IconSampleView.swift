@@ -10,7 +10,7 @@ import UI
 
 struct IconSampleView: View {
     @State var collectBtnIcon: IconName = .commonBtnUncollected
-    
+
     var body: some View {
         VStack {
             Label {
@@ -20,14 +20,18 @@ struct IconSampleView: View {
             }
             HStack {
                 Button {
-                    collectBtnIcon = (collectBtnIcon == .commonBtnUncollected) ? .commonBtnCollected : .commonBtnUncollected
+                    changeCollectButtonStatus()
                 } label: {
                     Image(collectBtnIcon)
                 }
-                
+
                 Text("Collect button")
             }
         }
+    }
+
+    private func changeCollectButtonStatus() {
+        collectBtnIcon = (collectBtnIcon == .commonBtnUncollected) ? .commonBtnCollected : .commonBtnUncollected
     }
 }
 
