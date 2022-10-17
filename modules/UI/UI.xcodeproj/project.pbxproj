@@ -14,6 +14,9 @@
 		B205719828E151B50076EC9E /* ScaledFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205719628E150360076EC9E /* ScaledFontModifier.swift */; };
 		B205719A28E152110076EC9E /* FontWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205719928E152110076EC9E /* FontWeight.swift */; };
 		B205719C28E1524B0076EC9E /* TextStyleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B205719B28E1524B0076EC9E /* TextStyleable.swift */; };
+		B28795C328FD002E00614653 /* IconName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28795C228FD002E00614653 /* IconName.swift */; };
+		B28795C528FD012D00614653 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28795C428FD012D00614653 /* Icons.xcassets */; };
+		B28795C828FD0D0900614653 /* IconSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28795C728FD0D0900614653 /* IconSampleView.swift */; };
 		B2A5EFF128BF52C500F3E391 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2A5EFF028BF52C500F3E391 /* Colors.xcassets */; };
 		B2A5EFF328BF534D00F3E391 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5EFF228BF534D00F3E391 /* Colors.swift */; };
 		B2FCC69C28CB2FCA0091A202 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */; };
@@ -108,6 +111,9 @@
 		B205719628E150360076EC9E /* ScaledFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledFontModifier.swift; sourceTree = "<group>"; };
 		B205719928E152110076EC9E /* FontWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeight.swift; sourceTree = "<group>"; };
 		B205719B28E1524B0076EC9E /* TextStyleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyleable.swift; sourceTree = "<group>"; };
+		B28795C228FD002E00614653 /* IconName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconName.swift; sourceTree = "<group>"; };
+		B28795C428FD012D00614653 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		B28795C728FD0D0900614653 /* IconSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSampleView.swift; sourceTree = "<group>"; };
 		B2A5EFF028BF52C500F3E391 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B2A5EFF228BF534D00F3E391 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
@@ -234,6 +240,23 @@
 			path = Typography;
 			sourceTree = "<group>";
 		};
+		B28795C128FD001A00614653 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B28795C228FD002E00614653 /* IconName.swift */,
+				B28795C428FD012D00614653 /* Icons.xcassets */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		B28795C628FD0CF900614653 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				B28795C728FD0D0900614653 /* IconSampleView.swift */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
 		B2A5EFEE28BF529D00F3E391 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +279,7 @@
 		B2FCC6D828CB3B420091A202 /* UISample */ = {
 			isa = PBXGroup;
 			children = (
+				B28795C628FD0CF900614653 /* Icon */,
 				B205719128E143CC0076EC9E /* Typography */,
 				B205718E28E1439A0076EC9E /* Color */,
 				B205718B28E143540076EC9E /* Dimension */,
@@ -363,6 +387,7 @@
 		E604932228A22E60005C737A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B28795C128FD001A00614653 /* Image */,
 				B2FCC70928D45CDC0091A202 /* Typography */,
 				B2FCC70628CB41470091A202 /* Dimension */,
 				B2A5EFEE28BF529D00F3E391 /* Theme */,
@@ -568,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2FCC72528D4643B0091A202 /* Roboto-Thin.ttf in Resources */,
+				B28795C528FD012D00614653 /* Icons.xcassets in Resources */,
 				B2FCC72228D4643B0091A202 /* LICENSE.txt in Resources */,
 				B2FCC72628D4643B0091A202 /* Roboto-Black.ttf in Resources */,
 				B2FCC72428D4643B0091A202 /* Roboto-Bold.ttf in Resources */,
@@ -648,6 +674,7 @@
 			files = (
 				B205719528E14EF60076EC9E /* AppDelegate.swift in Sources */,
 				B205719028E143AE0076EC9E /* ColorSampleView.swift in Sources */,
+				B28795C828FD0D0900614653 /* IconSampleView.swift in Sources */,
 				B205718D28E143760076EC9E /* DimensionSampleView.swift in Sources */,
 				B205719328E143E70076EC9E /* TypographySampleView.swift in Sources */,
 				B2FCC6DC28CB3B420091A202 /* ContentView.swift in Sources */,
@@ -682,6 +709,7 @@
 				B205719828E151B50076EC9E /* ScaledFontModifier.swift in Sources */,
 				B2FCC70828CB41570091A202 /* Dimensions.swift in Sources */,
 				B2FCC72828D4645D0091A202 /* CustomFont.swift in Sources */,
+				B28795C328FD002E00614653 /* IconName.swift in Sources */,
 				B205719C28E1524B0076EC9E /* TextStyleable.swift in Sources */,
 				E674B1F628B74EE500C689A2 /* UI.swift in Sources */,
 				B2FCC69C28CB2FCA0091A202 /* ThemeColors.swift in Sources */,
