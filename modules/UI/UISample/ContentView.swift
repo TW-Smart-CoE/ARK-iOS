@@ -29,6 +29,12 @@ struct ContentView: View {
                 } label: {
                     Text("Typography Sample")
                 }
+
+                NavigationLink {
+                    IconSampleView()
+                } label: {
+                    Text("Icon Sample")
+                }
             }
             .navigationTitle("Sample List")
             .navigationBarTitleDisplayMode(.inline)
