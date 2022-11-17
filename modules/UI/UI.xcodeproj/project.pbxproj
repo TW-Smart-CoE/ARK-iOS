@@ -17,10 +17,10 @@
 		B28795C328FD002E00614653 /* IconName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28795C228FD002E00614653 /* IconName.swift */; };
 		B28795C528FD012D00614653 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28795C428FD012D00614653 /* Icons.xcassets */; };
 		B28795C828FD0D0900614653 /* IconSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28795C728FD0D0900614653 /* IconSampleView.swift */; };
-		B2A5EFF128BF52C500F3E391 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2A5EFF028BF52C500F3E391 /* Colors.xcassets */; };
-		B2A5EFF328BF534D00F3E391 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5EFF228BF534D00F3E391 /* Colors.swift */; };
-		B2FCC69C28CB2FCA0091A202 /* ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */; };
-		B2FCC69E28CB2FD90091A202 /* ThemeColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FCC69D28CB2FD90091A202 /* ThemeColors.xcassets */; };
+		B2A5EFF128BF52C500F3E391 /* ColorPalette.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2A5EFF028BF52C500F3E391 /* ColorPalette.xcassets */; };
+		B2A5EFF328BF534D00F3E391 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A5EFF228BF534D00F3E391 /* ColorPalette.swift */; };
+		B2FCC69C28CB2FCA0091A202 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCC69B28CB2FCA0091A202 /* Colors.swift */; };
+		B2FCC69E28CB2FD90091A202 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FCC69D28CB2FD90091A202 /* Colors.xcassets */; };
 		B2FCC6DA28CB3B420091A202 /* UISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCC6D928CB3B420091A202 /* UISampleApp.swift */; };
 		B2FCC6DC28CB3B420091A202 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCC6DB28CB3B420091A202 /* ContentView.swift */; };
 		B2FCC6DE28CB3B440091A202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2FCC6DD28CB3B440091A202 /* Assets.xcassets */; };
@@ -114,10 +114,10 @@
 		B28795C228FD002E00614653 /* IconName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconName.swift; sourceTree = "<group>"; };
 		B28795C428FD012D00614653 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		B28795C728FD0D0900614653 /* IconSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSampleView.swift; sourceTree = "<group>"; };
-		B2A5EFF028BF52C500F3E391 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		B2A5EFF228BF534D00F3E391 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColors.swift; sourceTree = "<group>"; };
-		B2FCC69D28CB2FD90091A202 /* ThemeColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThemeColors.xcassets; sourceTree = "<group>"; };
+		B2A5EFF028BF52C500F3E391 /* ColorPalette.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorPalette.xcassets; sourceTree = "<group>"; };
+		B2A5EFF228BF534D00F3E391 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		B2FCC69B28CB2FCA0091A202 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B2FCC69D28CB2FD90091A202 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B2FCC6D728CB3B420091A202 /* UISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FCC6D928CB3B420091A202 /* UISampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISampleApp.swift; sourceTree = "<group>"; };
 		B2FCC6DB28CB3B420091A202 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -261,6 +261,9 @@
 			isa = PBXGroup;
 			children = (
 				B2A5EFEF28BF52A300F3E391 /* Colors */,
+				B2FCC70628CB41470091A202 /* Dimension */,
+				B28795C128FD001A00614653 /* Image */,
+				B2FCC70928D45CDC0091A202 /* Typography */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -268,10 +271,10 @@
 		B2A5EFEF28BF52A300F3E391 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
-				B2A5EFF028BF52C500F3E391 /* Colors.xcassets */,
-				B2FCC69D28CB2FD90091A202 /* ThemeColors.xcassets */,
-				B2A5EFF228BF534D00F3E391 /* Colors.swift */,
-				B2FCC69B28CB2FCA0091A202 /* ThemeColors.swift */,
+				B2A5EFF028BF52C500F3E391 /* ColorPalette.xcassets */,
+				B2FCC69D28CB2FD90091A202 /* Colors.xcassets */,
+				B2A5EFF228BF534D00F3E391 /* ColorPalette.swift */,
+				B2FCC69B28CB2FCA0091A202 /* Colors.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -387,9 +390,6 @@
 		E604932228A22E60005C737A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B28795C128FD001A00614653 /* Image */,
-				B2FCC70928D45CDC0091A202 /* Typography */,
-				B2FCC70628CB41470091A202 /* Dimension */,
 				B2A5EFEE28BF529D00F3E391 /* Theme */,
 				E604932328A22E60005C737A /* UI.h */,
 				E674B1F528B74EE500C689A2 /* UI.swift */,
@@ -597,8 +597,8 @@
 				B2FCC72228D4643B0091A202 /* LICENSE.txt in Resources */,
 				B2FCC72628D4643B0091A202 /* Roboto-Black.ttf in Resources */,
 				B2FCC72428D4643B0091A202 /* Roboto-Bold.ttf in Resources */,
-				B2A5EFF128BF52C500F3E391 /* Colors.xcassets in Resources */,
-				B2FCC69E28CB2FD90091A202 /* ThemeColors.xcassets in Resources */,
+				B2A5EFF128BF52C500F3E391 /* ColorPalette.xcassets in Resources */,
+				B2FCC69E28CB2FD90091A202 /* Colors.xcassets in Resources */,
 				B2FCC71F28D4643B0091A202 /* Roboto-BoldItalic.ttf in Resources */,
 				B2FCC71C28D4643B0091A202 /* Roboto-Regular.ttf in Resources */,
 				B2FCC71E28D4643B0091A202 /* Roboto-ThinItalic.ttf in Resources */,
@@ -704,7 +704,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2FCC70B28D45D220091A202 /* TypographyStyle.swift in Sources */,
-				B2A5EFF328BF534D00F3E391 /* Colors.swift in Sources */,
+				B2A5EFF328BF534D00F3E391 /* ColorPalette.swift in Sources */,
 				B205719A28E152110076EC9E /* FontWeight.swift in Sources */,
 				B205719828E151B50076EC9E /* ScaledFontModifier.swift in Sources */,
 				B2FCC70828CB41570091A202 /* Dimensions.swift in Sources */,
@@ -712,7 +712,7 @@
 				B28795C328FD002E00614653 /* IconName.swift in Sources */,
 				B205719C28E1524B0076EC9E /* TextStyleable.swift in Sources */,
 				E674B1F628B74EE500C689A2 /* UI.swift in Sources */,
-				B2FCC69C28CB2FCA0091A202 /* ThemeColors.swift in Sources */,
+				B2FCC69C28CB2FCA0091A202 /* Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

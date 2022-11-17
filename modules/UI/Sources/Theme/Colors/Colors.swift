@@ -1,5 +1,5 @@
 //
-//  ColorName.swift
+//  Colors.swift
 //  UI
 //
 //  Copyright 2022 Thoughtworks, Inc. All rights reserved.
@@ -9,43 +9,31 @@ import Foundation
 import SwiftUI
 
 public enum Colors: String {
-    // black
-    case black
-    // white
-    case white
-    // gray
-    case gray50
-    case gray100
-    case gray200
-    case gray300
-    case gray400
-    case gray500
-    case gray600
-    case gray700
-    case gray800
-    case gray900
-    // blue
-    case blue
-    // light blue
-    case lightBlue50
-    case lightBlue300
-    // light green
-    case lightGreen200
-    case lightGreen700
-    // purple
-    case purple200
-    case purple500
-    case purple700
-    // teal
-    case teal200
-    case teal700
-    // red
-    case red700
-    case red900
+    case primary
+    case primaryVariant
+    case secondary
+    case secondaryVariant
+    case background
+    case surface
+    case error
+    case onPrimary
+    case onSecondary
+    case onBackground
+    case onSurface
+    case onError
+    case statusBarColor
 }
 
 public extension Colors {
     var color: Color {
-        Color(self.rawValue, bundle: Bundle.uiBundle)
+        switch self {
+        case .statusBarColor:
+            // Colors枚举相当于颜色值仓库，其他所有使用颜色值的地方都可以从这里取值。
+            // 然后ThemeColors，是基于UI Guide设计的一个应用主题色集合，它可以自定义颜色值，也可以使用Colors里面定义好的色值。
+            // 所以，这里的statusBarColor就是使用了Colors里面定义好的blue。
+            return ColorPalette.blue.color
+        default:
+            return Color(self.rawValue, bundle: .uiBundle)
+        }
     }
 }

@@ -13,15 +13,15 @@ struct DimensionSampleView: View {
         VStack(spacing: .smallSpacing) {
             Text("Test ColorName with dynamic color")
                 .padding(.bottom, .smallPadding)
-                .foregroundColor(Colors.blue.color)
+                .foregroundColor(ColorPalette.blue.color)
 
             Text("Test ColorName with solid color")
                 .padding(.bottom, .standardPadding)
-                .foregroundColor(Colors.teal200.color)
+                .foregroundColor(ColorPalette.teal200.color)
 
             Text("Test ThemeColors")
                 .padding()
-                .foregroundColor(ThemeColors.primary.color)
+                .foregroundColor(Colors.primary.color)
         }
     }
 }
