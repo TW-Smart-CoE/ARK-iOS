@@ -11,12 +11,17 @@ public struct ExampleHomeView: View {
     public init() { }
     
     public var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, ExampleHomeView!")
+        NavigationView {
+            List {
+                NavigationLink {
+                    NetworkView()
+                } label: {
+                    Text("Network Sample")
+                }
+            }
+            .navigationTitle("Ark Example List")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

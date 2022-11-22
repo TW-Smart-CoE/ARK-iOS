@@ -6,6 +6,7 @@ PODS:
     - Alamofire (~> 5.6)
   - Examples (0.0.1):
     - Alamofire (~> 5.6)
+    - Core
   - SwiftLint (0.48.0)
   - UI (0.0.1)
 
@@ -32,7 +33,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   Core: 49389ad3275c8cd2d60727bd0d747197c68be285
-  Examples: 19e2a49633c97f4c33b15363a6c5f52f8c3a16f6
+  Examples: a85286e567cdeb245917cbe1e5094816b9f9fe3b
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
   UI: 1af87e03025bfb7106afb4a4c56a12608e8c373d
 
