@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (5.6.4)
+  - Core (0.0.1):
+    - Alamofire (~> 5.6)
+  - Core/Tests (0.0.1):
+    - Alamofire (~> 5.6)
+  - UI (0.0.1)
+
+DEPENDENCIES:
+  - Core (from `../Core`)
+  - Core/Tests (from `../Core`)
+  - UI (from `../UI`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+
+EXTERNAL SOURCES:
+  Core:
+    :path: "../Core"
+  UI:
+    :path: "../UI"
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Core: 49389ad3275c8cd2d60727bd0d747197c68be285
+  UI: 1af87e03025bfb7106afb4a4c56a12608e8c373d
+
+PODFILE CHECKSUM: 565be4de61c3e03eeced763abe76dc2af5fc12ff
+
+COCOAPODS: 1.11.3

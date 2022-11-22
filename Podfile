@@ -7,6 +7,7 @@ use_frameworks!
 def modules
   pod 'Core', :path => './modules/Core', :testspecs => ['Tests']
   pod 'UI', :path => './modules/UI'
+  pod 'Examples', :path => './modules/Examples'
 end
 
 target 'ARK-iOS' do
