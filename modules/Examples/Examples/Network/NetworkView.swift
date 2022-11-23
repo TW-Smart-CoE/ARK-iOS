@@ -2,7 +2,7 @@
 //  NetworkView.swift
 //  Examples
 //
-//  Created by Renjun Li on 2022/11/22.
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved.
 //
 
 import SwiftUI
@@ -34,24 +34,5 @@ struct NetworkView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-}
-
-struct NetworkResultView: View {
-    @ObservedObject
-    private var viewModel = NetworkViewModel()
-    let method: HTTPMethod
-    
-    init(method: HTTPMethod) {
-        self.method = method
-    }
-    
-    var body: some View {
-        VStack {
-            Text(viewModel.result)
-        }.onAppear(perform: {
-            var viewModel = NetworkViewModel()
-            viewModel.request(method)
-        })
     }
 }

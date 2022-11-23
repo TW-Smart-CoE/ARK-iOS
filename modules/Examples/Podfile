@@ -12,6 +12,8 @@ target 'Examples' do
 
   target 'ExamplesTests' do
     inherit! :search_paths
+    # Pods for testing
+    shared
   end
 
   target 'ExamplesUITests' do

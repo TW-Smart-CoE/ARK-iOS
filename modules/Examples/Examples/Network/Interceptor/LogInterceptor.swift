@@ -2,7 +2,7 @@
 //  LogInterceptor.swift
 //  Examples
 //
-//  Created by Renjun Li on 2022/11/22.
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved.
 //
 
 import Core
