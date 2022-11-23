@@ -4,19 +4,18 @@ platform :ios, '14.0'
 
 use_frameworks!
 
-target 'Examples' do
+target 'Samples' do
   use_frameworks!
   
   pod 'Core', :path => '../Core', :testspecs => ['Tests']
   pod 'UI', :path => '../UI'
 
-  target 'ExamplesTests' do
+  target 'SamplesTests' do
     inherit! :search_paths
     # Pods for testing
-    shared
   end
 
-  target 'ExamplesUITests' do
+  target 'SamplesUITests' do
   end
 
 end

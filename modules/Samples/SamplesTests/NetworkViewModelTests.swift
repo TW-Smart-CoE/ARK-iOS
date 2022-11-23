@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Examples
+@testable import Samples
 import Combine
 import Alamofire
 

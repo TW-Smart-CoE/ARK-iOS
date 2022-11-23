@@ -1,6 +1,6 @@
 //
-//  ExamplesApp.swift
-//  Examples
+//  SamplesApp.swift
+//  Samples
 //
 //  Copyright 2022 Thoughtworks, Inc. All rights reserved.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct ExamplesApp: App {
+struct SamplesApp: App {
     var body: some Scene {
         WindowGroup {
             ExampleHomeView()
