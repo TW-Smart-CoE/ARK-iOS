@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Examples
 
 @main
 struct ARKApp: App {
@@ -26,7 +25,7 @@ struct AppView: View {
         if appDelegate.showDeveloperTools {
             DevelopMenu()
         } else {
-            ExampleHomeView()
+            ContentView()
         }
     }
 }
