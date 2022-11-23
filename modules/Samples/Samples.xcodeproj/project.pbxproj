@@ -23,6 +23,13 @@
 		F8B13356292D117900C4BF13 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13355292D117900C4BF13 /* NetworkView.swift */; };
 		F8B13359292D123300C4BF13 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13358292D123300C4BF13 /* NetworkViewModel.swift */; };
 		F8B13360292D230D00C4BF13 /* LogInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1335F292D230D00C4BF13 /* LogInterceptor.swift */; };
+		F8FBEB8B292E6D30003DF468 /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB8A292E6D30003DF468 /* NetworkRepository.swift */; };
+		F8FBEB8D292E6DEA003DF468 /* StandardNetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB8C292E6DEA003DF468 /* StandardNetworkRepository.swift */; };
+		F8FBEB8F292E7271003DF468 /* NetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB8E292E7271003DF468 /* NetworkMapper.swift */; };
+		F8FBEB91292E74AA003DF468 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB90292E74AA003DF468 /* NetworkResponse.swift */; };
+		F8FBEB93292E762B003DF468 /* NetworkFeatureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB92292E762B003DF468 /* NetworkFeatureData.swift */; };
+		F8FBEB95292E79E6003DF468 /* NetworkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB94292E79E6003DF468 /* NetworkUseCase.swift */; };
+		F8FBEB97292E7DD4003DF468 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB96292E7DD4003DF468 /* NetworkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +80,13 @@
 		F8B13355292D117900C4BF13 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
 		F8B13358292D123300C4BF13 /* NetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
 		F8B1335F292D230D00C4BF13 /* LogInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInterceptor.swift; sourceTree = "<group>"; };
+		F8FBEB8A292E6D30003DF468 /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
+		F8FBEB8C292E6DEA003DF468 /* StandardNetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardNetworkRepository.swift; sourceTree = "<group>"; };
+		F8FBEB8E292E7271003DF468 /* NetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMapper.swift; sourceTree = "<group>"; };
+		F8FBEB90292E74AA003DF468 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		F8FBEB92292E762B003DF468 /* NetworkFeatureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFeatureData.swift; sourceTree = "<group>"; };
+		F8FBEB94292E79E6003DF468 /* NetworkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUseCase.swift; sourceTree = "<group>"; };
+		F8FBEB96292E7DD4003DF468 /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		FA67B115CFCB12644876854F /* Pods-SamplesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamplesTests.release.xcconfig"; path = "Target Support Files/Pods-SamplesTests/Pods-SamplesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +160,7 @@
 		F87D882E292E1DD4003AAC0F /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				F8FBEB8E292E7271003DF468 /* NetworkMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -153,6 +168,7 @@
 		F87D882F292E1E08003AAC0F /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				F8FBEB90292E74AA003DF468 /* NetworkResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -160,6 +176,7 @@
 		F87D8830292E1E0F003AAC0F /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				F8FBEB8A292E6D30003DF468 /* NetworkRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -169,21 +186,23 @@
 			children = (
 				F87D8834292E1E6D003AAC0F /* UseCase */,
 				F87D8833292E1E5E003AAC0F /* Repository */,
-				F87D8832292E1E4D003AAC0F /* Entities */,
+				F87D8832292E1E4D003AAC0F /* Entitity */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		F87D8832292E1E4D003AAC0F /* Entities */ = {
+		F87D8832292E1E4D003AAC0F /* Entitity */ = {
 			isa = PBXGroup;
 			children = (
+				F8FBEB92292E762B003DF468 /* NetworkFeatureData.swift */,
 			);
-			path = Entities;
+			path = Entitity;
 			sourceTree = "<group>";
 		};
 		F87D8833292E1E5E003AAC0F /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				F8FBEB8C292E6DEA003DF468 /* StandardNetworkRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -191,6 +210,7 @@
 		F87D8834292E1E6D003AAC0F /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				F8FBEB94292E79E6003DF468 /* NetworkUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -200,6 +220,7 @@
 			children = (
 				F8B13355292D117900C4BF13 /* NetworkView.swift */,
 				F8B13358292D123300C4BF13 /* NetworkViewModel.swift */,
+				F8FBEB96292E7DD4003DF468 /* NetworkViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -550,8 +571,15 @@
 				F8B13360292D230D00C4BF13 /* LogInterceptor.swift in Sources */,
 				F8B13352292D100C00C4BF13 /* ExampleHomeView.swift in Sources */,
 				F8B13359292D123300C4BF13 /* NetworkViewModel.swift in Sources */,
+				F8FBEB8F292E7271003DF468 /* NetworkMapper.swift in Sources */,
 				F8B1331C292D0BC700C4BF13 /* ContentView.swift in Sources */,
+				F8FBEB97292E7DD4003DF468 /* NetworkViewController.swift in Sources */,
+				F8FBEB8B292E6D30003DF468 /* NetworkRepository.swift in Sources */,
 				F8B1331A292D0BC700C4BF13 /* SamplesApp.swift in Sources */,
+				F8FBEB93292E762B003DF468 /* NetworkFeatureData.swift in Sources */,
+				F8FBEB95292E79E6003DF468 /* NetworkUseCase.swift in Sources */,
+				F8FBEB8D292E6DEA003DF468 /* StandardNetworkRepository.swift in Sources */,
+				F8FBEB91292E74AA003DF468 /* NetworkResponse.swift in Sources */,
 				F8B13356292D117900C4BF13 /* NetworkView.swift in Sources */,
 				F8B13351292D100C00C4BF13 /* ExampleHomeViewModel.swift in Sources */,
 			);

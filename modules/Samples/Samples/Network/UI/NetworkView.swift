@@ -9,13 +9,17 @@ import SwiftUI
 import Alamofire
 
 struct NetworkView: View {
-    @StateObject
-    private var viewModel = NetworkViewModel()
+    @ObservedObject
+    private var viewModel: NetworkViewModel
+    
+    init(viewModel: NetworkViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         List {
-            if !viewModel.result.isEmpty {
-                Text(viewModel.result)
+            if let currentData = viewModel.currentData {
+                Text(currentData.userAgent)
             }
             if viewModel.isLoading {
                 ProgressView()

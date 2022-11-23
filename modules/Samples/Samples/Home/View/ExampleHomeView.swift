@@ -14,7 +14,7 @@ public struct ExampleHomeView: View {
         NavigationView {
             List {
                 NavigationLink {
-                    NetworkView()
+                    
                 } label: {
                     Text("Network Sample")
                 }
