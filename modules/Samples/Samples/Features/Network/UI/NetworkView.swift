@@ -19,11 +19,10 @@ struct NetworkView: View {
     var body: some View {
         List {
             if let currentData = viewModel.currentData {
-                Text(currentData.userAgent)
+                Text("response").foregroundColor(.red)
+                Text(currentData.toJSONString())
             }
-            if viewModel.isLoading {
-                ProgressView()
-            }
+         
             Button("GET") {
                 viewModel.request(.get)
             }
@@ -37,6 +36,11 @@ struct NetworkView: View {
                 viewModel.request(.put)
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .overlay {
+            if viewModel.isLoading {
+                ProgressView()
+                    .tint(.red)
+            }
+        }
     }
 }

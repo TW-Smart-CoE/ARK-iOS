@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NetworkFeatureData {
+struct NetworkFeatureData: Codable {
     let accept: String
     let acceptEncoding: String
     let acceptLanguage: String

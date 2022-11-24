@@ -17,7 +17,6 @@ enum ApiError: Error {
 
 class StandardNetworkRepository: NetworkRepository {
     enum Constants {
-        static let baseURL = "https://httpbin.org"
         static let getPath = "/get"
         static let postPath = "/post"
         static let putPath = "/put"
@@ -62,6 +61,7 @@ class StandardNetworkRepository: NetworkRepository {
                         let decoder = JSONDecoder()
                         let response = try decoder.decode(NetworkResponse.self, from: data)
                         let result = NetworkMapper.transform(response)
+                        Log.info(tag: "response", message: "\(result)")
                         promise(.success(result))
                     } catch {
                         promise(.failure(ApiError.dataParseError))

@@ -10,9 +10,12 @@ import UIKit
 import SwiftUI
 
 class ExampleHomeViewController: UIHostingController<ExampleHomeView> {
+    private let viewModel: ExampleHomeViewModel
     
-    init() {
-        super.init(rootView: ExampleHomeView())
+    init(viewModel: ExampleHomeViewModel) {
+        self.viewModel = viewModel
+        let view = ExampleHomeView(viewModel: viewModel)
+        super.init(rootView: view)
     }
     
     override func viewDidLoad() {
