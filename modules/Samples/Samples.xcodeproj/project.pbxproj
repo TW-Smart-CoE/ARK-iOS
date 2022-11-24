@@ -19,6 +19,9 @@
 		F8200254292F2769006DA54D /* NetworkMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200253292F2769006DA54D /* NetworkMapperTests.swift */; };
 		F8200257292F41AA006DA54D /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200256292F41AA006DA54D /* HomeViewModelTests.swift */; };
 		F820025B292F4C0B006DA54D /* Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = F820025A292F4C0B006DA54D /* Samples.swift */; };
+		F8200261292F66AD006DA54D /* CommonDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200260292F66AD006DA54D /* CommonDependency.swift */; };
+		F8200264292F6888006DA54D /* BinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200263292F6888006DA54D /* BinDataSource.swift */; };
+		F8200266292F6918006DA54D /* RemoteBinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200265292F6918006DA54D /* RemoteBinDataSource.swift */; };
 		F87D8828292DDEA0003AAC0F /* NetworkViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87D8827292DDEA0003AAC0F /* NetworkViewModelTests.swift */; };
 		F8B1331E292D0BCA00C4BF13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B1331D292D0BCA00C4BF13 /* Assets.xcassets */; };
 		F8B1332B292D0BCB00C4BF13 /* Samplesests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1332A292D0BCB00C4BF13 /* Samplesests.swift */; };
@@ -38,7 +41,7 @@
 		F8FBEB97292E7DD4003DF468 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB96292E7DD4003DF468 /* NetworkViewController.swift */; };
 		F8FBEB99292E7FAA003DF468 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB98292E7FAA003DF468 /* HomeViewController.swift */; };
 		F8FBEB9B292E807E003DF468 /* Appdelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB9A292E807E003DF468 /* Appdelegate.swift */; };
-		F8FBEB9D292E8215003DF468 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB9C292E8215003DF468 /* HomeCoordinator.swift */; };
+		F8FBEB9D292E8215003DF468 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB9C292E8215003DF468 /* HomeNavigationController.swift */; };
 		F8FBEB9F292E84E8003DF468 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FBEB9E292E84E8003DF468 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		F8200253292F2769006DA54D /* NetworkMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMapperTests.swift; sourceTree = "<group>"; };
 		F8200256292F41AA006DA54D /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		F820025A292F4C0B006DA54D /* Samples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Samples.swift; sourceTree = "<group>"; };
+		F8200260292F66AD006DA54D /* CommonDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDependency.swift; sourceTree = "<group>"; };
+		F8200263292F6888006DA54D /* BinDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinDataSource.swift; sourceTree = "<group>"; };
+		F8200265292F6918006DA54D /* RemoteBinDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBinDataSource.swift; sourceTree = "<group>"; };
 		F87D8827292DDEA0003AAC0F /* NetworkViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModelTests.swift; sourceTree = "<group>"; };
 		F8B13316292D0BC700C4BF13 /* Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B1331D292D0BCA00C4BF13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,7 +111,7 @@
 		F8FBEB96292E7DD4003DF468 /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		F8FBEB98292E7FAA003DF468 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F8FBEB9A292E807E003DF468 /* Appdelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appdelegate.swift; sourceTree = "<group>"; };
-		F8FBEB9C292E8215003DF468 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F8FBEB9C292E8215003DF468 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		F8FBEB9E292E84E8003DF468 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F8FBEBA0292E86DF003DF468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FA67B115CFCB12644876854F /* Pods-SamplesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamplesTests.release.xcconfig"; path = "Target Support Files/Pods-SamplesTests/Pods-SamplesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,57 +174,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F820023E292F12A3006DA54D /* Features */ = {
+		F820023E292F12A3006DA54D /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				F87D882D292E1D7B003AAC0F /* Data */,
+				F820025F292F662A006DA54D /* DI */,
 				F8B1334C292D100C00C4BF13 /* Home */,
 				F8B13354292D115200C4BF13 /* Network */,
 			);
-			path = Features;
+			path = Component;
 			sourceTree = "<group>";
 		};
-		F8200240292F12D1006DA54D /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				F8FBEB9C292E8215003DF468 /* HomeCoordinator.swift */,
-				F8200242292F1402006DA54D /* HomeNavigator.swift */,
-				F8200249292F1720006DA54D /* StandardHomeDependency.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		F8200241292F12F5006DA54D /* Vendor */ = {
+		F8200241292F12F5006DA54D /* Vender */ = {
 			isa = PBXGroup;
 			children = (
 				F820024E292F20F2006DA54D /* Extension */,
 				F8B1335C292D22AF00C4BF13 /* Interceptor */,
 			);
-			path = Vendor;
+			path = Vender;
 			sourceTree = "<group>";
 		};
 		F8200244292F145A006DA54D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F8FBEB9C292E8215003DF468 /* HomeNavigationController.swift */,
+				F8200242292F1402006DA54D /* HomeNavigator.swift */,
 				F8B13350292D100C00C4BF13 /* HomeView.swift */,
 				F8FBEB98292E7FAA003DF468 /* HomeViewController.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		F8200245292F148F006DA54D /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				F8200246292F1498006DA54D /* Entity */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		F8200246292F1498006DA54D /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				F8200247292F14A7006DA54D /* HomeItem.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		F820024B292F1AF1006DA54D /* AppConfiguration */ = {
@@ -279,11 +263,39 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F820025E292F6596006DA54D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8200247292F14A7006DA54D /* HomeItem.swift */,
+				F8FBEB92292E762B003DF468 /* NetworkFeatureData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F820025F292F662A006DA54D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				F8200249292F1720006DA54D /* StandardHomeDependency.swift */,
+				F8200260292F66AD006DA54D /* CommonDependency.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		F8200262292F6834006DA54D /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				F8200263292F6888006DA54D /* BinDataSource.swift */,
+				F8200265292F6918006DA54D /* RemoteBinDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		F87D882D292E1D7B003AAC0F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F87D8834292E1E6D003AAC0F /* UseCase */,
+				F820025E292F6596006DA54D /* Model */,
 				F87D8830292E1E0F003AAC0F /* Repository */,
-				F87D882F292E1E08003AAC0F /* Entity */,
 				F87D882E292E1DD4003AAC0F /* Mapper */,
 			);
 			path = Data;
@@ -308,33 +320,10 @@
 		F87D8830292E1E0F003AAC0F /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				F8FBEB8A292E6D30003DF468 /* NetworkRepository.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		F87D8831292E1E44003AAC0F /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				F87D8834292E1E6D003AAC0F /* UseCase */,
-				F87D8833292E1E5E003AAC0F /* Repository */,
-				F87D8832292E1E4D003AAC0F /* Entitity */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		F87D8832292E1E4D003AAC0F /* Entitity */ = {
-			isa = PBXGroup;
-			children = (
-				F8FBEB92292E762B003DF468 /* NetworkFeatureData.swift */,
-			);
-			path = Entitity;
-			sourceTree = "<group>";
-		};
-		F87D8833292E1E5E003AAC0F /* Repository */ = {
-			isa = PBXGroup;
-			children = (
+				F8200262292F6834006DA54D /* DataSource */,
+				F87D882F292E1E08003AAC0F /* Entity */,
 				F8FBEB8C292E6DEA003DF468 /* StandardNetworkRepository.swift */,
+				F8FBEB8A292E6D30003DF468 /* NetworkRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -382,8 +371,8 @@
 			isa = PBXGroup;
 			children = (
 				F820024B292F1AF1006DA54D /* AppConfiguration */,
-				F820023E292F12A3006DA54D /* Features */,
-				F8200241292F12F5006DA54D /* Vendor */,
+				F820023E292F12A3006DA54D /* Component */,
+				F8200241292F12F5006DA54D /* Vender */,
 				F8FBEB9A292E807E003DF468 /* Appdelegate.swift */,
 				F8B1331D292D0BCA00C4BF13 /* Assets.xcassets */,
 				F8FBEBA0292E86DF003DF468 /* Info.plist */,
@@ -416,9 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				F820025D292F5753006DA54D /* ViewModel */,
-				F8200245292F148F006DA54D /* Domain */,
 				F8200244292F145A006DA54D /* UI */,
-				F8200240292F12D1006DA54D /* Coordinator */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -428,8 +415,6 @@
 			children = (
 				F820025C292F5742006DA54D /* ViewModel */,
 				F87D8835292E1EB2003AAC0F /* UI */,
-				F87D8831292E1E44003AAC0F /* Domain */,
-				F87D882D292E1D7B003AAC0F /* Data */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -680,15 +665,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8200264292F6888006DA54D /* BinDataSource.swift in Sources */,
 				F8B13360292D230D00C4BF13 /* LogInterceptor.swift in Sources */,
 				F8B13352292D100C00C4BF13 /* HomeView.swift in Sources */,
 				F820024D292F1B01006DA54D /* EnvironmentConfiguration.swift in Sources */,
 				F8200243292F1402006DA54D /* HomeNavigator.swift in Sources */,
 				F8200250292F211B006DA54D /* CodableExtension.swift in Sources */,
 				F8B13359292D123300C4BF13 /* NetworkViewModel.swift in Sources */,
-				F8FBEB9D292E8215003DF468 /* HomeCoordinator.swift in Sources */,
+				F8FBEB9D292E8215003DF468 /* HomeNavigationController.swift in Sources */,
 				F8FBEB8F292E7271003DF468 /* NetworkMapper.swift in Sources */,
 				F820025B292F4C0B006DA54D /* Samples.swift in Sources */,
+				F8200261292F66AD006DA54D /* CommonDependency.swift in Sources */,
 				F8FBEB99292E7FAA003DF468 /* HomeViewController.swift in Sources */,
 				F820024A292F1720006DA54D /* StandardHomeDependency.swift in Sources */,
 				F8FBEB97292E7DD4003DF468 /* NetworkViewController.swift in Sources */,
@@ -698,6 +685,7 @@
 				F8FBEB95292E79E6003DF468 /* NetworkUseCase.swift in Sources */,
 				F8FBEB8D292E6DEA003DF468 /* StandardNetworkRepository.swift in Sources */,
 				F8FBEB91292E74AA003DF468 /* NetworkResponse.swift in Sources */,
+				F8200266292F6918006DA54D /* RemoteBinDataSource.swift in Sources */,
 				F8200248292F14A7006DA54D /* HomeItem.swift in Sources */,
 				F8B13356292D117900C4BF13 /* NetworkView.swift in Sources */,
 				F8B13351292D100C00C4BF13 /* HomeViewModel.swift in Sources */,

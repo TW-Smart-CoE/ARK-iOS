@@ -7,43 +7,43 @@
 
 import Foundation
 
-struct NetworkResponse: Codable {
-    let origin: String
-    let url: String
-    let header: NetworkResponseHeader
+public struct NetworkResponse: Codable {
+    public let origin: String
+    public let url: String
+    public let header: NetworkResponseHeader
     
-    init(origin: String, url: String, header: NetworkResponseHeader) {
+    public init(origin: String, url: String, header: NetworkResponseHeader) {
         self.origin = origin
         self.url = url
         self.header = header
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.origin = (try? container.decode(String.self, forKey: .origin)) ?? ""
         self.url = (try? container.decode(String.self, forKey: .url)) ?? ""
         self.header = (try? container.decode(NetworkResponseHeader.self, forKey: .header)) ?? .default
     }
     
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case origin
         case url
         case header
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.origin, forKey: .origin)
         try container.encode(self.url, forKey: .url)
     }
 }
 
-struct NetworkResponseHeader: Codable {
-    let accept: String
-    let acceptEncoding: String
-    let acceptLanguage: String
-    let host: String
-    let userAgent: String
+public struct NetworkResponseHeader: Codable {
+    public let accept: String
+    public let acceptEncoding: String
+    public let acceptLanguage: String
+    public let host: String
+    public let userAgent: String
     
     enum CodingKeys: String, CodingKey {
         case accept = "Accept"
@@ -53,7 +53,7 @@ struct NetworkResponseHeader: Codable {
         case userAgent = "User-Agent"
     }
     
-    internal init(
+    public init(
         accept: String,
         acceptEncoding: String,
         acceptLanguage: String,
@@ -67,7 +67,7 @@ struct NetworkResponseHeader: Codable {
         self.userAgent = userAgent
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.accept = (try? container.decode(String.self, forKey: .accept)) ?? ""
         self.acceptEncoding = (try? container.decode(String.self, forKey: .acceptEncoding)) ?? ""
@@ -76,7 +76,7 @@ struct NetworkResponseHeader: Codable {
         self.userAgent = (try? container.decode(String.self, forKey: .userAgent)) ?? ""
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.accept, forKey: .accept)
         try container.encode(self.acceptEncoding, forKey: .acceptEncoding)
@@ -86,7 +86,7 @@ struct NetworkResponseHeader: Codable {
     }
 }
 
-extension NetworkResponseHeader {
+public extension NetworkResponseHeader {
     static let `default`: NetworkResponseHeader = .init(
         accept: "",
         acceptEncoding: "",

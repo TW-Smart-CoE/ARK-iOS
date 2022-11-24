@@ -9,7 +9,7 @@ import Foundation
 import Core
 import Network
 
-class StandardHomeDependency: HomeDependency {
+class StandardHomeDependency: CommonDependency {
     let networkRepository: NetworkRepository
     
     init(networkRepository: NetworkRepository) {

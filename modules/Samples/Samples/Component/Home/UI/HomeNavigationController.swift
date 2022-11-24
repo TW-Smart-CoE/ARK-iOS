@@ -8,14 +8,10 @@
 import Foundation
 import UIKit
 
-public protocol HomeDependency {
-    var networkRepository: NetworkRepository { get }
-}
-
 public class HomeCoordinator: UINavigationController, HomeNavigator {
-    private let dependency: HomeDependency
+    private let dependency: CommonDependency
     
-    public init(dependency: HomeDependency) {
+    public init(dependency: CommonDependency) {
         self.dependency = dependency
         super.init(nibName: nil, bundle: nil)
     }

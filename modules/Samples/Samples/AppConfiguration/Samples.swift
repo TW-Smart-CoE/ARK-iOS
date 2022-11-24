@@ -10,7 +10,8 @@ import Foundation
 public class Samples {
     public static func homePage() -> HomeCoordinator {
         let envvironment = EnvironmentConfiguration.development
-        let repository = StandardNetworkRepository(service: envvironment.apiService)
+        let dataSource = RemoteBinDataSource(service: envvironment.apiService)
+        let repository = StandardNetworkRepository(dataSource: dataSource)
         let homeDependency = StandardHomeDependency(networkRepository: repository)
         let home = HomeCoordinator(dependency: homeDependency)
         let exampleViewModel = HomeViewModel(navigator: home)

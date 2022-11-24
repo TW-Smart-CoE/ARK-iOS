@@ -1,8 +1,8 @@
 //
-//  StandardNetworkRepository.swift
+//  RemoteBinDataSource.swift
 //  Samples
 //
-//  Copyright 2022 Thoughtworks, Inc. All rights reserved
+//  Created by Renjun Li on 2022/11/24.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ enum ApiError: Error {
     case serverError
 }
 
-class StandardNetworkRepository: NetworkRepository {
+class RemoteBinDataSource: BinDataSource {
     enum Constants {
         static let getPath = "/get"
         static let postPath = "/post"
@@ -28,7 +28,7 @@ class StandardNetworkRepository: NetworkRepository {
         self.service = service
     }
     
-    func makeGetRequest() -> AnyPublisher<NetworkFeatureData, Error> {
+    func makeGetRequest() -> AnyPublisher<NetworkResponse, Error> {
         // optional: add interceptor
         var chain = RequestInterceptorsChain.default
         chain.add(LogInterceptor())
@@ -36,23 +36,23 @@ class StandardNetworkRepository: NetworkRepository {
         return handleResponse(request)
     }
     
-    func makePostRequest() -> AnyPublisher<NetworkFeatureData, Error> {
+    func makePostRequest() -> AnyPublisher<NetworkResponse, Error> {
         let request = service.request(path: Constants.postPath, method: .post)
         return handleResponse(request)
     }
     
-    func makePutRequest() -> AnyPublisher<NetworkFeatureData, Error> {
+    func makePutRequest() -> AnyPublisher<NetworkResponse, Error> {
         let request = service.request(path: Constants.putPath, method: .put)
         return handleResponse(request)
     }
     
-    func makeDeleteRequest() -> AnyPublisher<NetworkFeatureData, Error> {
+    func makeDeleteRequest() -> AnyPublisher<NetworkResponse, Error> {
         let request = service.request(path: Constants.deletePath, method: .delete)
         return handleResponse(request)
     }
    
-    private func handleResponse(_ request: Alamofire.DataRequest) -> AnyPublisher<NetworkFeatureData, Error> {
-        return Future<NetworkFeatureData, Error> { promise in
+    private func handleResponse(_ request: Alamofire.DataRequest) -> AnyPublisher<NetworkResponse, Error> {
+        return Future<NetworkResponse, Error> { promise in
             request.response { afResponse in
                 switch afResponse.result {
                 case .success(let data):
@@ -60,9 +60,8 @@ class StandardNetworkRepository: NetworkRepository {
                     do {
                         let decoder = JSONDecoder()
                         let response = try decoder.decode(NetworkResponse.self, from: data)
-                        let result = NetworkMapper.transform(response)
-                        Log.info(tag: "response", message: "\(result)")
-                        promise(.success(result))
+                        Log.info(tag: "response", message: "\(response)")
+                        promise(.success(response))
                     } catch {
                         promise(.failure(ApiError.dataParseError))
                     }
