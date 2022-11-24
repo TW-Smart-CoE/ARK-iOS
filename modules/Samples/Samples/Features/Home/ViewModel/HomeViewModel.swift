@@ -2,15 +2,15 @@
 //  HomeViewModel.swift
 //  Samples
 //
-//  Created by Renjun Li on 2022/11/24.
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved
 //
 import Combine
 
-class HomeViewModel: ObservableObject {
+public class HomeViewModel: ObservableObject {
     @Published var itemList: [HomeItem] = [HomeItem(title: "Network", itemType: .network)]
     private weak var navigator: HomeNavigator?
     
-    init(navigator: HomeNavigator) {
+    public init(navigator: HomeNavigator) {
         self.navigator = navigator
     }
     

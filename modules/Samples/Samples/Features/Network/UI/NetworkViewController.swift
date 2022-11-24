@@ -2,13 +2,13 @@
 //  NetworkViewController.swift
 //  Samples
 //
-//  Created by Renjun Li on 2022/11/24.
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved
 //
 
 import UIKit
 import SwiftUI
 
-class NetworkViewController: UIHostingController<NetworkView> {    
+class NetworkViewController: UIHostingController<NetworkView> {
     init(viewModel: NetworkViewModel) {
         let networkView = NetworkView(viewModel: viewModel)
         super.init(rootView: networkView)

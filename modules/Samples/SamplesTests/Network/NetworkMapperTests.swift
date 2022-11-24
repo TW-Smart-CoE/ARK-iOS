@@ -8,7 +8,7 @@ import XCTest
 @testable import Samples
 
 final class NetworkMapperTests: XCTestCase {
-    func testResultISNotEmptyWhenDataIsCodable() {
+    func testTransform() {
         let serverResponse = NetworkResponse(
             origin: "origin",
             url: "url",

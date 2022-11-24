@@ -2,17 +2,17 @@
 //  NetworkFeatureData.swift
 //  Samples
 //
-//  Created by Renjun Li on 2022/11/23.
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved
 //
 
 import Foundation
 
-struct NetworkFeatureData: Codable {
-    let accept: String
-    let acceptEncoding: String
-    let acceptLanguage: String
-    let host: String
-    let userAgent: String
-    let origin: String
-    let url: String
+public struct NetworkFeatureData: Codable {
+    public let accept: String
+    public let acceptEncoding: String
+    public let acceptLanguage: String
+    public let host: String
+    public let userAgent: String
+    public let origin: String
+    public let url: String
 }

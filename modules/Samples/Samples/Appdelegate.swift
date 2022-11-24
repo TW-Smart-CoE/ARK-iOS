@@ -2,7 +2,7 @@
 //  Appdelegate.swift
 //  Samples
 //
-//  Created by Renjun Li on 2022/11/24.
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved
 //  swiftlint:disable line_length
 
 import Foundation
@@ -16,14 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let envvironment = EnvironmentConfiguration.development
-        let repository = StandardNetworkRepository(service: envvironment.apiService)
-        let homeDependency = StandardHomeDependency(networkRepository: repository)
-        let home = HomeCoordinator(dependency: homeDependency)
-        let exampleViewModel = HomeViewModel(navigator: home)
-        let homeVC = HomeViewController(viewModel: exampleViewModel)
-        home.addChild(homeVC)
-        window?.rootViewController = home
+        window?.rootViewController = Samples.homePage()
         window?.makeKeyAndVisible()
         return true
     }

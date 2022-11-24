@@ -2,14 +2,14 @@
 //  HomeViewController.swift
 //  Samples
 //
-//  Created by Renjun Li on 2022/11/24.
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved
 //
 
 import Foundation
 import UIKit
 import SwiftUI
 
-class HomeViewController: UIHostingController<HomeView> {
+public class HomeViewController: UIHostingController<HomeView> {
     private let viewModel: HomeViewModel
     
     init(viewModel: HomeViewModel) {
@@ -18,7 +18,7 @@ class HomeViewController: UIHostingController<HomeView> {
         super.init(rootView: view)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
     }

@@ -2,7 +2,7 @@
 //  EnvironmentConfiguration.swift
 //  Samples
 //
-//  Created by Renjun Li on 2022/11/24.
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved
 //
 
 import Foundation

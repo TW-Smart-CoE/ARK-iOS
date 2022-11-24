@@ -2,13 +2,13 @@
 //  NetworkRepository.swift
 //  Samples
 //
-//  Created by Renjun Li on 2022/11/23.
+//  Copyright 2022 Thoughtworks, Inc. All rights reserved
 //
 
 import Foundation
 import Combine
 
-protocol NetworkRepository {
+public protocol NetworkRepository {
     func makeGetRequest() -> AnyPublisher<NetworkFeatureData, Error>
     
     func makePostRequest() -> AnyPublisher<NetworkFeatureData, Error>
