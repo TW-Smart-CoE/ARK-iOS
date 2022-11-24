@@ -8,6 +8,5 @@
 import Foundation
 
 protocol HomeNavigator: AnyObject {
-    
     func navigateToNetwork()
 }

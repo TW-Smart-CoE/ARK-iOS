@@ -3,7 +3,7 @@
 //  Samples
 //
 //  Created by Renjun Li on 2022/11/24.
-//
+//  swiftlint:disable line_length
 
 import Foundation
 import UIKit
@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let repository = StandardNetworkRepository(service: envvironment.apiService)
         let homeDependency = StandardHomeDependency(networkRepository: repository)
         let home = HomeCoordinator(dependency: homeDependency)
-        let exampleViewModel = ExampleHomeViewModel(navigator: home)
-        let homeVC = ExampleHomeViewController(viewModel: exampleViewModel)
+        let exampleViewModel = HomeViewModel(navigator: home)
+        let homeVC = HomeViewController(viewModel: exampleViewModel)
         home.addChild(homeVC)
         window?.rootViewController = home
         window?.makeKeyAndVisible()

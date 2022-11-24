@@ -10,7 +10,6 @@ import Core
 import Network
 
 class StandardHomeDependency: HomeDependency {
-    
     let networkRepository: NetworkRepository
     
     init(networkRepository: NetworkRepository) {

@@ -15,9 +15,6 @@ struct HomeItem: Identifiable {
     var id: String {
         return itemType.rawValue
     }
-    
     let title: String
     let itemType: HomeItemType
-    
-
 }

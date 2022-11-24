@@ -15,13 +15,16 @@
 		F820024A292F1720006DA54D /* StandardHomeDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200249292F1720006DA54D /* StandardHomeDependency.swift */; };
 		F820024D292F1B01006DA54D /* EnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F820024C292F1B01006DA54D /* EnvironmentConfiguration.swift */; };
 		F8200250292F211B006DA54D /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F820024F292F211B006DA54D /* CodableExtension.swift */; };
+		F8200252292F2444006DA54D /* CodeleExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200251292F2444006DA54D /* CodeleExtensionTests.swift */; };
+		F8200254292F2769006DA54D /* NetworkMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200253292F2769006DA54D /* NetworkMapperTests.swift */; };
+		F8200257292F41AA006DA54D /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200256292F41AA006DA54D /* HomeViewModelTests.swift */; };
 		F87D8828292DDEA0003AAC0F /* NetworkViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87D8827292DDEA0003AAC0F /* NetworkViewModelTests.swift */; };
 		F8B1331E292D0BCA00C4BF13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B1331D292D0BCA00C4BF13 /* Assets.xcassets */; };
 		F8B1332B292D0BCB00C4BF13 /* Samplesests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1332A292D0BCB00C4BF13 /* Samplesests.swift */; };
 		F8B13335292D0BCB00C4BF13 /* SamplesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13334292D0BCB00C4BF13 /* SamplesUITests.swift */; };
 		F8B13337292D0BCB00C4BF13 /* SamplesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13336292D0BCB00C4BF13 /* SamplesUITestsLaunchTests.swift */; };
-		F8B13351292D100C00C4BF13 /* ExampleHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1334E292D100C00C4BF13 /* ExampleHomeViewModel.swift */; };
-		F8B13352292D100C00C4BF13 /* ExampleHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13350292D100C00C4BF13 /* ExampleHomeView.swift */; };
+		F8B13351292D100C00C4BF13 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1334E292D100C00C4BF13 /* HomeViewModel.swift */; };
+		F8B13352292D100C00C4BF13 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13350292D100C00C4BF13 /* HomeView.swift */; };
 		F8B13356292D117900C4BF13 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13355292D117900C4BF13 /* NetworkView.swift */; };
 		F8B13359292D123300C4BF13 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13358292D123300C4BF13 /* NetworkViewModel.swift */; };
 		F8B13360292D230D00C4BF13 /* LogInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1335F292D230D00C4BF13 /* LogInterceptor.swift */; };
@@ -32,7 +35,7 @@
 		F8FBEB93292E762B003DF468 /* NetworkFeatureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB92292E762B003DF468 /* NetworkFeatureData.swift */; };
 		F8FBEB95292E79E6003DF468 /* NetworkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB94292E79E6003DF468 /* NetworkUseCase.swift */; };
 		F8FBEB97292E7DD4003DF468 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB96292E7DD4003DF468 /* NetworkViewController.swift */; };
-		F8FBEB99292E7FAA003DF468 /* ExampleHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB98292E7FAA003DF468 /* ExampleHomeViewController.swift */; };
+		F8FBEB99292E7FAA003DF468 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB98292E7FAA003DF468 /* HomeViewController.swift */; };
 		F8FBEB9B292E807E003DF468 /* Appdelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB9A292E807E003DF468 /* Appdelegate.swift */; };
 		F8FBEB9D292E8215003DF468 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB9C292E8215003DF468 /* HomeCoordinator.swift */; };
 		F8FBEB9F292E84E8003DF468 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FBEB9E292E84E8003DF468 /* Launch Screen.storyboard */; };
@@ -75,6 +78,9 @@
 		F8200249292F1720006DA54D /* StandardHomeDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardHomeDependency.swift; sourceTree = "<group>"; };
 		F820024C292F1B01006DA54D /* EnvironmentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfiguration.swift; sourceTree = "<group>"; };
 		F820024F292F211B006DA54D /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
+		F8200251292F2444006DA54D /* CodeleExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeleExtensionTests.swift; sourceTree = "<group>"; };
+		F8200253292F2769006DA54D /* NetworkMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMapperTests.swift; sourceTree = "<group>"; };
+		F8200256292F41AA006DA54D /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		F87D8827292DDEA0003AAC0F /* NetworkViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModelTests.swift; sourceTree = "<group>"; };
 		F8B13316292D0BC700C4BF13 /* Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B1331D292D0BCA00C4BF13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,8 +89,8 @@
 		F8B13330292D0BCB00C4BF13 /* SamplesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamplesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B13334292D0BCB00C4BF13 /* SamplesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesUITests.swift; sourceTree = "<group>"; };
 		F8B13336292D0BCB00C4BF13 /* SamplesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		F8B1334E292D100C00C4BF13 /* ExampleHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleHomeViewModel.swift; sourceTree = "<group>"; };
-		F8B13350292D100C00C4BF13 /* ExampleHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleHomeView.swift; sourceTree = "<group>"; };
+		F8B1334E292D100C00C4BF13 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F8B13350292D100C00C4BF13 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F8B13355292D117900C4BF13 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
 		F8B13358292D123300C4BF13 /* NetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
 		F8B1335F292D230D00C4BF13 /* LogInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInterceptor.swift; sourceTree = "<group>"; };
@@ -95,7 +101,7 @@
 		F8FBEB92292E762B003DF468 /* NetworkFeatureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFeatureData.swift; sourceTree = "<group>"; };
 		F8FBEB94292E79E6003DF468 /* NetworkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUseCase.swift; sourceTree = "<group>"; };
 		F8FBEB96292E7DD4003DF468 /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
-		F8FBEB98292E7FAA003DF468 /* ExampleHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleHomeViewController.swift; sourceTree = "<group>"; };
+		F8FBEB98292E7FAA003DF468 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F8FBEB9A292E807E003DF468 /* Appdelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appdelegate.swift; sourceTree = "<group>"; };
 		F8FBEB9C292E8215003DF468 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		F8FBEB9E292E84E8003DF468 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -191,9 +197,9 @@
 		F8200244292F145A006DA54D /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				F8B13350292D100C00C4BF13 /* ExampleHomeView.swift */,
-				F8FBEB98292E7FAA003DF468 /* ExampleHomeViewController.swift */,
-				F8B1334E292D100C00C4BF13 /* ExampleHomeViewModel.swift */,
+				F8B13350292D100C00C4BF13 /* HomeView.swift */,
+				F8FBEB98292E7FAA003DF468 /* HomeViewController.swift */,
+				F8B1334E292D100C00C4BF13 /* HomeViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -228,6 +234,31 @@
 				F820024F292F211B006DA54D /* CodableExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F8200255292F419E006DA54D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F8200256292F41AA006DA54D /* HomeViewModelTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F8200258292F43C5006DA54D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F8200253292F2769006DA54D /* NetworkMapperTests.swift */,
+				F87D8827292DDEA0003AAC0F /* NetworkViewModelTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F8200259292F43EB006DA54D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F8200251292F2444006DA54D /* CodeleExtensionTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F87D882D292E1D7B003AAC0F /* Data */ = {
@@ -348,7 +379,9 @@
 			isa = PBXGroup;
 			children = (
 				F8B1332A292D0BCB00C4BF13 /* Samplesests.swift */,
-				F87D8827292DDEA0003AAC0F /* NetworkViewModelTests.swift */,
+				F8200259292F43EB006DA54D /* Extensions */,
+				F8200258292F43C5006DA54D /* Network */,
+				F8200255292F419E006DA54D /* Home */,
 			);
 			path = SamplesTests;
 			sourceTree = "<group>";
@@ -629,14 +662,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B13360292D230D00C4BF13 /* LogInterceptor.swift in Sources */,
-				F8B13352292D100C00C4BF13 /* ExampleHomeView.swift in Sources */,
+				F8B13352292D100C00C4BF13 /* HomeView.swift in Sources */,
 				F820024D292F1B01006DA54D /* EnvironmentConfiguration.swift in Sources */,
 				F8200243292F1402006DA54D /* HomeNavigator.swift in Sources */,
 				F8200250292F211B006DA54D /* CodableExtension.swift in Sources */,
 				F8B13359292D123300C4BF13 /* NetworkViewModel.swift in Sources */,
 				F8FBEB9D292E8215003DF468 /* HomeCoordinator.swift in Sources */,
 				F8FBEB8F292E7271003DF468 /* NetworkMapper.swift in Sources */,
-				F8FBEB99292E7FAA003DF468 /* ExampleHomeViewController.swift in Sources */,
+				F8FBEB99292E7FAA003DF468 /* HomeViewController.swift in Sources */,
 				F820024A292F1720006DA54D /* StandardHomeDependency.swift in Sources */,
 				F8FBEB97292E7DD4003DF468 /* NetworkViewController.swift in Sources */,
 				F8FBEB8B292E6D30003DF468 /* NetworkRepository.swift in Sources */,
@@ -647,7 +680,7 @@
 				F8FBEB91292E74AA003DF468 /* NetworkResponse.swift in Sources */,
 				F8200248292F14A7006DA54D /* HomeItem.swift in Sources */,
 				F8B13356292D117900C4BF13 /* NetworkView.swift in Sources */,
-				F8B13351292D100C00C4BF13 /* ExampleHomeViewModel.swift in Sources */,
+				F8B13351292D100C00C4BF13 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +688,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8200257292F41AA006DA54D /* HomeViewModelTests.swift in Sources */,
+				F8200252292F2444006DA54D /* CodeleExtensionTests.swift in Sources */,
+				F8200254292F2769006DA54D /* NetworkMapperTests.swift in Sources */,
 				F8B1332B292D0BCB00C4BF13 /* Samplesests.swift in Sources */,
 				F87D8828292DDEA0003AAC0F /* NetworkViewModelTests.swift in Sources */,
 			);

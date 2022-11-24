@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ExampleHomeView: View {
-    @ObservedObject var viewModel: ExampleHomeViewModel
+struct HomeView: View {
+    @ObservedObject var viewModel: HomeViewModel
     
-    init(viewModel: ExampleHomeViewModel) {
+    init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
     }
     

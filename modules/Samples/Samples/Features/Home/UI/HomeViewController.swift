@@ -1,5 +1,5 @@
 //
-//  ExampleHomeViewController.swift
+//  HomeViewController.swift
 //  Samples
 //
 //  Created by Renjun Li on 2022/11/24.
@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class ExampleHomeViewController: UIHostingController<ExampleHomeView> {
-    private let viewModel: ExampleHomeViewModel
+class HomeViewController: UIHostingController<HomeView> {
+    private let viewModel: HomeViewModel
     
-    init(viewModel: ExampleHomeViewModel) {
+    init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
-        let view = ExampleHomeView(viewModel: viewModel)
+        let view = HomeView(viewModel: viewModel)
         super.init(rootView: view)
     }
     
@@ -22,7 +22,6 @@ class ExampleHomeViewController: UIHostingController<ExampleHomeView> {
         super.viewDidLoad()
         view.backgroundColor = .white
     }
-    
     
     required dynamic init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

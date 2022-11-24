@@ -12,6 +12,12 @@ struct NetworkResponse: Codable {
     let url: String
     let header: NetworkResponseHeader
     
+    init(origin: String, url: String, header: NetworkResponseHeader) {
+        self.origin = origin
+        self.url = url
+        self.header = header
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.origin = (try? container.decode(String.self, forKey: .origin)) ?? ""

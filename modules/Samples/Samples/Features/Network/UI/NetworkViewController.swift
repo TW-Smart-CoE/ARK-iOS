@@ -8,8 +8,7 @@
 import UIKit
 import SwiftUI
 
-class NetworkViewController: UIHostingController<NetworkView> {
-    
+class NetworkViewController: UIHostingController<NetworkView> {    
     init(viewModel: NetworkViewModel) {
         let networkView = NetworkView(viewModel: viewModel)
         super.init(rootView: networkView)

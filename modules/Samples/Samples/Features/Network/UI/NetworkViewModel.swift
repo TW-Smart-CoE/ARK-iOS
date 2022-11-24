@@ -13,7 +13,7 @@ class NetworkViewModel: ObservableObject {
     enum UIState {
         case hideLoading
         case loading
-        case error(String)
+        case error
     }
     @Published var currentData: NetworkFeatureData?
     @Published var isLoading: Bool = false
@@ -43,8 +43,8 @@ class NetworkViewModel: ObservableObject {
                 receiveCompletion: {[weak self] competion in
                     guard let self = self else { return }
                     switch competion {
-                    case .failure(let error):
-                        self.uiState = .error(error.localizedDescription)
+                    case .failure:
+                        self.uiState = .error
                     case .finished:
                         self.uiState = .hideLoading
                     }

@@ -36,11 +36,9 @@ struct NetworkView: View {
                 viewModel.request(.put)
             }
         }
-        .overlay {
-            if viewModel.isLoading {
-                ProgressView()
-                    .tint(.red)
-            }
-        }
+        .overlay(
+            ProgressView()
+                .opacity(viewModel.isLoading ? 1: 0)
+        )
     }
 }
