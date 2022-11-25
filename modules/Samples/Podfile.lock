@@ -2,13 +2,10 @@ PODS:
   - Alamofire (5.6.4)
   - Core (0.0.1):
     - Alamofire (~> 5.6)
-  - Core/Tests (0.0.1):
-    - Alamofire (~> 5.6)
   - UI (0.0.1)
 
 DEPENDENCIES:
   - Core (from `../Core`)
-  - Core/Tests (from `../Core`)
   - UI (from `../UI`)
 
 SPEC REPOS:
@@ -26,6 +23,6 @@ SPEC CHECKSUMS:
   Core: 49389ad3275c8cd2d60727bd0d747197c68be285
   UI: 1af87e03025bfb7106afb4a4c56a12608e8c373d
 
-PODFILE CHECKSUM: e104ff1dacf9f8a8e57910eef8dd597754033c83
+PODFILE CHECKSUM: 5c533dafc80d5e788e0a4f0afda333175801af3c
 
 COCOAPODS: 1.11.3

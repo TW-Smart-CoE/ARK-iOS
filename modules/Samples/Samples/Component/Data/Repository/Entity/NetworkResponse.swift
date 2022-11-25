@@ -10,7 +10,7 @@ import Foundation
 public struct NetworkResponse: Codable {
     public let origin: String
     public let url: String
-    public let header: NetworkResponseHeader
+    public let header: NetworkResponseHeader?
     
     public init(origin: String, url: String, header: NetworkResponseHeader) {
         self.origin = origin
@@ -20,9 +20,9 @@ public struct NetworkResponse: Codable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.origin = (try? container.decode(String.self, forKey: .origin)) ?? ""
-        self.url = (try? container.decode(String.self, forKey: .url)) ?? ""
-        self.header = (try? container.decode(NetworkResponseHeader.self, forKey: .header)) ?? .default
+        self.origin = (try container.decode(String.self, forKey: .origin))
+        self.url = (try container.decode(String.self, forKey: .url))
+        self.header = try? container.decode(NetworkResponseHeader.self, forKey: .header)
     }
     
     public enum CodingKeys: String, CodingKey {
@@ -69,11 +69,11 @@ public struct NetworkResponseHeader: Codable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.accept = (try? container.decode(String.self, forKey: .accept)) ?? ""
-        self.acceptEncoding = (try? container.decode(String.self, forKey: .acceptEncoding)) ?? ""
-        self.acceptLanguage = (try? container.decode(String.self, forKey: .acceptLanguage)) ?? ""
-        self.host = (try? container.decode(String.self, forKey: .host)) ?? ""
-        self.userAgent = (try? container.decode(String.self, forKey: .userAgent)) ?? ""
+        self.accept = try container.decode(String.self, forKey: .accept)
+        self.acceptEncoding = try container.decode(String.self, forKey: .acceptEncoding)
+        self.acceptLanguage = try container.decode(String.self, forKey: .acceptLanguage)
+        self.host = try container.decode(String.self, forKey: .host)
+        self.userAgent = try container.decode(String.self, forKey: .userAgent)
     }
     
     public func encode(to encoder: Encoder) throws {

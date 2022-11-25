@@ -26,7 +26,7 @@ class NetworkUseCase {
         case .delete:
             return repository.makeDeleteRequest()
         default:
-            return Fail(error: ApiError.serverError).eraseToAnyPublisher()
+            return Fail(error: ApiError.unkown).eraseToAnyPublisher()
         }
     }
 }

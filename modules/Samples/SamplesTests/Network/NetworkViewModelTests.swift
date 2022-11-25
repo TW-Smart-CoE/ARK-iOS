@@ -1,6 +1,6 @@
 //
 //  NetworkViewModelTests.swift
-//  ExamplesTests
+//  SamplesTests
 //
 //  Copyright 2022 Thoughtworks, Inc. All rights reserved.
 //  swiftlint:disable implicitly_unwrapped_optional
@@ -11,32 +11,34 @@ import Combine
 import Alamofire
 
 final class NetworkViewModelTests: XCTestCase {
-    let repo = MockNetworRepository()
+    var dataSouce: MockDataSource!
+    var repo: StandardNetworkRepository!
     var sut: NetworkViewModel!
     var bag: Set<AnyCancellable> = .init()
     let timeOut: TimeInterval = 10
     
     override func setUpWithError() throws {
+        dataSouce = MockDataSource()
+        repo = StandardNetworkRepository(dataSource: dataSouce)
         sut = NetworkViewModel(repository: repo)
     }
-    
-    func testResultShouldNotEmptyWhenMetohdIsGet() {
-        makeRequest(.get)
+    func testResultShouldNotBeEmptyWhenMetohdIsGet() {
+        request(.get)
     }
     
-    func testResultShouldNotEmptyWhenMetohdIsPost() {
-        makeRequest(.post)
+    func testResultShouldNotBeEmptyWhenMetohdIsPost() {
+        request(.post)
     }
     
-    func testResultShouldNotEmptyWhenMetohdIsPut() {
-        makeRequest(.put)
+    func testResultShouldNotBeEmptyWhenMetohdIsPut() {
+        request(.put)
     }
     
-    func testResultShouldNotEmptyWhenMetohdIsDelete() {
-        makeRequest(.delete)
+    func testResultShouldNotBeEmptyWhenMetohdIsDelete() {
+        request(.delete)
     }
     
-    func makeRequest(_ method: HTTPMethod) {
+    func request(_ method: HTTPMethod) {
         // Given
         let expectation = expectation(description: #function)
         var result: NetworkFeatureData?
@@ -59,51 +61,16 @@ final class NetworkViewModelTests: XCTestCase {
     
     func testShouldBeErrorWhenResponseError() {
         // Given
-        let repo = MockNetworRepository()
-        repo.returError = true
+        dataSouce.returError = true
         sut = NetworkViewModel(repository: repo)
         
         // When
         sut.request(.get)
+        sut.request(.post)
+        sut.request(.put)
+        sut.request(.delete)
         
         // Then
-        XCTAssertEqual(sut.uiState, .error)
-    }
-}
-
-class MockNetworRepository: NetworkRepository {
-    let responseData = NetworkFeatureData(
-        accept: "accept",
-        acceptEncoding: "acceptEncoding",
-        acceptLanguage: "acceptLanguage",
-        host: "host",
-        userAgent: "userAgent",
-        origin: "origin",
-        url: "url"
-    )
-    
-    var returError: Bool = false
-    
-    func makeGetRequest() -> AnyPublisher<NetworkFeatureData, Error> {
-        return makeResponse()
-    }
-    
-    func makePostRequest() -> AnyPublisher<NetworkFeatureData, Error> {
-        return makeResponse()
-    }
-    
-    func makePutRequest() -> AnyPublisher<NetworkFeatureData, Error> {
-        return makeResponse()
-    }
-    
-    func makeDeleteRequest() -> AnyPublisher<NetworkFeatureData, Error> {
-        return makeResponse()
-    }
-    
-    private func makeResponse() -> AnyPublisher<NetworkFeatureData, Error> {
-        guard !returError else {
-            return Fail(error: NSError(domain: "Error", code: -1)).eraseToAnyPublisher()
-        }
-        return Just(responseData).setFailureType(to: Error.self).eraseToAnyPublisher()
+        XCTAssertFalse(sut.errorMessage.isEmpty)
     }
 }

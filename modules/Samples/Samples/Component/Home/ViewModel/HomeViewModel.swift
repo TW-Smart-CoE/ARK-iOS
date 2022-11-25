@@ -16,7 +16,7 @@ public class HomeViewModel: ObservableObject {
     
     func navigate(to type: HomeItemType) {
         switch type {
-        case.network:
+        case .network:
             navigator?.navigateToNetwork()
         }
     }

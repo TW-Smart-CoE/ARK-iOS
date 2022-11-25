@@ -1,6 +1,6 @@
 //
 //  NetworkViewModel.swift
-//  Examples
+//  Samples
 //
 //  Copyright 2022 Thoughtworks, Inc. All rights reserved.
 //
@@ -13,19 +13,23 @@ class NetworkViewModel: ObservableObject {
     enum UIState {
         case hideLoading
         case loading
-        case error
+        case error(Error)
     }
     @Published var currentData: NetworkFeatureData?
     @Published var isLoading: Bool = false
+    @Published var errorMessage: String = ""
     @Published var uiState: UIState = .hideLoading {
         didSet {
             switch uiState {
             case .loading:
                 isLoading = true
+                errorMessage = ""
             case .hideLoading:
                 isLoading = false
-            case .error:
+                errorMessage = ""
+            case .error(let error):
                 isLoading = false
+                errorMessage = error.localizedDescription
             }
         }
     }
@@ -43,8 +47,8 @@ class NetworkViewModel: ObservableObject {
                 receiveCompletion: {[weak self] competion in
                     guard let self = self else { return }
                     switch competion {
-                    case .failure:
-                        self.uiState = .error
+                    case .failure(let error):
+                        self.uiState = .error(error)
                     case .finished:
                         self.uiState = .hideLoading
                     }

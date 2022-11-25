@@ -1,6 +1,6 @@
 //
 //  NetworkView.swift
-//  Examples
+//  Samples
 //
 //  Copyright 2022 Thoughtworks, Inc. All rights reserved.
 //
@@ -19,8 +19,10 @@ struct NetworkView: View {
     var body: some View {
         List {
             if let currentData = viewModel.currentData {
-                Text("response").foregroundColor(.red)
+                Text("response").foregroundColor(.blue)
                 Text(currentData.toJSONString())
+            } else if !viewModel.errorMessage.isEmpty {
+                Text(viewModel.errorMessage).foregroundColor(.red)
             }
          
             Button("GET") {

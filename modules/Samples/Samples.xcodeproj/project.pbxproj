@@ -14,7 +14,6 @@
 		F8200248292F14A7006DA54D /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200247292F14A7006DA54D /* HomeItem.swift */; };
 		F820024A292F1720006DA54D /* StandardHomeDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200249292F1720006DA54D /* StandardHomeDependency.swift */; };
 		F820024D292F1B01006DA54D /* EnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F820024C292F1B01006DA54D /* EnvironmentConfiguration.swift */; };
-		F8200250292F211B006DA54D /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F820024F292F211B006DA54D /* CodableExtension.swift */; };
 		F8200252292F2444006DA54D /* CodeleExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200251292F2444006DA54D /* CodeleExtensionTests.swift */; };
 		F8200254292F2769006DA54D /* NetworkMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200253292F2769006DA54D /* NetworkMapperTests.swift */; };
 		F8200257292F41AA006DA54D /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200256292F41AA006DA54D /* HomeViewModelTests.swift */; };
@@ -22,6 +21,9 @@
 		F8200261292F66AD006DA54D /* CommonDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200260292F66AD006DA54D /* CommonDependency.swift */; };
 		F8200264292F6888006DA54D /* BinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200263292F6888006DA54D /* BinDataSource.swift */; };
 		F8200266292F6918006DA54D /* RemoteBinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200265292F6918006DA54D /* RemoteBinDataSource.swift */; };
+		F82002692930FDB1006DA54D /* StandardNetworkRepostoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82002682930FDB1006DA54D /* StandardNetworkRepostoryTests.swift */; };
+		F8200272293113C9006DA54D /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F820026F293113C9006DA54D /* CodableExtension.swift */; };
+		F8200273293113C9006DA54D /* LogInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200271293113C9006DA54D /* LogInterceptor.swift */; };
 		F87D8828292DDEA0003AAC0F /* NetworkViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87D8827292DDEA0003AAC0F /* NetworkViewModelTests.swift */; };
 		F8B1331E292D0BCA00C4BF13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B1331D292D0BCA00C4BF13 /* Assets.xcassets */; };
 		F8B13335292D0BCB00C4BF13 /* SamplesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13334292D0BCB00C4BF13 /* SamplesUITests.swift */; };
@@ -30,7 +32,6 @@
 		F8B13352292D100C00C4BF13 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13350292D100C00C4BF13 /* HomeView.swift */; };
 		F8B13356292D117900C4BF13 /* NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13355292D117900C4BF13 /* NetworkView.swift */; };
 		F8B13359292D123300C4BF13 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13358292D123300C4BF13 /* NetworkViewModel.swift */; };
-		F8B13360292D230D00C4BF13 /* LogInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1335F292D230D00C4BF13 /* LogInterceptor.swift */; };
 		F8FBEB8B292E6D30003DF468 /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB8A292E6D30003DF468 /* NetworkRepository.swift */; };
 		F8FBEB8D292E6DEA003DF468 /* StandardNetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB8C292E6DEA003DF468 /* StandardNetworkRepository.swift */; };
 		F8FBEB8F292E7271003DF468 /* NetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FBEB8E292E7271003DF468 /* NetworkMapper.swift */; };
@@ -80,7 +81,6 @@
 		F8200247292F14A7006DA54D /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
 		F8200249292F1720006DA54D /* StandardHomeDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardHomeDependency.swift; sourceTree = "<group>"; };
 		F820024C292F1B01006DA54D /* EnvironmentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfiguration.swift; sourceTree = "<group>"; };
-		F820024F292F211B006DA54D /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
 		F8200251292F2444006DA54D /* CodeleExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeleExtensionTests.swift; sourceTree = "<group>"; };
 		F8200253292F2769006DA54D /* NetworkMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMapperTests.swift; sourceTree = "<group>"; };
 		F8200256292F41AA006DA54D /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
@@ -88,6 +88,9 @@
 		F8200260292F66AD006DA54D /* CommonDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDependency.swift; sourceTree = "<group>"; };
 		F8200263292F6888006DA54D /* BinDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinDataSource.swift; sourceTree = "<group>"; };
 		F8200265292F6918006DA54D /* RemoteBinDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBinDataSource.swift; sourceTree = "<group>"; };
+		F82002682930FDB1006DA54D /* StandardNetworkRepostoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardNetworkRepostoryTests.swift; sourceTree = "<group>"; };
+		F820026F293113C9006DA54D /* CodableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
+		F8200271293113C9006DA54D /* LogInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInterceptor.swift; sourceTree = "<group>"; };
 		F87D8827292DDEA0003AAC0F /* NetworkViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModelTests.swift; sourceTree = "<group>"; };
 		F8B13316292D0BC700C4BF13 /* Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B1331D292D0BCA00C4BF13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,7 +102,6 @@
 		F8B13350292D100C00C4BF13 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F8B13355292D117900C4BF13 /* NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkView.swift; sourceTree = "<group>"; };
 		F8B13358292D123300C4BF13 /* NetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
-		F8B1335F292D230D00C4BF13 /* LogInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInterceptor.swift; sourceTree = "<group>"; };
 		F8FBEB8A292E6D30003DF468 /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
 		F8FBEB8C292E6DEA003DF468 /* StandardNetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardNetworkRepository.swift; sourceTree = "<group>"; };
 		F8FBEB8E292E7271003DF468 /* NetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMapper.swift; sourceTree = "<group>"; };
@@ -183,15 +185,6 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		F8200241292F12F5006DA54D /* Vender */ = {
-			isa = PBXGroup;
-			children = (
-				F820024E292F20F2006DA54D /* Extension */,
-				F8B1335C292D22AF00C4BF13 /* Interceptor */,
-			);
-			path = Vender;
-			sourceTree = "<group>";
-		};
 		F8200244292F145A006DA54D /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,14 +203,6 @@
 				F820025A292F4C0B006DA54D /* Samples.swift */,
 			);
 			path = AppConfiguration;
-			sourceTree = "<group>";
-		};
-		F820024E292F20F2006DA54D /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				F820024F292F211B006DA54D /* CodableExtension.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		F8200255292F419E006DA54D /* Home */ = {
@@ -286,6 +271,39 @@
 				F8200265292F6918006DA54D /* RemoteBinDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		F82002672930FD87006DA54D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F82002682930FDB1006DA54D /* StandardNetworkRepostoryTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		F820026D293113C9006DA54D /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				F820026E293113C9006DA54D /* Extension */,
+				F8200270293113C9006DA54D /* Interceptor */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		F820026E293113C9006DA54D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F820026F293113C9006DA54D /* CodableExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F8200270293113C9006DA54D /* Interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				F8200271293113C9006DA54D /* LogInterceptor.swift */,
+			);
+			path = Interceptor;
 			sourceTree = "<group>";
 		};
 		F87D882D292E1D7B003AAC0F /* Data */ = {
@@ -368,9 +386,9 @@
 		F8B13318292D0BC700C4BF13 /* Samples */ = {
 			isa = PBXGroup;
 			children = (
+				F820026D293113C9006DA54D /* Vendor */,
 				F820024B292F1AF1006DA54D /* AppConfiguration */,
 				F820023E292F12A3006DA54D /* Component */,
-				F8200241292F12F5006DA54D /* Vender */,
 				F8FBEB9A292E807E003DF468 /* Appdelegate.swift */,
 				F8B1331D292D0BCA00C4BF13 /* Assets.xcassets */,
 				F8FBEBA0292E86DF003DF468 /* Info.plist */,
@@ -382,6 +400,7 @@
 		F8B13329292D0BCB00C4BF13 /* SamplesTests */ = {
 			isa = PBXGroup;
 			children = (
+				F82002672930FD87006DA54D /* Repository */,
 				F8200259292F43EB006DA54D /* Extensions */,
 				F8200258292F43C5006DA54D /* Network */,
 				F8200255292F419E006DA54D /* Home */,
@@ -414,14 +433,6 @@
 				F87D8835292E1EB2003AAC0F /* UI */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		F8B1335C292D22AF00C4BF13 /* Interceptor */ = {
-			isa = PBXGroup;
-			children = (
-				F8B1335F292D230D00C4BF13 /* LogInterceptor.swift */,
-			);
-			path = Interceptor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -662,12 +673,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8200273293113C9006DA54D /* LogInterceptor.swift in Sources */,
 				F8200264292F6888006DA54D /* BinDataSource.swift in Sources */,
-				F8B13360292D230D00C4BF13 /* LogInterceptor.swift in Sources */,
+				F8200272293113C9006DA54D /* CodableExtension.swift in Sources */,
 				F8B13352292D100C00C4BF13 /* HomeView.swift in Sources */,
 				F820024D292F1B01006DA54D /* EnvironmentConfiguration.swift in Sources */,
 				F8200243292F1402006DA54D /* HomeNavigator.swift in Sources */,
-				F8200250292F211B006DA54D /* CodableExtension.swift in Sources */,
 				F8B13359292D123300C4BF13 /* NetworkViewModel.swift in Sources */,
 				F8FBEB9D292E8215003DF468 /* HomeNavigationController.swift in Sources */,
 				F8FBEB8F292E7271003DF468 /* NetworkMapper.swift in Sources */,
@@ -695,6 +706,7 @@
 			files = (
 				F8200257292F41AA006DA54D /* HomeViewModelTests.swift in Sources */,
 				F8200252292F2444006DA54D /* CodeleExtensionTests.swift in Sources */,
+				F82002692930FDB1006DA54D /* StandardNetworkRepostoryTests.swift in Sources */,
 				F8200254292F2769006DA54D /* NetworkMapperTests.swift in Sources */,
 				F87D8828292DDEA0003AAC0F /* NetworkViewModelTests.swift in Sources */,
 			);
@@ -908,7 +920,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ark.examples.ExamplesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ark.samples.SamplesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -928,7 +940,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ark.examples.ExamplesTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ark.samples.SamplesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -946,12 +958,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ark.examples.ExamplesUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ark.samples.SamplesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Examples;
+				TEST_TARGET_NAME = Samples;
 			};
 			name = Debug;
 		};
@@ -964,12 +976,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ark.examples.ExamplesUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ark.samples.SamplesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Examples;
+				TEST_TARGET_NAME = Samples;
 			};
 			name = Release;
 		};

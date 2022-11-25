@@ -5,10 +5,8 @@ PODS:
   - Core/Tests (0.0.1):
     - Alamofire (~> 5.6)
   - Samples (0.0.1):
-    - Alamofire (~> 5.6)
     - Core
   - Samples/SamplesTests (0.0.1):
-    - Alamofire (~> 5.6)
     - Core
   - SwiftLint (0.48.0)
   - UI (0.0.1)
@@ -37,7 +35,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   Core: 49389ad3275c8cd2d60727bd0d747197c68be285
-  Samples: 58e20fd41393b6dfceca9d112912c7c36612ba78
+  Samples: fa5796a313415a272b58f10365ab8a1f59ae8e8e
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
   UI: 1af87e03025bfb7106afb4a4c56a12608e8c373d
 

@@ -1,6 +1,6 @@
 //
-//  ExampleHomeView.swift
-//  Examples
+//  HomeView.swift
+//  Samples
 //
 //  Copyright 2022 Thoughtworks, Inc. All rights reserved.
 //

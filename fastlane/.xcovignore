@@ -20,10 +20,11 @@
 
 # Samples
 - modules/Samples/Samples/Appdelegate.swift
-- modules/Samples/Samples/Vender/Interceptor/LogInterceptor.swift
+- modules/Samples/Samples/Vendor/Interceptor/LogInterceptor.swift
 - modules/Samples/Samples/Component/Data/Model
 - modules/Samples/Samples/Component/Data/UseCase
 - modules/Samples/Samples/Component/Data/Repository/Entity
 - modules/Samples/Samples/Component/DI
 - modules/Samples/Pods
 - modules/Samples/Samples/AppConfiguration
+- modules/Samples/Samples/Component/Data/Repository/DataSource

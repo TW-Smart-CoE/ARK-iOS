@@ -24,19 +24,19 @@ class StandardNetworkRepository: NetworkRepository {
     }
     
     func makePostRequest() -> AnyPublisher<NetworkFeatureData, Error> {
-        return dataSource.makeGetRequest()
-            .map { NetworkMapper.transform($0)}
+        return dataSource.makePostRequest()
+            .map { NetworkMapper.transform($0) }
             .eraseToAnyPublisher()
     }
     
     func makePutRequest() -> AnyPublisher<NetworkFeatureData, Error> {
-        return dataSource.makeGetRequest()
+        return dataSource.makePutRequest()
             .map { NetworkMapper.transform($0) }
             .eraseToAnyPublisher()
     }
     
     func makeDeleteRequest() -> AnyPublisher<NetworkFeatureData, Error> {
-        return dataSource.makeGetRequest()
+        return dataSource.makeDeleteRequest()
             .map { NetworkMapper.transform($0) }
             .eraseToAnyPublisher()
     }
