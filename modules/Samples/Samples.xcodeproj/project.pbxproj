@@ -24,7 +24,6 @@
 		F8200266292F6918006DA54D /* RemoteBinDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8200265292F6918006DA54D /* RemoteBinDataSource.swift */; };
 		F87D8828292DDEA0003AAC0F /* NetworkViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87D8827292DDEA0003AAC0F /* NetworkViewModelTests.swift */; };
 		F8B1331E292D0BCA00C4BF13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B1331D292D0BCA00C4BF13 /* Assets.xcassets */; };
-		F8B1332B292D0BCB00C4BF13 /* Samplesests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1332A292D0BCB00C4BF13 /* Samplesests.swift */; };
 		F8B13335292D0BCB00C4BF13 /* SamplesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13334292D0BCB00C4BF13 /* SamplesUITests.swift */; };
 		F8B13337292D0BCB00C4BF13 /* SamplesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B13336292D0BCB00C4BF13 /* SamplesUITestsLaunchTests.swift */; };
 		F8B13351292D100C00C4BF13 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1334E292D100C00C4BF13 /* HomeViewModel.swift */; };
@@ -93,7 +92,6 @@
 		F8B13316292D0BC700C4BF13 /* Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B1331D292D0BCA00C4BF13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8B13326292D0BCB00C4BF13 /* SamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8B1332A292D0BCB00C4BF13 /* Samplesests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Samplesests.swift; sourceTree = "<group>"; };
 		F8B13330292D0BCB00C4BF13 /* SamplesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamplesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B13334292D0BCB00C4BF13 /* SamplesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesUITests.swift; sourceTree = "<group>"; };
 		F8B13336292D0BCB00C4BF13 /* SamplesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -384,7 +382,6 @@
 		F8B13329292D0BCB00C4BF13 /* SamplesTests */ = {
 			isa = PBXGroup;
 			children = (
-				F8B1332A292D0BCB00C4BF13 /* Samplesests.swift */,
 				F8200259292F43EB006DA54D /* Extensions */,
 				F8200258292F43C5006DA54D /* Network */,
 				F8200255292F419E006DA54D /* Home */,
@@ -699,7 +696,6 @@
 				F8200257292F41AA006DA54D /* HomeViewModelTests.swift in Sources */,
 				F8200252292F2444006DA54D /* CodeleExtensionTests.swift in Sources */,
 				F8200254292F2769006DA54D /* NetworkMapperTests.swift in Sources */,
-				F8B1332B292D0BCB00C4BF13 /* Samplesests.swift in Sources */,
 				F87D8828292DDEA0003AAC0F /* NetworkViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

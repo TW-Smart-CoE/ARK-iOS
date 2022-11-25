@@ -1,5 +1,5 @@
 //
-//  HomeCoordinator.swift
+//  HomeNavigationController.swift
 //  Samples
 //
 //  Copyright 2022 Thoughtworks, Inc. All rights reserved
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class HomeCoordinator: UINavigationController, HomeNavigator {
+public class HomeNavigationController: UINavigationController, HomeNavigator {
     private let dependency: CommonDependency
     
     public init(dependency: CommonDependency) {

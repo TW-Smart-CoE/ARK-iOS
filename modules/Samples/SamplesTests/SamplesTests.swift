@@ -1,6 +1,6 @@
 //
-//  ExamplesTests.swift
-//  ExamplesTests
+//  SamplesTests.swift
+//  SamplesTests
 //
 //   Copyright 2022 Thoughtworks, Inc. All rights reserved.
 //
@@ -8,4 +8,4 @@
 import XCTest
 @testable import Samples
 
-final class ExamplesTests: XCTestCase { }
+final class SamplesTests: XCTestCase { }

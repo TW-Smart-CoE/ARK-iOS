@@ -8,12 +8,12 @@
 import Foundation
 
 public class Samples {
-    public static func homePage() -> HomeCoordinator {
+    public static func homePage() -> HomeNavigationController {
         let envvironment = EnvironmentConfiguration.development
         let dataSource = RemoteBinDataSource(service: envvironment.apiService)
         let repository = StandardNetworkRepository(dataSource: dataSource)
         let homeDependency = StandardHomeDependency(networkRepository: repository)
-        let home = HomeCoordinator(dependency: homeDependency)
+        let home = HomeNavigationController(dependency: homeDependency)
         let exampleViewModel = HomeViewModel(navigator: home)
         let homeVC = HomeViewController(viewModel: exampleViewModel)
         home.addChild(homeVC)

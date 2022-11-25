@@ -5,6 +5,7 @@
 
 # Exclude all files ending by "View.swift"
 - .*View.swift
+- .*Controller.swift
 
 # Exclude all dependencies
 - Pods
@@ -16,3 +17,13 @@
 - modules/Core/Sources/Logger/LogRecord.swift
 - modules/Core/Sources/Logger/SensitiveInfoProtector.swift
 - modules/Core/Sources/Logger/DefaultOutputStream.swift
+
+# Samples
+- modules/Samples/Samples/Appdelegate.swift
+- modules/Samples/Samples/Vender/Interceptor/LogInterceptor.swift
+- modules/Samples/Samples/Component/Data/Model
+- modules/Samples/Samples/Component/Data/UseCase
+- modules/Samples/Samples/Component/Data/Repository/Entity
+- modules/Samples/Samples/Component/DI
+- modules/Samples/Pods
+- modules/Samples/Samples/AppConfiguration
