@@ -10,10 +10,11 @@ Pod::Spec.new do |spec|
   spec.module_name           = 'Samples'
   spec.swift_version         = '5.0'
   spec.ios.deployment_target = '14.0'
-  spec.source_files          = 'Samples/**/*.swift'
+  spec.source_files          = 'Sources/**/*.swift'
   spec.framework             = 'Foundation'
-  spec.test_spec 'SamplesTests' do |test_spec|
-    test_spec.source_files = 'SamplesTests/**/*.swift'
+  spec.test_spec 'Tests' do |test_spec|
+    test_spec.source_files = 'Tests/**/*.swift'
   end
   spec.dependency 'Core'
+  spec.dependency 'UI'
 end

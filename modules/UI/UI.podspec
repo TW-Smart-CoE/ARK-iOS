@@ -12,6 +12,9 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '14.0'
   spec.source_files          = 'Sources/**/*.swift'
   spec.framework             = 'SwiftUI'
+  spec.resource_bundles = {
+    'UI' => ['Sources/Image/*.{xcassets}','Sources/Theme/Colors/*.{xcassets}'],
+ }
   spec.test_spec 'Tests' do |test_spec|
     test_spec.source_files = 'Tests/**/*.swift'
   end

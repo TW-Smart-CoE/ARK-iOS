@@ -77,9 +77,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9CD837692CFEE0813264E26F019CC609"
-               BuildableName = "Samples-Unit-SamplesTests.xctest"
-               BlueprintName = "Samples-Unit-SamplesTests"
+               BlueprintIdentifier = "EF0D3B65FE4C782F4029FDC71E1F85B4"
+               BuildableName = "Samples-Unit-Tests.xctest"
+               BlueprintName = "Samples-Unit-Tests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </TestableReference>
