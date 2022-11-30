@@ -94,3 +94,28 @@ public struct HeaderInterceptor: RequestInterceptor {
         completion(.success(newRequest))
     }
 }
+
+public struct LogInterceptor: RequestInterceptor {
+    public init() { }
+    
+    public func adapt(
+        _ urlRequest: URLRequest,
+        for session: Session,
+        completion: @escaping (Result<URLRequest, Error>) -> Void
+    ) {
+        let header = urlRequest.headers
+        let method = urlRequest.method?.rawValue ?? ""
+        let url = urlRequest.url
+        var body = ""
+        if let bodyData = urlRequest.httpBody {
+            body = String(data: bodyData, encoding: .utf8) ?? ""
+        }
+        #if DEBUG
+        Log.info(tag: "Network", message: "url:\(url?.absoluteString ?? "")")
+        Log.info(tag: "Network", message: "header:\(header)")
+        Log.info(tag: "Network", message: "method: \(method)")
+        Log.info(tag: "Network", message: "body: \(body)")
+        #endif
+        completion(.success(urlRequest))
+    }
+}

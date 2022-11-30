@@ -16,3 +16,14 @@
 - modules/Core/Sources/Logger/LogRecord.swift
 - modules/Core/Sources/Logger/SensitiveInfoProtector.swift
 - modules/Core/Sources/Logger/DefaultOutputStream.swift
+
+# Samples
+- modules/Samples/Sources/Appdelegate.swift
+- modules/Samples/Sources/Component/Data/Model
+- modules/Samples/Sources/Component/Data/Repository/Entity
+- modules/Samples/Sources/Component/DI
+- modules/Samples/Pods
+- modules/Samples/Sources/AppConfiguration
+- modules/Samples/Sources/Component/Data/Repository/DataSource
+- modules/Samples/Sources/Component/Home/UI
+- modules/Samples/Sources/Component/Network/UI

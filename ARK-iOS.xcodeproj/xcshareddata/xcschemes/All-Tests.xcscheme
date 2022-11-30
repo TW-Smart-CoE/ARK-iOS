@@ -44,6 +44,13 @@
             BlueprintName = "Core"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C870C7F18B12212B9E70DB88F7CF44F1"
+            BuildableName = "Samples.framework"
+            BlueprintName = "Samples"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
@@ -63,6 +70,16 @@
                BlueprintIdentifier = "FA7727F429532F0C18F34C9B13767CE7"
                BuildableName = "Core-Unit-Tests.xctest"
                BlueprintName = "Core-Unit-Tests"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EF0D3B65FE4C782F4029FDC71E1F85B4"
+               BuildableName = "Samples-Unit-Tests.xctest"
+               BlueprintName = "Samples-Unit-Tests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </TestableReference>

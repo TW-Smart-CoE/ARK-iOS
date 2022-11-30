@@ -26,6 +26,8 @@ opt_in_rules:
   - multiline_parameters
   - vertical_whitespace_opening_braces
   - vertical_whitespace_closing_braces
+disabled_rules:
+  - trailing_whitespace
 custom_rules:
   prevent_print:
     name: "prevent_print"

@@ -1,0 +1,19 @@
+source 'https://cdn.cocoapods.org/'
+
+platform :ios, '14.0'
+
+target 'Samples' do
+  use_frameworks!
+  
+  pod 'Core', :path => '../Core'
+  pod 'UI', :path => '../UI'
+
+  target 'SamplesTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SamplesUITests' do
+  end
+
+end

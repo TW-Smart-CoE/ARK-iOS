@@ -4,12 +4,20 @@ PODS:
     - Alamofire (~> 5.6)
   - Core/Tests (0.0.1):
     - Alamofire (~> 5.6)
+  - Samples (0.0.1):
+    - Core
+    - UI
+  - Samples/Tests (0.0.1):
+    - Core
+    - UI
   - SwiftLint (0.48.0)
   - UI (0.0.1)
 
 DEPENDENCIES:
   - Core (from `./modules/Core`)
   - Core/Tests (from `./modules/Core`)
+  - Samples (from `./modules/Samples`)
+  - Samples/Tests (from `./modules/Samples`)
   - SwiftLint (~> 0.48)
   - UI (from `./modules/UI`)
 
@@ -21,15 +29,18 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Core:
     :path: "./modules/Core"
+  Samples:
+    :path: "./modules/Samples"
   UI:
     :path: "./modules/UI"
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   Core: 49389ad3275c8cd2d60727bd0d747197c68be285
+  Samples: 3a0c25a2f83dd653487e61bba374cfd25bb1c084
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
-  UI: 1af87e03025bfb7106afb4a4c56a12608e8c373d
+  UI: 5aa2b30168c641c4250396777e6a6be22a2401c7
 
-PODFILE CHECKSUM: 2326e47d4089050e8bf021b1070d37ef9fe310cb
+PODFILE CHECKSUM: df9103b836879e56e646c33ff4e8d92069458793
 
 COCOAPODS: 1.11.3
