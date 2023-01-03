@@ -12,13 +12,13 @@ struct ColorSampleView: View {
     var body: some View {
         VStack {
             Text("Test ColorName with dynamic color")
-                .foregroundColor(Colors.blue.color)
+                .foregroundColor(ColorPalette.blue.color)
 
             Text("Test ColorName with solid color")
-                .foregroundColor(Colors.teal200.color)
+                .foregroundColor(ColorPalette.teal200.color)
 
             Text("Test ThemeColors")
-                .foregroundColor(ThemeColors.primary.color)
+                .foregroundColor(Colors.primary.color)
         }
     }
 }

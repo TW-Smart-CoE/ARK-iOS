@@ -14,18 +14,19 @@ struct TypographySampleView: View {
             VStack(alignment: .leading) {
                 Text("Header Content")
                     .typographyStyle(as: .h5)
+                    .foregroundColor(Colors.onBackground.color)
 
                 Text("Subtitle Content")
                     .typographyStyle(as: .subtitle1)
-                    .foregroundColor(Colors.gray900.color)
+                    .foregroundColor(Colors.onBackground.color)
             }
 
             Spacer()
 
             Text("Custom Font")
                 .scaledFont(fontWeight: .thinItalic, size: 20)
-                .foregroundColor(Colors.gray600.color)
-        }.padding(.standardPadding)
+                .foregroundColor(Colors.onBackground.color)
+        }.foregroundColor(Colors.background.color).padding(.standardPadding)
     }
 }
 

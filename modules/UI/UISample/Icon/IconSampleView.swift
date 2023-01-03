@@ -16,7 +16,7 @@ struct IconSampleView: View {
             Label {
                 Text("Settings icon")
             } icon: {
-                Image(IconName.commonIconSetting)
+                Image(.commonIconSetting)
             }
             HStack {
                 Button {
