@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A24A34D296CF18000E06050 /* setup.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0A24A347296CF18000E06050 /* setup.sh */; };
+		0A24A34E296CF18000E06050 /* setup-hooks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0A24A349296CF18000E06050 /* setup-hooks.sh */; };
+		0A24A34F296CF18000E06050 /* pre-push in Resources */ = {isa = PBXBuildFile; fileRef = 0A24A34B296CF18000E06050 /* pre-push */; };
+		0A24A350296CF18000E06050 /* pre-commit in Resources */ = {isa = PBXBuildFile; fileRef = 0A24A34C296CF18000E06050 /* pre-commit */; };
+		0A24A353296CF6C200E06050 /* commit-msg in Resources */ = {isa = PBXBuildFile; fileRef = 0A24A352296CF6C200E06050 /* commit-msg */; };
 		20F21EBCE804EDBFA80DD10B /* Pods_ARK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E604933C28A39EDF005C737A /* Pods_ARK_iOS.framework */; };
 		93163E6907136AB5741E4814 /* Pods_ARK_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF88D1E3AA74A33F7502972 /* Pods_ARK_iOSTests.framework */; };
 		E6710DF12898EECE00663362 /* ARKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6710DF02898EECE00663362 /* ARKApp.swift */; };
@@ -33,6 +38,11 @@
 
 /* Begin PBXFileReference section */
 		03460ABD7AF93F9D0D9CED0E /* Pods-ARK-iOSTests.uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOSTests.uat.xcconfig"; path = "Target Support Files/Pods-ARK-iOSTests/Pods-ARK-iOSTests.uat.xcconfig"; sourceTree = "<group>"; };
+		0A24A347296CF18000E06050 /* setup.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setup.sh; sourceTree = "<group>"; };
+		0A24A349296CF18000E06050 /* setup-hooks.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "setup-hooks.sh"; sourceTree = "<group>"; };
+		0A24A34B296CF18000E06050 /* pre-push */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pre-push"; sourceTree = "<group>"; };
+		0A24A34C296CF18000E06050 /* pre-commit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pre-commit"; sourceTree = "<group>"; };
+		0A24A352296CF6C200E06050 /* commit-msg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "commit-msg"; sourceTree = "<group>"; };
 		1EFA4D47DF08F86027C8471D /* Pods_ARK_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARK_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B02F006099AF5E51964524C /* Pods-ARK-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-ARK-iOSTests/Pods-ARK-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		3336613C68709622898B732B /* Pods-ARK-iOS.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARK-iOS.staging.xcconfig"; path = "Target Support Files/Pods-ARK-iOS/Pods-ARK-iOS.staging.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +93,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A24A346296CF18000E06050 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				0A24A347296CF18000E06050 /* setup.sh */,
+				0A24A348296CF18000E06050 /* githooks */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		0A24A348296CF18000E06050 /* githooks */ = {
+			isa = PBXGroup;
+			children = (
+				0A24A349296CF18000E06050 /* setup-hooks.sh */,
+				0A24A34A296CF18000E06050 /* hooks */,
+			);
+			path = githooks;
+			sourceTree = "<group>";
+		};
+		0A24A34A296CF18000E06050 /* hooks */ = {
+			isa = PBXGroup;
+			children = (
+				0A24A352296CF6C200E06050 /* commit-msg */,
+				0A24A34B296CF18000E06050 /* pre-push */,
+				0A24A34C296CF18000E06050 /* pre-commit */,
+			);
+			path = hooks;
+			sourceTree = "<group>";
+		};
 		38120C593EA2BF32DFB9F279 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +139,7 @@
 		E6710DE42898EECE00663362 = {
 			isa = PBXGroup;
 			children = (
+				0A24A346296CF18000E06050 /* scripts */,
 				E6710DEF2898EECE00663362 /* Sources */,
 				E6710E002898EED000663362 /* Tests */,
 				E6710E2A28990B0000663362 /* Configs */,
@@ -275,8 +314,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A24A34D296CF18000E06050 /* setup.sh in Resources */,
+				0A24A34E296CF18000E06050 /* setup-hooks.sh in Resources */,
 				E6710DF82898EED000663362 /* Preview Assets.xcassets in Resources */,
+				0A24A350296CF18000E06050 /* pre-commit in Resources */,
 				E6710DF52898EED000663362 /* Assets.xcassets in Resources */,
+				0A24A353296CF6C200E06050 /* commit-msg in Resources */,
+				0A24A34F296CF18000E06050 /* pre-push in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
